@@ -74,6 +74,13 @@
 }
 
 // -----------------------------------------------------------------------------
+// Cloudflare Turnstile CAPTCHA widget
+// -----------------------------------------------------------------------------
+.cf-turnstile {
+  margin-bottom: $spacing-md;
+}
+
+// -----------------------------------------------------------------------------
 // Form privacy notice (lock icon + small text)
 // -----------------------------------------------------------------------------
 .form-privacy {
@@ -161,13 +168,14 @@
   box-shadow: $shadow-md;
 }
 
-// Thank-you state (shown via JS after submission)
-.prayer-thankyou {
+// Thank-you states (hidden by default, revealed by JS after submission)
+.prayer-thankyou,
+.contact-thankyou {
   text-align: center;
   padding: $spacing-3xl $spacing-lg;
   display: none;
 
-  h2 {
+  h2, h3 {
     color: $primary;
     margin-bottom: $spacing-md;
   }
@@ -176,5 +184,107 @@
     color: $text-secondary;
     font-size: $text-lg;
     margin-bottom: $spacing-2xl;
+  }
+}
+
+// Checkmark icon inside thank-you panels
+.thankyou-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background-color: rgba($primary, 0.08);
+  border-radius: 50%;
+  margin: 0 auto $spacing-lg;
+
+  svg {
+    color: $primary;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Form status region (loading / success / error banners injected by forms.js)
+// -----------------------------------------------------------------------------
+.form-status {
+  margin-top: $spacing-md;
+  padding: $spacing-md;
+  border-radius: $border-radius;
+  font-size: $text-sm;
+  min-height: 0; // collapsed when empty
+
+  &:empty {
+    display: none;
+  }
+
+  &--success {
+    background-color: #eaf7ef;
+    color: #1a6835;
+    border: 1px solid #a3d9b1;
+  }
+
+  &--error {
+    background-color: #fef2f2;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Inline field error messages injected by forms.js
+// -----------------------------------------------------------------------------
+.field-error {
+  display: block;
+  margin-top: $spacing-xs;
+  font-size: $text-sm;
+  color: #991b1b;
+}
+
+// Input invalid state (set via aria-invalid by forms.js)
+input[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+}
+
+// -----------------------------------------------------------------------------
+// Loading spinner injected by forms.js inside the submit button
+// -----------------------------------------------------------------------------
+@keyframes form-spin {
+  to { transform: rotate(360deg); }
+}
+
+.form-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: form-spin 0.7s linear infinite;
+  vertical-align: middle;
+  margin-right: $spacing-xs;
+}
+
+// Disabled submit button while loading
+[type="submit"][aria-busy="true"] {
+  opacity: 0.85;
+  cursor: not-allowed;
+}
+
+// -----------------------------------------------------------------------------
+// Contact form: thank-you inside the form-wrap column
+// -----------------------------------------------------------------------------
+.contact-thankyou {
+  padding: $spacing-2xl $spacing-lg;
+
+  h3 {
+    font-size: $text-2xl;
+    color: $primary;
+    margin-bottom: $spacing-sm;
+  }
+
+  p {
+    margin-bottom: 0;
   }
 }

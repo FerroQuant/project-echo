@@ -1,20 +1,40 @@
-<section class="hero" aria-label="Welcome banner">
+{% comment %} ============================================================
+  HERO — full-bleed cover photo with gradient overlay and animated content
+============================================================ {% endcomment %}
+
+<section
+  class="hero hero-animate"
+  aria-label="Welcome to The Well Church"
+  style="background-image: url('{{ '/assets/images/facebook/screenshot_cover_photo_clean.png' | relative_url }}');">
+
   <div class="hero__overlay" aria-hidden="true"></div>
+
   <div class="hero__content container">
+
     <h1 class="hero__title">Welcome to The Well Church</h1>
-    <p class="hero__subtitle">A community church in Reading &mdash; come as you are</p>
+
+    <p class="hero__subtitle">
+      A community church in Reading &mdash; come as you are
+    </p>
+
+    <blockquote class="hero__scripture">
+      <p>&ldquo;If anyone is thirsty, let him come to me and drink!&rdquo;</p>
+      <cite>&mdash;&thinsp;John 7:37</cite>
+    </blockquote>
 
     <div class="hero__actions">
       <a href="{{ '/services/' | relative_url }}" class="btn--accent">Plan Your Visit</a>
-      <a href="{{ '/prayer/' | relative_url }}" class="btn--outline">Request Prayer</a>
+      <a href="https://www.facebook.com/thewellreading/videos" class="btn--outline" target="_blank" rel="noopener noreferrer">Watch Live</a>
     </div>
 
     {% assign st = site.data.service_times %}
     {% if st %}
-    <p class="hero__service-info">
+    <div class="hero__badge">
+      <span class="hero__badge-dot" aria-hidden="true"></span>
       <strong>{{ st.services[0].day }}s at {{ st.services[0].time }}</strong>
       &bull; {{ st.address }}
-    </p>
+    </div>
     {% endif %}
+
   </div>
 </section>

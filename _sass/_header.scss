@@ -17,6 +17,16 @@
   background-color: $white;
   box-shadow: $shadow-sm;
   border-bottom: 1px solid $border-color;
+  transition: background-color $transition-normal, box-shadow $transition-normal;
+
+  // Applied by JS when user scrolls past the hero
+  &.is-scrolled {
+    background-color: rgba($white, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: $shadow-md;
+    border-bottom-color: rgba($border-color, 0.7);
+  }
 }
 
 // -----------------------------------------------------------------------------

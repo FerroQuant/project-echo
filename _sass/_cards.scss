@@ -33,9 +33,18 @@
   display: flex;
   flex-direction: column;
 
-  &:hover {
-    box-shadow: $shadow-lg;
-    transform: translateY(-2px);
+  @media (prefers-reduced-motion: no-preference) {
+    &:hover {
+      box-shadow: $shadow-lg;
+      transform: translateY(-4px);
+    }
+  }
+
+  // Reduced-motion: keep shadow feedback, drop transform
+  @media (prefers-reduced-motion: reduce) {
+    &:hover {
+      box-shadow: $shadow-lg;
+    }
   }
 }
 

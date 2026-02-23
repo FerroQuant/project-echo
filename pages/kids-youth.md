@@ -8,26 +8,30 @@ description: "Find out about children's and youth ministry at The Well Church in
 
 ## Kids at The Well
 
-We love children and believe they are a vital part of our church family. We want every child to encounter God in a way that is age-appropriate, fun, and genuinely meaningful.
+Children are not an afterthought at The Well — they are a full and cherished part of our church family. We believe that faith begins early, and we want every child who walks through our doors to feel genuinely welcomed, known, and cared for.
 
-During our Sunday morning services, we run children's activities for different age groups so that children can learn and worship in an environment designed just for them — while parents engage fully in the service.
+During our Sunday morning services, we run age-appropriate activities for children so that they can learn, ask questions, and grow in faith in an environment designed just for them — while parents and carers engage fully in the service.
 
-Our children's team is DBS-checked and trained to provide a safe, nurturing environment for every child. We follow robust safeguarding policies to ensure all children and young people in our care are protected.
+Our children's team is DBS-checked and committed to providing a safe, nurturing, and fun space for every child. We take safeguarding seriously, and all children and young people in our care are protected by robust policies.
 
-**Age groups catered for:**
+**Age groups:**
 
-- Babies and toddlers (0–3 years) — a safe and supervised crèche space
-- Pre-school children (3–5 years) — play-based learning and Bible stories
-- Primary age (5–11 years) — interactive activities, craft, games, and teaching
+- **Babies and toddlers (0–3)** — A supervised and safe crèche space
+- **Pre-school (3–5)** — Play-based learning and Bible stories
+- **Primary age (5–11)** — Interactive teaching, craft, games, and conversation
 
 ## Youth
 
-Our youth ministry is for young people in secondary school (ages 11–18). We believe in investing in the next generation — helping them discover who they are in Christ and how their faith connects to everyday life.
+Our youth ministry is for young people in secondary school (ages 11–18). We want to invest in the next generation — to help them discover who they are, grow in their faith, and connect with one another in a community that genuinely cares about them.
 
-Youth activities include Sunday morning groups, social events, and opportunities to serve the wider community.
+Youth activities include Sunday morning groups, social events, and opportunities to serve the wider community together.
+
+## A Family-Friendly Church
+
+The Well Church is a place where families are genuinely welcome. We are a multicultural community, and we love the energy and joy that children bring. Whether you are a young family visiting for the first time or you have been coming for years, we want your whole family to feel at home here.
 
 ## Get in Touch
 
-If you have questions about children's or youth ministry at The Well, or if you'd like to find out more before bringing your family along, we'd love to hear from you.
+If you have questions about children's or youth ministry, or if you would like to find out more before bringing your family along, we would love to hear from you.
 
-[Contact us](/contact/) and we'll be happy to help.
+[Contact us]({{ '/contact/' | relative_url }}) and we will be happy to help.

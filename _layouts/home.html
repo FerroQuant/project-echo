@@ -4,92 +4,247 @@ layout: default
 
 {% comment %} ============================================================
   HOME LAYOUT
-  Sections: hero, facebook posts, video clips, prayer CTA, service info
+  Sections:
+    1. Hero (cover photo, animated title, scripture, CTAs)
+    2. Welcome strip (about / intro)
+    3. Watch Our Services (3 Facebook video embeds)
+    4. Life at The Well (photo gallery)
+    5. Community Stats
+    6. Scripture Quote
+    7. Prayer CTA banner
+    8. Join Us / Service Times + Map
 ============================================================ {% endcomment %}
 
 {% comment %} 1. Hero {% endcomment %}
 {% include hero.html %}
 
-{% comment %} 2. Latest from The Well (Facebook posts) {% endcomment %}
-<section class="section" aria-labelledby="posts-heading">
-  <div class="container">
-    <h2 id="posts-heading">Latest from The Well</h2>
-    <p class="section-subtitle">News, updates, and encouragement from our community</p>
+{% comment %} ---- Wave divider ---- {% endcomment %}
+<div class="section-wave" aria-hidden="true">
+  <svg viewBox="0 0 1440 56" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,32 C360,72 1080,0 1440,40 L1440,56 L0,56 Z" fill="#f5f8fb"/>
+  </svg>
+</div>
 
-    {% if site.data.facebook_posts and site.data.facebook_posts.data %}
-      {% assign posts = site.data.facebook_posts.data | limit: 6 %}
-      <div class="card-grid">
-        {% for post in posts %}
-          {% include facebook-post-card.html post=post %}
-        {% endfor %}
-      </div>
-    {% else %}
-      <div class="placeholder-text">
-        <p>
-          Follow us on Facebook to stay up to date with everything happening
-          at The Well Church.
-        </p>
-        <a href="https://www.facebook.com/TheWellChurchReading"
-           class="btn--primary"
-           target="_blank"
-           rel="noopener noreferrer">
-          Visit Our Facebook Page &rarr;
-        </a>
-      </div>
-    {% endif %}
+{% comment %} 2. Welcome strip {% endcomment %}
+<section class="section" aria-labelledby="welcome-heading">
+  <div class="container">
+    <div class="welcome-strip fade-in">
+      <span class="welcome-strip__eyebrow">Welcome</span>
+      <h2 class="welcome-strip__heading" id="welcome-heading">
+        You are welcome here, just as you are
+      </h2>
+      <p class="welcome-strip__body">
+        We are a growing, multicultural family of believers in Reading. Whether you have been
+        following Jesus for decades or are simply curious, there is a place for you at The Well.
+        Come and experience genuine community, heartfelt worship, and the living water that
+        Jesus offers.
+      </p>
+      <a href="{{ '/about/' | relative_url }}" class="btn--primary">Learn About Us</a>
+    </div>
   </div>
 </section>
 
-{% comment %} 3. Watch Live Clips (Facebook videos) {% endcomment %}
+{% comment %} 3. Watch Our Services {% endcomment %}
 <section class="section--alt" aria-labelledby="videos-heading">
   <div class="container">
-    <h2 id="videos-heading">Watch Live Clips</h2>
-    <p class="section-subtitle">Catch up on recent sermons and worship moments</p>
 
-    {% if site.data.facebook_videos and site.data.facebook_videos.data %}
-      {% assign videos = site.data.facebook_videos.data | limit: 6 %}
-      <div class="card-grid">
-        {% for video in videos %}
-          {% include video-card.html video=video %}
-        {% endfor %}
+    <h2 id="videos-heading" style="text-align:center; margin-bottom: 0.25rem;">Watch Our Services</h2>
+    <p class="section-subtitle" style="text-align:center;">
+      Catch up on recent Sunday messages — streamed live every week
+    </p>
+
+    <div class="video-grid stagger-children">
+
+      {% comment %} Video 1 — 22 Feb 2026, 272 views {% endcomment %}
+      <div class="video-card">
+        <div class="video-embed video-card__embed">
+          <iframe
+            src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fthewellreading%2Fvideos%2F1232556278437226%2F&show_text=false&appId"
+            title="The Well Sunday Service — 22 February 2026"
+            allowfullscreen
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+            loading="lazy">
+          </iframe>
+        </div>
+        <div class="video-card__meta">
+          <p class="video-card__date">22 February 2026</p>
+          <p class="video-card__views">272 views &bull; 31 min live stream</p>
+        </div>
       </div>
-      <div class="section-cta">
-        <a href="{{ '/sermons/' | relative_url }}" class="btn--primary">View All Sermons</a>
+
+      {% comment %} Video 2 — 15 Feb 2026, 438 views {% endcomment %}
+      <div class="video-card">
+        <div class="video-embed video-card__embed">
+          <iframe
+            src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fthewellreading%2Fvideos%2F760989896666345%2F&show_text=false&appId"
+            title="The Well Sunday Service — 15 February 2026"
+            allowfullscreen
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+            loading="lazy">
+          </iframe>
+        </div>
+        <div class="video-card__meta">
+          <p class="video-card__date">15 February 2026</p>
+          <p class="video-card__views">438 views &bull; 49 min live stream</p>
+        </div>
       </div>
-    {% else %}
-      <div class="placeholder-text">
-        <p>
-          Watch our services and sermons live on Facebook, or browse our
-          growing library of recordings.
-        </p>
-        <a href="https://www.facebook.com/TheWellChurchReading/videos"
-           class="btn--outline-primary"
-           target="_blank"
-           rel="noopener noreferrer">
-          Watch on Facebook &rarr;
-        </a>
+
+      {% comment %} Video 3 — 1 Feb 2026, 582 views {% endcomment %}
+      <div class="video-card">
+        <div class="video-embed video-card__embed">
+          <iframe
+            src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fthewellreading%2Fvideos%2F1409583690563413%2F&show_text=false&appId"
+            title="The Well Sunday Service — 1 February 2026"
+            allowfullscreen
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+            loading="lazy">
+          </iframe>
+        </div>
+        <div class="video-card__meta">
+          <p class="video-card__date">1 February 2026</p>
+          <p class="video-card__views">582 views &bull; 26 min live stream</p>
+        </div>
       </div>
-    {% endif %}
+
+    </div>
+
+    <div class="section-cta">
+      <a href="https://www.facebook.com/thewellreading/videos"
+         class="btn--outline-primary"
+         target="_blank"
+         rel="noopener noreferrer">
+        See All Services on Facebook &rarr;
+      </a>
+    </div>
+
   </div>
 </section>
 
-{% comment %} 4. Prayer CTA banner {% endcomment %}
+{% comment %} 4. Life at The Well — photo gallery {% endcomment %}
+<section class="section" aria-labelledby="gallery-heading">
+  <div class="container">
+
+    <h2 id="gallery-heading" style="text-align:center; margin-bottom:0.25rem;">Life at The Well</h2>
+    <p class="section-subtitle" style="text-align:center;">
+      A glimpse into our community &mdash; Sunday worship, fellowship, and celebration
+    </p>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-item gallery-item--wide">
+        <img
+          src="{{ '/assets/images/facebook/screenshot_cover_photo_clean.png' | relative_url }}"
+          alt="The Well congregation worshipping together — a diverse, multicultural community of believers"
+          loading="lazy">
+        <span class="gallery-item__caption">Our congregation worshipping together</span>
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="{{ '/assets/images/facebook/screenshot_photos_grid.png' | relative_url }}"
+          alt="Photos from The Well Church community life and events"
+          loading="lazy">
+        <span class="gallery-item__caption">Community life &amp; events</span>
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="{{ '/assets/images/facebook/photo_01_text.jpg' | relative_url }}"
+          alt="Encouraging message from The Well Church"
+          loading="lazy">
+        <span class="gallery-item__caption">Word of encouragement</span>
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="{{ '/assets/images/facebook/screenshot_video_post.png' | relative_url }}"
+          alt="A recent Sunday message at The Well Church in Reading"
+          loading="lazy">
+        <span class="gallery-item__caption">Sunday message in action</span>
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="{{ '/assets/images/facebook/profile_388x388.png' | relative_url }}"
+          alt="The Well Church logo — a blue cross symbol representing our faith"
+          loading="lazy">
+        <span class="gallery-item__caption">The Well Reading</span>
+      </div>
+
+    </div>
+
+    <div class="section-cta">
+      <a href="https://www.facebook.com/thewellreading/photos"
+         class="btn--outline-primary"
+         target="_blank"
+         rel="noopener noreferrer">
+        See More Photos on Facebook &rarr;
+      </a>
+    </div>
+
+  </div>
+</section>
+
+{% comment %} 5. Community Stats {% endcomment %}
+<section class="section--alt" aria-labelledby="stats-heading">
+  <div class="container">
+
+    <h2 id="stats-heading" class="sr-only">Our community in numbers</h2>
+
+    <div class="stats-strip stagger-children">
+
+      <div class="stat-card">
+        <span class="stat-card__number">967</span>
+        <span class="stat-card__label">Followers</span>
+      </div>
+
+      <div class="stat-card">
+        <span class="stat-card__number">Weekly</span>
+        <span class="stat-card__label">Live Services</span>
+      </div>
+
+      <div class="stat-card">
+        <span class="stat-card__number">10+</span>
+        <span class="stat-card__label">Years in Reading</span>
+      </div>
+
+      <div class="stat-card">
+        <span class="stat-card__number">One</span>
+        <span class="stat-card__label">Big Family</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% comment %} 6. Scripture Quote {% endcomment %}
+<section class="section" aria-label="Scripture">
+  <div class="container">
+    <div class="scripture-quote fade-in">
+      <p class="scripture-quote__verse">
+        &ldquo;If anyone is thirsty, let him come to me and drink!&rdquo;
+      </p>
+      <cite class="scripture-quote__reference">John 7:37 &mdash; Jesus</cite>
+    </div>
+  </div>
+</section>
+
+{% comment %} 7. Prayer CTA banner {% endcomment %}
 {% include cta-banner.html %}
 
-{% comment %} 5. Join Us This Sunday {% endcomment %}
+{% comment %} 8. Join Us This Sunday — service times + map {% endcomment %}
 <section class="section" aria-labelledby="join-heading">
   <div class="container">
-    <h2 id="join-heading">Join Us This Sunday</h2>
-    <p class="section-subtitle">We would love to see you</p>
+    <h2 id="join-heading" style="text-align:center; margin-bottom:0.25rem;">Join Us This Sunday</h2>
+    <p class="section-subtitle" style="text-align:center;">We would love to see you — no prior church experience needed</p>
 
     {% assign st = site.data.service_times %}
     <div class="service-map-grid">
 
-      {% comment %} Service info column {% endcomment %}
       <div class="service-time-card">
         {% for service in st.services %}
         <p class="service-time">{{ service.day }}s at {{ service.time }}</p>
-        <p class="section-subtitle" style="margin-top:0; margin-bottom: 1rem;">
+        <p class="section-subtitle" style="margin-top:0; margin-bottom:1rem;">
           {{ service.description }}
         </p>
         {% endfor %}
@@ -101,14 +256,14 @@ layout: default
         </div>
 
         {% if st.phone %}
-        <p style="margin-bottom: 0.5rem;">
+        <p style="margin-bottom:0.5rem;">
           <strong>Phone:</strong>
           <a href="tel:{{ st.phone | remove: ' ' }}">{{ st.phone }}</a>
         </p>
         {% endif %}
 
         {% if st.email %}
-        <p style="margin-bottom: 1.5rem;">
+        <p style="margin-bottom:1.5rem;">
           <strong>Email:</strong>
           <a href="mailto:{{ st.email }}">{{ st.email }}</a>
         </p>
@@ -117,14 +272,13 @@ layout: default
         <a href="{{ '/services/' | relative_url }}" class="btn--primary">Plan Your Visit</a>
       </div>
 
-      {% comment %} Google Maps column {% endcomment %}
       <div>
         <iframe
           title="The Well Church location on Google Maps"
           src="https://maps.google.com/maps?q={{ st.map_coords.lat }},{{ st.map_coords.lng }}&z=15&output=embed"
           width="100%"
           height="400"
-          style="border:0; border-radius: 16px; display: block;"
+          style="border:0; border-radius:16px; display:block;"
           allowfullscreen=""
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade">

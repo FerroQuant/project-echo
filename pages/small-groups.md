@@ -6,26 +6,37 @@ permalink: /small-groups/
 description: "Small groups at The Well Church are where real community happens — Bible study, prayer, and friendship in smaller gatherings across Reading."
 ---
 
-## What Are Small Groups?
+## Going Deeper Together
 
-Small groups are one of the heartbeats of The Well Church. They are smaller gatherings of people — usually 8 to 15 — who meet regularly to study the Bible, pray together, and support one another through life.
+Sunday mornings are wonderful, but they are only part of the picture. Small groups are where real, lasting community is built — smaller gatherings of people who meet regularly through the week to study the Bible, pray, and do life together.
 
-While our Sunday gatherings are a wonderful time to worship together as a larger family, small groups are where deeper relationships are built. They meet throughout the week in homes and other venues across Reading.
+At The Well, we believe that following Jesus was never meant to be a solo journey. Small groups are an invitation to go deeper: deeper in your faith, deeper in your understanding of Scripture, and deeper in friendship with the people around you.
 
-## Why Join a Small Group?
+## Midweek Gatherings
 
-Being part of a small group is one of the best ways to put down roots at The Well. Here's what many of our members say they value most:
+We meet in homes and other venues across Reading throughout the week. These midweek gatherings are a chance to catch up, share what God has been putting on your heart, study the Bible together, and pray for one another.
 
-- **Friendships** — Getting to know people well, not just on a Sunday morning
-- **Growth** — Studying the Bible together and learning from one another
-- **Support** — Having people around you in the ups and downs of life
-- **Study** — Going deeper into Scripture in a conversational setting
-- **Prayer** — Praying together and seeing God at work
+You do not need to have everything figured out to join a group. Come as you are — questions welcome.
+
+## Prayer Groups
+
+Prayer is central to who we are as a church. Our prayer groups meet regularly to bring our needs, our hopes, and our community before God. We believe that prayer changes things, and we have seen God act in response to faithful, persistent prayer.
+
+If you want to grow in prayer — or if you simply need people to pray with you — a prayer group might be exactly what you are looking for.
+
+## Building Character Like Jesus — Devotional Study Groups
+
+Our ongoing series, **Building Character Like Jesus**, is available as a group study as well as a daily personal devotional. The series explores what it looks like to grow in the character of Jesus, covering themes like:
+
+- **Diligence** — Faithful effort in the small things
+- **Compassion** — Seeing people the way Jesus sees them
+- **Self-Control** — Living with wisdom and discipline
+- **Joy** — A deep gladness rooted in God, not circumstances
+
+These devotionals are shared daily on our Facebook page. Gathering with others to discuss and apply them adds another layer of richness and accountability.
 
 ## Find a Group
 
-We want everyone at The Well to be part of a small group. Whether you're brand new to the church or you've been coming for years, there is a group for you.
+We want everyone at The Well to be part of a small group. Whether you are brand new to the church or you have been coming for years, there is a group for you.
 
-Groups are available at different times and in different locations to suit a range of schedules and needs.
-
-[Get in touch](/contact/) to find out more about current small groups and which one might be the right fit for you.
+[Get in touch]({{ '/contact/' | relative_url }}) to find out about current groups, when and where they meet, and which one might be the right fit for you.

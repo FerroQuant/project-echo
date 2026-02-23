@@ -50,10 +50,19 @@ description: "Get in touch with The Well Church in Reading. Find us, send a mess
       </div>
 
       <!-- Right column: contact form -->
-      <div class="contact-form-wrap">
+      <div class="contact-form-wrap" id="contact-form-wrap">
         <h2>Send a Message</h2>
-        <form class="contact-form" action="https://formspree.io/f/FORMSPREE_ID" method="POST" novalidate>
-          <input type="hidden" name="_subject" value="Message from The Well Church Website">
+
+        <form class="contact-form" id="contact-form" novalidate>
+
+          <!-- Honeypot anti-spam field: hidden from real users, bots fill it in -->
+          <input
+            type="text"
+            name="_honeypot"
+            style="display:none"
+            tabindex="-1"
+            aria-hidden="true"
+            autocomplete="off">
 
           <div class="form-group">
             <label for="contact-name">
@@ -82,6 +91,19 @@ description: "Get in touch with The Well Church in Reading. Find us, send a mess
           </div>
 
           <div class="form-group">
+            <label for="contact-phone">
+              Phone Number
+              <span class="optional">(optional)</span>
+            </label>
+            <input
+              type="tel"
+              id="contact-phone"
+              name="phone"
+              autocomplete="tel"
+              placeholder="e.g. 07700 900000">
+          </div>
+
+          <div class="form-group">
             <label for="contact-message">
               Message <span class="required" aria-hidden="true">*</span>
             </label>
@@ -93,9 +115,35 @@ description: "Get in touch with The Well Church in Reading. Find us, send a mess
               placeholder="How can we help you?"></textarea>
           </div>
 
-          <button type="submit" class="btn btn--primary btn--full">Send Message</button>
+          <!-- Cloudflare Turnstile CAPTCHA (free, privacy-friendly) -->
+          <div class="cf-turnstile" data-sitekey="TURNSTILE_SITE_KEY" data-theme="light" data-size="normal"></div>
+
+          <button type="submit" class="btn btn--primary btn--full" id="contact-submit">
+            Send Message
+          </button>
+
         </form>
-      </div>
+
+        <!-- Thank-you message shown after successful submission -->
+        <div class="contact-thankyou" id="contact-thankyou" aria-live="polite" tabindex="-1">
+          <div class="thankyou-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 width="48" height="48"
+                 viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="2"
+                 stroke-linecap="round"
+                 stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+          </div>
+          <h3>Message sent!</h3>
+          <p>Thank you for getting in touch. We'll get back to you as soon as we can.</p>
+        </div>
+
+      </div><!-- /.contact-form-wrap -->
 
     </div><!-- /.contact-grid -->
   </div>
@@ -119,3 +167,24 @@ description: "Get in touch with The Well Church in Reading. Find us, send a mess
     </div>
   </div>
 </section>
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<script src="{{ '/assets/js/forms.js' | relative_url }}" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var form = document.getElementById('contact-form');
+    if (!form || typeof WellForms === 'undefined') return;
+
+    // Replace GOOGLE_SCRIPT_URL with your deployed Apps Script web app URL.
+    // See scripts/google-apps-script-form.js for setup instructions.
+    var GOOGLE_SCRIPT_URL = 'GOOGLE_SCRIPT_URL';
+
+    WellForms.handleFormSubmit(form, GOOGLE_SCRIPT_URL, {
+      formType:     'contact',
+      honeypotName: '_honeypot',
+      thankyouId:   'contact-thankyou',
+      formWrapId:   'contact-form-wrap',
+      phoneFieldId: 'contact-phone'
+    });
+  });
+</script>

@@ -1,33 +1,54 @@
 // =============================================================================
 // HERO
-// Full-width hero section with gradient overlay, CTAs, service info
+// Full-bleed cover photo with gradient overlay, animated content, CTAs
 // =============================================================================
 @use 'sass:color';
 @import 'variables';
 
+// Keyframe for hero title / subtitle entrance (also referenced in _animations.scss)
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 .hero {
   position: relative;
-  min-height: 70vh;
+  min-height: 88vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  // Background image supplied inline; fallback is primary-dark
   background-color: $primary-dark;
-  background-image: linear-gradient(135deg, $primary-dark 0%, $primary 100%);
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
   color: $white;
   // Pull up under the fixed nav to avoid a gap
   margin-top: -$nav-height;
   padding-top: calc(#{$nav-height} + #{$spacing-4xl});
   padding-bottom: $spacing-4xl;
   overflow: hidden;
+
+  @media (max-width: $bp-md) {
+    min-height: 75vh;
+  }
 }
 
+// Dark gradient so text is always readable over any photo
 .hero__overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     160deg,
-    rgba($primary-dark, 0.85) 0%,
-    rgba($primary, 0.60) 100%
+    rgba($primary-dark, 0.82) 0%,
+    rgba($primary, 0.55) 55%,
+    rgba($primary-dark, 0.70) 100%
   );
   pointer-events: none;
 }
@@ -40,33 +61,86 @@
   padding-right: $spacing-md;
 }
 
+// -----------------------------------------------------------------------------
+// Title
+// -----------------------------------------------------------------------------
 .hero__title {
-  font-size: $text-5xl;
+  font-size: clamp(#{$text-3xl}, 6vw, #{$text-6xl});
   color: $white;
   margin-bottom: $spacing-lg;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+  line-height: 1.1;
 
-  @media (max-width: $bp-md) {
-    font-size: $text-4xl;
-  }
-
-  @media (max-width: $bp-sm) {
-    font-size: $text-3xl;
+  @media (prefers-reduced-motion: no-preference) {
+    opacity: 0;
+    animation: heroFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards;
   }
 }
 
+// -----------------------------------------------------------------------------
+// Subtitle
+// -----------------------------------------------------------------------------
 .hero__subtitle {
-  font-size: $text-xl;
-  color: rgba($white, 0.9);
-  margin-bottom: $spacing-2xl;
+  font-size: clamp(#{$text-lg}, 2.5vw, #{$text-2xl});
+  color: rgba($white, 0.92);
+  margin-bottom: $spacing-xl;
   max-width: 52ch;
   margin-left: auto;
   margin-right: auto;
+  font-weight: $font-light;
 
-  @media (max-width: $bp-sm) {
-    font-size: $text-lg;
+  @media (prefers-reduced-motion: no-preference) {
+    opacity: 0;
+    animation: heroFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
   }
 }
 
+// -----------------------------------------------------------------------------
+// Scripture blockquote inside hero
+// -----------------------------------------------------------------------------
+.hero__scripture {
+  position: relative;
+  margin: 0 auto $spacing-2xl;
+  max-width: 52ch;
+  padding: $spacing-md $spacing-xl;
+  border-left: 3px solid $accent-light;
+  background: rgba($white, 0.08);
+  border-radius: 0 $border-radius $border-radius 0;
+  backdrop-filter: blur(4px);
+  text-align: left;
+
+  p {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: $text-lg;
+    font-style: italic;
+    color: rgba($white, 0.95);
+    margin-bottom: $spacing-xs;
+    max-width: 100%;
+    line-height: 1.55;
+  }
+
+  cite {
+    font-size: $text-sm;
+    font-style: normal;
+    font-weight: $font-semibold;
+    color: $accent-light;
+    letter-spacing: 0.04em;
+    display: block;
+  }
+
+  @media (max-width: $bp-sm) {
+    text-align: left;
+    padding: $spacing-md $spacing-lg;
+
+    p {
+      font-size: $text-base;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// CTA button row
+// -----------------------------------------------------------------------------
 .hero__actions {
   display: flex;
   gap: $spacing-md;
@@ -75,20 +149,44 @@
   margin-bottom: $spacing-2xl;
 }
 
-.hero__service-info {
+// -----------------------------------------------------------------------------
+// Service time badge at the bottom of the hero
+// -----------------------------------------------------------------------------
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-sm;
   font-size: $text-sm;
-  color: rgba($white, 0.8);
-  margin: 0;
-  max-width: 100%;
+  color: rgba($white, 0.85);
+  background: rgba($primary-dark, 0.55);
+  border: 1px solid rgba($white, 0.18);
+  border-radius: 999px;
+  padding: $spacing-xs $spacing-lg;
+  backdrop-filter: blur(6px);
 
   strong {
     color: $accent-light;
   }
 }
 
+// Pulsing green dot — "live" indicator
+.hero__badge-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #4ade80;
+  box-shadow: 0 0 0 2px rgba(74, 222, 128, 0.35);
+  flex-shrink: 0;
+
+  @media (prefers-reduced-motion: no-preference) {
+    animation: pulse 2s ease-in-out infinite;
+  }
+}
+
 // =============================================================================
 // CTA BANNER
-// Blue accent strip — prayer call to action
+// Prayer call-to-action strip
 // =============================================================================
 
 .cta-banner {

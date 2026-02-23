@@ -1,0 +1,507 @@
+// =============================================================================
+// ANIMATIONS
+// Keyframes, fade-in, stagger-children, hero-animate, scroll-driven classes
+// =============================================================================
+@import 'variables';
+
+// -----------------------------------------------------------------------------
+// Keyframes
+// -----------------------------------------------------------------------------
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.6; }
+}
+
+// -----------------------------------------------------------------------------
+// Utility classes — all motion wrapped in prefers-reduced-motion
+// -----------------------------------------------------------------------------
+
+// Scroll-triggered fade-in: JS adds .is-visible when element enters viewport
+// No-JS / reduced-motion fallback: element is fully visible by default
+.fade-in {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+      opacity  0.6s ease-out,
+      transform 0.6s ease-out;
+
+    &.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+// Staggered children — each direct child is delayed progressively
+// Children are visible by default; JS/reduced-motion guard applied below
+.stagger-children > * {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .stagger-children > * {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity  0.5s ease-out,
+      transform 0.5s ease-out;
+
+    &:nth-child(1) { transition-delay: 0.05s; }
+    &:nth-child(2) { transition-delay: 0.13s; }
+    &:nth-child(3) { transition-delay: 0.21s; }
+    &:nth-child(4) { transition-delay: 0.29s; }
+    &:nth-child(5) { transition-delay: 0.37s; }
+    &:nth-child(6) { transition-delay: 0.45s; }
+  }
+
+  .stagger-children.is-visible > * {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Hero-specific animation chain
+@media (prefers-reduced-motion: no-preference) {
+  .hero-animate {
+    .hero__title {
+      opacity: 0;
+      animation: fadeInUp 0.9s ease 0.1s forwards;
+    }
+
+    .hero__subtitle {
+      opacity: 0;
+      animation: fadeInUp 0.9s ease 0.3s forwards;
+    }
+
+    .hero__scripture {
+      opacity: 0;
+      animation: fadeInUp 0.9s ease 0.5s forwards;
+    }
+
+    .hero__actions {
+      opacity: 0;
+      animation: fadeInUp 0.9s ease 0.65s forwards;
+    }
+
+    .hero__badge {
+      opacity: 0;
+      animation: fadeIn 0.9s ease 0.85s forwards;
+    }
+  }
+}
+
+// Pulsing CTA — subtle radial ring for prayer/primary CTA buttons
+@keyframes ctaPulse {
+  0%, 100% { box-shadow: 0 0 0 0   rgba($accent, 0.55), $shadow-md; }
+  50%       { box-shadow: 0 0 0 8px rgba($accent, 0),    $shadow-lg; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .btn--pulse {
+    animation: ctaPulse 2.4s ease-in-out infinite;
+  }
+}
+
+// =============================================================================
+// VIDEO GRID
+// Three-column responsive grid for Facebook video embeds
+// =============================================================================
+
+.video-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-xl;
+
+  @media (min-width: $bp-md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: $bp-lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.video-card {
+  background-color: $white;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-sm;
+  overflow: hidden;
+  transition: box-shadow $transition-normal, transform $transition-normal;
+
+  &:hover {
+    box-shadow: $shadow-lg;
+    transform: translateY(-3px);
+  }
+}
+
+.video-card__embed {
+  // inherits .video-embed from _video.scss — 16:9 wrapper
+}
+
+.video-card__meta {
+  padding: $spacing-md $spacing-lg $spacing-lg;
+}
+
+.video-card__date {
+  font-size: $text-xs;
+  font-weight: $font-semibold;
+  color: $accent;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: $spacing-xs;
+}
+
+.video-card__views {
+  font-size: $text-sm;
+  color: $text-muted;
+  margin-bottom: 0;
+}
+
+// =============================================================================
+// GALLERY GRID
+// Photo collage with hover overlay
+// =============================================================================
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $spacing-sm;
+
+  @media (min-width: $bp-md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: $bp-lg) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: $spacing-md;
+  }
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: $border-radius;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  background-color: $bg-alt;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    display: block;
+  }
+
+  // Hover overlay
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba($primary-dark, 0) 40%,
+      rgba($primary-dark, 0.75) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover {
+    img {
+      transform: scale(1.06);
+    }
+
+    &::after {
+      opacity: 1;
+    }
+
+    .gallery-item__caption {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+// Wide item spans 2 columns
+.gallery-item--wide {
+  grid-column: span 2;
+  aspect-ratio: 2 / 1;
+
+  @media (max-width: $bp-sm) {
+    grid-column: span 2;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+.gallery-item__caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: $spacing-sm $spacing-md;
+  color: $white;
+  font-size: $text-xs;
+  font-weight: $font-semibold;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+// =============================================================================
+// STAT CARDS
+// Community numbers strip
+// =============================================================================
+
+.stats-strip {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $spacing-md;
+
+  @media (min-width: $bp-md) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.stat-card {
+  text-align: center;
+  padding: $spacing-xl $spacing-md;
+  background-color: $white;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-sm;
+  transition: box-shadow $transition-normal, transform $transition-normal;
+
+  &:hover {
+    box-shadow: $shadow-md;
+    transform: translateY(-2px);
+  }
+}
+
+.stat-card__number {
+  display: block;
+  font-family: $font-heading;
+  font-size: $text-4xl;
+  font-weight: $font-bold;
+  color: $accent;
+  line-height: 1;
+  margin-bottom: $spacing-sm;
+}
+
+.stat-card__label {
+  display: block;
+  font-size: $text-sm;
+  font-weight: $font-semibold;
+  color: $text-secondary;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+// =============================================================================
+// SCRIPTURE QUOTE
+// Large decorative blockquote
+// =============================================================================
+
+.scripture-quote {
+  position: relative;
+  text-align: center;
+  padding: $spacing-4xl $spacing-lg;
+  max-width: 820px;
+  margin: 0 auto;
+
+  // Decorative opening quote
+  &::before {
+    content: '\201C';
+    position: absolute;
+    top: $spacing-2xl;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 8rem;
+    line-height: 1;
+    color: $accent-light;
+    opacity: 0.25;
+    font-family: Georgia, serif;
+    pointer-events: none;
+  }
+}
+
+.scripture-quote__verse {
+  position: relative;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: $text-2xl;
+  font-style: italic;
+  font-weight: $font-normal;
+  color: $primary-dark;
+  line-height: 1.6;
+  margin-bottom: $spacing-lg;
+  max-width: 100%;
+
+  @media (min-width: $bp-md) {
+    font-size: $text-3xl;
+  }
+}
+
+.scripture-quote__reference {
+  display: inline-block;
+  font-family: $font-heading;
+  font-size: $text-base;
+  font-weight: $font-semibold;
+  color: $accent;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+// =============================================================================
+// WELCOME STRIP
+// About / welcome band beneath the hero
+// =============================================================================
+
+.welcome-strip {
+  background-color: $white;
+  border-left: 5px solid $accent;
+  border-radius: 0 $border-radius-lg $border-radius-lg 0;
+  padding: $spacing-2xl $spacing-xl;
+  margin: 0 auto;
+  max-width: 780px;
+
+  @media (min-width: $bp-md) {
+    padding: $spacing-2xl $spacing-3xl;
+  }
+}
+
+.welcome-strip__eyebrow {
+  display: block;
+  font-size: $text-xs;
+  font-weight: $font-semibold;
+  color: $accent;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: $spacing-sm;
+}
+
+.welcome-strip__heading {
+  font-size: $text-2xl;
+  color: $primary-dark;
+  margin-bottom: $spacing-md;
+
+  @media (min-width: $bp-md) {
+    font-size: $text-3xl;
+  }
+}
+
+.welcome-strip__body {
+  font-size: $text-lg;
+  color: $text-secondary;
+  max-width: 58ch;
+  margin-bottom: $spacing-xl;
+}
+
+// =============================================================================
+// VIDEO EMBED WRAPPER
+// 16:9 responsive iframe container
+// =============================================================================
+
+.video-embed {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; // 16:9 aspect ratio
+  border-radius: $border-radius-lg;
+  overflow: hidden;
+  background-color: $primary-dark;
+  box-shadow: $shadow-lg;
+
+  iframe,
+  video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+}
+
+// =============================================================================
+// SECTION WAVE DIVIDER
+// SVG wave between sections — colour matched via modifier classes
+// =============================================================================
+
+.section-wave {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0; // collapse whitespace below inline SVG
+  margin: 0;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: 48px;
+  }
+
+  &--flip {
+    transform: scaleY(-1);
+  }
+
+  // Fill colour helpers — match the background of the section above or below
+  &--white   { fill: $white; }
+  &--bg      { fill: $bg; }
+  &--bg-alt  { fill: $bg-alt; }
+  &--primary { fill: $primary-dark; }
+}
+
+// =============================================================================
+// GRADIENT TEXT
+// Clip a linear gradient to the text fill for accent headings
+// =============================================================================
+
+.gradient-text {
+  background: linear-gradient(135deg, $primary 0%, $accent 50%, $accent-light 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  // Fallback for browsers that don't support background-clip: text
+  color: $primary;
+}

@@ -1,0 +1,216 @@
+{
+  "scraped_at": "2026-02-23",
+  "source": "facebook.com/thewellreading",
+  "page_url": "https://www.facebook.com/thewellreading",
+
+  "page_info": {
+    "name": "the well",
+    "handle": "thewellreading",
+    "category": "Church",
+    "followers": 967,
+    "following": 71,
+    "tagline": "Make sure like the page to stay up to date and connected with everything that's happening at the well!",
+    "scripture": "Jesus stood up and shouted, \"If anyone is thirsty, let him come to me and drink!\" John 7:37"
+  },
+
+  "contact": {
+    "address": "between 29 & 31 Dawlish Road, Reading, United Kingdom, RG2 7SD",
+    "address_short": "Dawlish Road, Reading, RG2 7SD",
+    "phone": "0118 975 5822",
+    "email": "life@thewell-church.com",
+    "website": "http://www.thewell-church.com/",
+    "website_display": "thewell-church.com"
+  },
+
+  "profile_picture": {
+    "url_200": "https://graph.facebook.com/thewellreading/picture?type=large",
+    "note": "Blue circular logo with white cross/plus symbol on light blue background",
+    "local_200": "assets/images/facebook/profile_200x200.png",
+    "local_388": "assets/images/facebook/profile_388x388.png"
+  },
+
+  "cover_photo": {
+    "facebook_url": "https://www.facebook.com/photo/?fbid=240297468327082&set=a.240297448327084",
+    "description": "Grid collage of approximately 30+ church congregation members, each in their own video call tile, worshipping and singing from home. Diverse, multicultural congregation. Posted January 2023.",
+    "local_screenshot": "assets/images/facebook/screenshot_cover_photo_clean.png"
+  },
+
+  "recent_videos": [
+    {
+      "url": "https://www.facebook.com/thewellreading/videos/1232556278437226/",
+      "date": "2026-02-22",
+      "date_display": "1 day ago (22 Feb 2026)",
+      "duration": "31:09",
+      "type": "Live stream",
+      "views": 272,
+      "reactions": 5,
+      "comments": 4,
+      "shares": 1,
+      "pinned_comment": "Jesus"
+    },
+    {
+      "url": "https://www.facebook.com/thewellreading/videos/760989896666345/",
+      "date": "2026-02-15",
+      "date_display": "15 February 2026 at 11:36",
+      "duration": "49:14",
+      "type": "Live stream",
+      "views": 438,
+      "reactions": 7,
+      "comments_note": "6 comments, including one from Liberia West Africa - 'Following from Liberia West Africa'",
+      "thumbnail_visible": "Woman speaker at the Well podium with Welcome banner visible"
+    },
+    {
+      "url": "https://www.facebook.com/thewellreading/videos/1659591164923913/",
+      "date": "2026-02-11",
+      "date_display": "11 February 2026 at 08:27",
+      "type": "Live stream"
+    },
+    {
+      "url": "https://www.facebook.com/thewellreading/videos/1935804250344502/",
+      "date": "2026-02-04",
+      "date_display": "4 February 2026 at 08:04",
+      "type": "Live stream"
+    },
+    {
+      "url": "https://www.facebook.com/thewellreading/videos/1409583690563413/",
+      "date": "2026-02-01",
+      "date_display": "1 February 2026 at 11:35",
+      "duration": "26:47",
+      "type": "Live stream",
+      "views": 582,
+      "reactions": 23
+    },
+    {
+      "url": "https://www.facebook.com/thewellreading/videos/1497326738622320/",
+      "date": "2026-01-28",
+      "date_display": "28 January 2026 at 08:01",
+      "type": "Live stream"
+    },
+    {
+      "url": "https://www.facebook.com/thewellreading/videos/1401107911363045/",
+      "date": "2026-01-25",
+      "date_display": "25 January 2026 at 11:48",
+      "duration": "32:31",
+      "type": "Live stream",
+      "views": 156,
+      "reactions": 5
+    },
+    {
+      "url": "https://www.facebook.com/thewellreading/videos/1954817302121848/",
+      "date": "2026-01-21",
+      "date_display": "21 January 2026",
+      "duration": "12:05",
+      "type": "Live stream",
+      "views": 66,
+      "reactions": 2
+    }
+  ],
+
+  "reels": [
+    { "url": "https://www.facebook.com/reel/1144823777720289/", "views": 75 },
+    { "url": "https://www.facebook.com/reel/1458076716041461/", "views": 589 },
+    { "url": "https://www.facebook.com/reel/1743776139865984/", "views": 261 },
+    { "url": "https://www.facebook.com/reel/1035525598195126/", "views": 122 },
+    { "url": "https://www.facebook.com/reel/397267753319776/", "views": 225 },
+    { "url": "https://www.facebook.com/reel/405211864432822/", "views": 45 },
+    { "url": "https://www.facebook.com/reel/433780421427556/", "views": 45 },
+    { "url": "https://www.facebook.com/reel/316551906692284/", "views": 54 },
+    { "url": "https://www.facebook.com/reel/2101314380006518/", "views": 185 },
+    { "url": "https://www.facebook.com/reel/4088500171194255/", "views": 335 }
+  ],
+
+  "photos": {
+    "albums_url": "https://www.facebook.com/thewellreading/photos",
+    "photo_ids": [
+      "909887374701418",
+      "903480442008778",
+      "903480415342114",
+      "903480395342116",
+      "903476235342532",
+      "630219442668214",
+      "630219422668216",
+      "630179802672178",
+      "630179789338846"
+    ],
+    "cdnurls_with_alts": [
+      {
+        "description": "Text/announcement image",
+        "filename": "605566778_909887381368084",
+        "alt": "May be an image of text"
+      },
+      {
+        "description": "Piano and violin (worship music)",
+        "filename": "603764680_903480445342111",
+        "alt": "May be an image of piano and violin"
+      },
+      {
+        "description": "Church gathering",
+        "filename": "601890860_903480422008780",
+        "alt": "No photo description available"
+      },
+      {
+        "description": "Flute player (worship music)",
+        "filename": "601890860_903480398675449",
+        "alt": "May be an image of flute"
+      },
+      {
+        "description": "Christmas tree with Welcome sign and thewell-church.com text",
+        "filename": "602461012_903477012009121",
+        "alt": "Christmas tree and text 'the well 1 Welcome www thewell-church.com'"
+      },
+      {
+        "description": "Congregation members (recent)",
+        "filename": "484947510_686927610330730"
+      },
+      {
+        "description": "Congregation members (recent)",
+        "filename": "483585394_686927620330729"
+      },
+      {
+        "description": "Congregation members (recent)",
+        "filename": "484332214_686927730330718"
+      }
+    ],
+    "photo_grid_screenshot": "assets/images/facebook/screenshot_photos_grid.png",
+    "photo_grid_description": "Grid shows: person speaking at front (preacher), woman in red top, Christmas/red decoration, woman in orange coat with Santa hat singing, the Well Welcome banner with Christmas tree, Christmas gathering at tables, congregation seated, congregation around tables, stairs with congregation, announcement graphic with cross (Reading Passion Play 2024), Christmas service graphic with star, daily devotion graphics (Morning Devotion Word Based), the Well logo (blue circle), group video call grid, daily devotional theme graphics (Abiding with Christ, Spiritual Growth, Receiving, Dealing with Failure, The Flesh, Speech), event poster (Fasting and Prayer - 2 Chronicles 20:1-37), The Mind of Christ graphic, woman speaker, Fasting and Praying Luke 12:35-48 poster"
+  },
+
+  "posts_summary": {
+    "posting_frequency": "Multiple times per week",
+    "content_types": [
+      "Live-streamed Sunday services (typically 30-50 minutes)",
+      "Daily devotional short videos (8-12 minutes, series: Building Character Like Jesus)",
+      "Event announcements (Fasting and Prayer, Passion Play)",
+      "Reels/short clips",
+      "Photo posts of gatherings"
+    ],
+    "series_noticed": [
+      "Daily Devotions - Building Character Like Jesus (shared from destinedtowin2017)",
+      "Building Character of Jesus - Self Control",
+      "Character of Jesus - Joy",
+      "Character Like Jesus - Diligence",
+      "Character Like Jesus - Compassion"
+    ],
+    "sample_comments": [
+      "Jesus (pinned comment on multiple videos)",
+      "Good morning",
+      "Amen! God bless you!",
+      "Thank you Minister. God Bless You.",
+      "Following from Liberia West Africa (Paye Wesley)"
+    ]
+  },
+
+  "page_transparency": {
+    "category_breadcrumb": "Pages > Non-business places > Religious place of worship > Church > the well",
+    "facebook_page_id": "100070404915135"
+  },
+
+  "screenshots": {
+    "main_page": "assets/images/facebook/screenshot_main.png",
+    "full_page": "assets/images/facebook/screenshot_page_clean.png",
+    "photos_grid": "assets/images/facebook/screenshot_photos_grid.png",
+    "cover_photo": "assets/images/facebook/screenshot_cover_photo_clean.png",
+    "videos_page": "assets/images/facebook/screenshot_videos.png",
+    "video_post": "assets/images/facebook/screenshot_video_post.png"
+  }
+}

@@ -21,6 +21,20 @@ description: "Meet the partner churches and ministries that The Well Church walk
       in Reading and beyond. These are the people we walk with, learn from, and serve alongside.
     </p>
 
+    <p>
+      The church was never meant to work alone. We believe that the body of Christ is made up of many
+      parts — different congregations, different expressions, different gifts — and that when we
+      stand together we are stronger. Our partner churches and ministries share our love for Jesus,
+      our heart for people, and our commitment to the city of Reading.
+    </p>
+
+    <p>
+      We are grateful for every relationship in this network. Some of these partnerships go back many
+      years; others are newer friendships built on a shared vision. All of them reflect our conviction
+      that the kingdom of God is bigger than any one church, and that we are called to walk humbly
+      and generously with those around us.
+    </p>
+
     <div class="partner-grid" role="list">
       {% for partner in site.data.partners %}
       <article class="partner-card" role="listitem">
@@ -49,6 +63,13 @@ description: "Meet the partner churches and ministries that The Well Church walk
       </article>
       {% endfor %}
     </div><!-- /.partner-grid -->
+
+    <div class="placeholder-text" style="margin-top: 3rem;">
+      <p>
+        If you are a church or ministry that would like to connect with The Well, we would love to hear from you.
+      </p>
+      <a href="{{ '/contact/' | relative_url }}" class="btn btn--accent">Get in Touch</a>
+    </div>
 
   </div>
 </section>

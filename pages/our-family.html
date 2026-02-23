@@ -1,0 +1,54 @@
+---
+layout: default
+title: "Our Family"
+subtitle: "Churches and ministries we walk with"
+permalink: /our-family/
+description: "Meet the partner churches and ministries that The Well Church walks with in Reading and beyond."
+---
+
+<section class="page-header">
+  <div class="container">
+    <h1>Our Family</h1>
+    <p class="page-subtitle">Churches and ministries we walk with</p>
+  </div>
+</section>
+
+<section class="page-content section">
+  <div class="container">
+
+    <p class="content-intro">
+      We are better together. The Well Church is part of a wider family of churches and ministries
+      in Reading and beyond. These are the people we walk with, learn from, and serve alongside.
+    </p>
+
+    <div class="partner-grid" role="list">
+      {% for partner in site.data.partners %}
+      <article class="partner-card" role="listitem">
+
+        <img
+          class="partner-card__logo"
+          src="{{ partner.logo | relative_url }}"
+          alt="{{ partner.name }} logo"
+          width="120"
+          height="80"
+          loading="lazy"
+          onerror="this.style.display='none'">
+
+        <h2 class="partner-card__name">{{ partner.name }}</h2>
+        <p class="partner-card__desc">{{ partner.description }}</p>
+
+        {% if partner.url != "#" %}
+        <a href="{{ partner.url }}"
+           class="btn btn--outline"
+           target="_blank"
+           rel="noopener noreferrer">
+          Visit Website
+        </a>
+        {% endif %}
+
+      </article>
+      {% endfor %}
+    </div><!-- /.partner-grid -->
+
+  </div>
+</section>

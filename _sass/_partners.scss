@@ -1,0 +1,73 @@
+// =============================================================================
+// PARTNERS
+// Partner churches / our-family page grid and card styles
+// =============================================================================
+@import 'variables';
+
+// -----------------------------------------------------------------------------
+// Intro text block (centered, constrained)
+// -----------------------------------------------------------------------------
+.content-intro {
+  text-align: center;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: $spacing-3xl;
+  color: $text-secondary;
+  font-size: $text-lg;
+}
+
+// -----------------------------------------------------------------------------
+// Partner grid
+// -----------------------------------------------------------------------------
+.partner-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-2xl;
+
+  @media (min-width: $bp-md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Partner card
+// -----------------------------------------------------------------------------
+.partner-card {
+  text-align: center;
+  background-color: $white;
+  padding: $spacing-2xl $spacing-xl;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-sm;
+  transition: box-shadow $transition-normal, transform $transition-normal;
+
+  &:hover {
+    box-shadow: $shadow-lg;
+    transform: translateY(-2px);
+  }
+}
+
+.partner-card__logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: $spacing-lg;
+  max-width: 120px;
+  max-height: 80px;
+  object-fit: contain;
+}
+
+.partner-card__name {
+  font-family: $font-heading;
+  font-size: $text-xl;
+  font-weight: $font-semibold;
+  color: $primary-dark;
+  margin-bottom: $spacing-sm;
+}
+
+.partner-card__desc {
+  font-size: $text-base;
+  color: $text-secondary;
+  margin-bottom: $spacing-lg;
+  line-height: $line-height;
+}

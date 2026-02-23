@@ -1,0 +1,145 @@
+---
+layout: default
+title: "Prayer Request"
+subtitle: "We'd love to pray with you"
+permalink: /prayer/
+description: "Submit a prayer request to The Well Church. We believe in the power of prayer and will be praying for you."
+---
+
+<section class="page-header">
+  <div class="container">
+    <h1>Prayer Request</h1>
+    <p class="page-subtitle">We'd love to pray with you</p>
+  </div>
+</section>
+
+<section class="page-content section">
+  <div class="container">
+    <div class="prayer-page">
+
+      <div class="prayer-intro">
+        <p>We believe in the power of prayer. Whether you are facing a difficult situation, dealing with health concerns, or simply want to grow in your faith, we would consider it a privilege to pray for you.</p>
+        <p>Your request will be treated with complete care and confidentiality. If you would like a member of our team to contact you, please include your phone number and we will be in touch.</p>
+      </div>
+
+      <!-- Prayer request form -->
+      <div class="prayer-form" id="prayer-form-wrap">
+        <form
+          id="prayer-form"
+          action="https://formspree.io/f/FORMSPREE_ID"
+          method="POST"
+          novalidate>
+
+          <!-- Formspree subject override -->
+          <input type="hidden" name="_subject" value="Prayer Request from The Well Church Website">
+
+          <!-- Honeypot anti-spam field -->
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" aria-hidden="true">
+
+          <div class="form-group">
+            <label for="prayer-firstname">
+              First Name <span class="required" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="text"
+              id="prayer-firstname"
+              name="first_name"
+              required
+              autocomplete="given-name"
+              placeholder="Your first name">
+          </div>
+
+          <div class="form-group">
+            <label for="prayer-phone">
+              Phone Number
+              <span class="optional">(optional)</span>
+            </label>
+            <input
+              type="tel"
+              id="prayer-phone"
+              name="phone"
+              autocomplete="tel"
+              placeholder="e.g. 07700 900000">
+          </div>
+
+          <div class="form-group">
+            <label for="prayer-request">
+              Prayer Request <span class="required" aria-hidden="true">*</span>
+            </label>
+            <textarea
+              id="prayer-request"
+              name="prayer_request"
+              required
+              rows="6"
+              placeholder="Share what's on your heart…"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--full">
+            Submit Prayer Request
+          </button>
+
+          <p class="form-privacy" role="note">
+            <!-- Lock icon -->
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 width="16"
+                 height="16"
+                 viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="2"
+                 stroke-linecap="round"
+                 stroke-linejoin="round"
+                 aria-hidden="true"
+                 focusable="false">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            <span>Your prayer request is kept confidential and will only be seen by members of our prayer team.</span>
+          </p>
+
+        </form>
+      </div><!-- /.prayer-form -->
+
+      <!-- Thank-you message (shown after successful submission) -->
+      <div class="prayer-thankyou" id="prayer-thankyou" aria-live="polite">
+        <h2>Thank you for sharing</h2>
+        <p>We'll be praying for you. You are not alone.</p>
+        <a href="{{ '/' | relative_url }}" class="btn btn--primary">Return Home</a>
+      </div>
+
+    </div><!-- /.prayer-page -->
+  </div>
+</section>
+
+<script>
+  (function () {
+    var form = document.getElementById('prayer-form');
+    var formWrap = document.getElementById('prayer-form-wrap');
+    var thankyou = document.getElementById('prayer-thankyou');
+
+    if (!form) return;
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var data = new FormData(form);
+
+      fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      })
+        .then(function (response) {
+          if (response.ok) {
+            formWrap.style.display = 'none';
+            thankyou.style.display = 'block';
+            thankyou.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          } else {
+            form.querySelector('[type="submit"]').textContent = 'Something went wrong — please try again';
+          }
+        })
+        .catch(function () {
+          form.querySelector('[type="submit"]').textContent = 'Something went wrong — please try again';
+        });
+    });
+  })();
+</script>

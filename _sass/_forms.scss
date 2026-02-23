@@ -1,0 +1,180 @@
+// =============================================================================
+// FORMS
+// Shared form styles: inputs, labels, buttons, privacy notice, prayer page
+// =============================================================================
+@import 'variables';
+
+// -----------------------------------------------------------------------------
+// Form groups and labels
+// -----------------------------------------------------------------------------
+.form-group {
+  margin-bottom: $spacing-lg;
+
+  label {
+    display: block;
+    font-weight: $font-semibold;
+    margin-bottom: $spacing-sm;
+    color: $text-primary;
+    font-size: $text-base;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea {
+    display: block;
+    width: 100%;
+    min-height: 44px;
+    padding: $spacing-sm $spacing-md;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    font-family: $font-body;
+    font-size: $text-base;
+    color: $text-primary;
+    background-color: $white;
+    transition: border-color $transition-fast, box-shadow $transition-fast;
+    box-sizing: border-box;
+
+    &::placeholder {
+      color: $text-muted;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $primary;
+      box-shadow: 0 0 0 3px rgba($primary, 0.15);
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    line-height: $line-height;
+  }
+}
+
+// Required / optional indicators
+.required {
+  color: #c0392b;
+  margin-left: 2px;
+}
+
+.optional {
+  color: $text-muted;
+  font-size: $text-sm;
+  font-weight: $font-normal;
+  margin-left: $spacing-xs;
+}
+
+// -----------------------------------------------------------------------------
+// Full-width button modifier
+// -----------------------------------------------------------------------------
+.btn--full {
+  width: 100%;
+  justify-content: center;
+}
+
+// -----------------------------------------------------------------------------
+// Form privacy notice (lock icon + small text)
+// -----------------------------------------------------------------------------
+.form-privacy {
+  display: flex;
+  align-items: flex-start;
+  gap: $spacing-sm;
+  margin-top: $spacing-lg;
+  color: $text-muted;
+  font-size: $text-sm;
+
+  svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: $text-muted;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Contact form details list
+// -----------------------------------------------------------------------------
+.contact-details {
+  list-style: none;
+  padding: 0;
+  margin: $spacing-lg 0 $spacing-2xl;
+
+  li {
+    margin-bottom: $spacing-sm;
+    color: $text-secondary;
+  }
+
+  a {
+    color: $primary;
+
+    &:hover {
+      color: $primary-light;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Map embed
+// -----------------------------------------------------------------------------
+.map-embed {
+  border-radius: $border-radius-lg;
+  overflow: hidden;
+  box-shadow: $shadow-md;
+  margin-top: $spacing-2xl;
+
+  iframe {
+    display: block;
+    width: 100%;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Prayer page layout
+// -----------------------------------------------------------------------------
+.prayer-page {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.prayer-intro {
+  text-align: center;
+  margin-bottom: $spacing-2xl;
+
+  p {
+    font-size: $text-lg;
+    color: $text-secondary;
+    max-width: 52ch;
+    margin-left: auto;
+    margin-right: auto;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.prayer-form {
+  background-color: $white;
+  padding: $spacing-2xl;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-md;
+}
+
+// Thank-you state (shown via JS after submission)
+.prayer-thankyou {
+  text-align: center;
+  padding: $spacing-3xl $spacing-lg;
+  display: none;
+
+  h2 {
+    color: $primary;
+    margin-bottom: $spacing-md;
+  }
+
+  p {
+    color: $text-secondary;
+    font-size: $text-lg;
+    margin-bottom: $spacing-2xl;
+  }
+}

@@ -1,0 +1,20 @@
+<section class="hero" aria-label="Welcome banner">
+  <div class="hero__overlay" aria-hidden="true"></div>
+  <div class="hero__content container">
+    <h1 class="hero__title">Welcome to The Well Church</h1>
+    <p class="hero__subtitle">A community church in Reading &mdash; come as you are</p>
+
+    <div class="hero__actions">
+      <a href="{{ '/services/' | relative_url }}" class="btn--accent">Plan Your Visit</a>
+      <a href="{{ '/prayer/' | relative_url }}" class="btn--outline">Request Prayer</a>
+    </div>
+
+    {% assign st = site.data.service_times %}
+    {% if st %}
+    <p class="hero__service-info">
+      <strong>{{ st.services[0].day }}s at {{ st.services[0].time }}</strong>
+      &bull; {{ st.address }}
+    </p>
+    {% endif %}
+  </div>
+</section>

@@ -1,0 +1,28 @@
+{% assign post = include.post %}
+<article class="card card--link">
+  {% if post.full_picture %}
+  <div class="card__image-wrap">
+    <img class="card__image"
+         src="{{ post.full_picture }}"
+         alt=""
+         loading="lazy">
+  </div>
+  {% endif %}
+  <div class="card__body">
+    {% if post.created_time %}
+    <time class="card__date" datetime="{{ post.created_time }}">
+      {{ post.created_time | date: "%d %B %Y" }}
+    </time>
+    {% endif %}
+    <p class="card__excerpt">
+      {{ post.message | default: post.story | truncate: 200 }}
+    </p>
+    <a href="{{ post.permalink_url }}"
+       class="card__link"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="View this post on Facebook (opens in new tab)">
+      View on Facebook &rarr;
+    </a>
+  </div>
+</article>

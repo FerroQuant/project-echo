@@ -1,0 +1,136 @@
+// =============================================================================
+// HERO
+// Full-width hero section with gradient overlay, CTAs, service info
+// =============================================================================
+@use 'sass:color';
+@import 'variables';
+
+.hero {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $primary-dark;
+  background-image: linear-gradient(135deg, $primary-dark 0%, $primary 100%);
+  color: $white;
+  // Pull up under the fixed nav to avoid a gap
+  margin-top: -$nav-height;
+  padding-top: calc(#{$nav-height} + #{$spacing-4xl});
+  padding-bottom: $spacing-4xl;
+  overflow: hidden;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba($primary-dark, 0.85) 0%,
+    rgba($primary, 0.60) 100%
+  );
+  pointer-events: none;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding-left: $spacing-md;
+  padding-right: $spacing-md;
+}
+
+.hero__title {
+  font-size: $text-5xl;
+  color: $white;
+  margin-bottom: $spacing-lg;
+
+  @media (max-width: $bp-md) {
+    font-size: $text-4xl;
+  }
+
+  @media (max-width: $bp-sm) {
+    font-size: $text-3xl;
+  }
+}
+
+.hero__subtitle {
+  font-size: $text-xl;
+  color: rgba($white, 0.9);
+  margin-bottom: $spacing-2xl;
+  max-width: 52ch;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (max-width: $bp-sm) {
+    font-size: $text-lg;
+  }
+}
+
+.hero__actions {
+  display: flex;
+  gap: $spacing-md;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: $spacing-2xl;
+}
+
+.hero__service-info {
+  font-size: $text-sm;
+  color: rgba($white, 0.8);
+  margin: 0;
+  max-width: 100%;
+
+  strong {
+    color: $accent-light;
+  }
+}
+
+// =============================================================================
+// CTA BANNER
+// Gold accent strip — prayer call to action
+// =============================================================================
+
+.cta-banner {
+  background-color: $accent;
+  padding-top: $spacing-2xl;
+  padding-bottom: $spacing-2xl;
+}
+
+.cta-banner__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $spacing-xl;
+
+  @media (max-width: $bp-md) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.cta-banner__text {
+  flex: 1;
+}
+
+.cta-banner__heading {
+  font-size: $text-2xl;
+  color: $primary-dark;
+  margin-bottom: $spacing-sm;
+}
+
+.cta-banner__body {
+  color: color.adjust($primary-dark, $lightness: 10%);
+  max-width: 56ch;
+  margin-bottom: 0;
+}
+
+.cta-banner__action {
+  flex-shrink: 0;
+
+  @media (max-width: $bp-md) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}

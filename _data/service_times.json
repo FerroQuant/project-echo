@@ -1,0 +1,14 @@
+{
+  "address": "Dawlish Road, Reading, RG2 7SD",
+  "phone": "0118 9755822",
+  "email": "life@thewell-church.com",
+  "map_coords": {"lat": 51.434, "lng": -0.969},
+  "services": [
+    {
+      "day": "Sunday",
+      "time": "10:30am",
+      "name": "Sunday Service",
+      "description": "Worship, teaching, and community for all ages"
+    }
+  ]
+}

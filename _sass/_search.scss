@@ -1,0 +1,100 @@
+// =============================================================================
+// SEARCH
+// Client-side Lunr.js search page styles
+// =============================================================================
+@import 'variables';
+
+// -----------------------------------------------------------------------------
+// Search form in page-header
+// -----------------------------------------------------------------------------
+.search-page-form {
+  display: flex;
+  gap: $spacing-sm;
+  max-width: 560px;
+  margin: $spacing-lg auto 0;
+
+  input[type="search"] {
+    flex: 1;
+    padding: $spacing-sm $spacing-md;
+    border: 2px solid rgba($white, 0.3);
+    border-radius: $border-radius;
+    background-color: rgba($white, 0.15);
+    color: $white;
+    font-size: $text-lg;
+    font-family: $font-body;
+
+    &::placeholder {
+      color: rgba($white, 0.6);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $accent;
+      background-color: rgba($white, 0.2);
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Result count / status line
+// -----------------------------------------------------------------------------
+.search-count {
+  font-size: $text-sm;
+  color: $text-muted;
+  margin-bottom: $spacing-lg;
+  min-height: 1.5em;
+}
+
+// -----------------------------------------------------------------------------
+// Results list
+// -----------------------------------------------------------------------------
+.search-results {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-result {
+  padding: $spacing-lg 0;
+  border-bottom: 1px solid $border-color;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  h3 {
+    font-size: $text-lg;
+    font-weight: $font-semibold;
+    margin: $spacing-xs 0 $spacing-sm;
+
+    a {
+      color: $primary-dark;
+      text-decoration: none;
+
+      &:hover {
+        color: $primary;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// Type badge
+.search-result__type {
+  display: inline-block;
+  font-size: $text-xs;
+  font-weight: $font-semibold;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background-color: $primary;
+  color: $white;
+  padding: 2px $spacing-sm;
+  border-radius: $border-radius;
+}
+
+.search-result__snippet {
+  font-size: $text-sm;
+  color: $text-secondary;
+  line-height: 1.6;
+  margin: 0;
+}

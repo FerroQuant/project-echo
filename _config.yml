@@ -1,7 +1,7 @@
 title: The Well Church
 description: A community church in Reading
 url: "https://thewell-church.com"
-baseurl: ""
+baseurl: "/thewell-church"
 
 church:
   name: "The Well Church"

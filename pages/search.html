@@ -1,0 +1,42 @@
+---
+layout: default
+title: "Search"
+subtitle: "Search sermons, posts, and more"
+permalink: /search/
+description: "Search The Well Church website for sermons, messages, and updates."
+---
+
+<section class="page-header">
+  <div class="container">
+    <h1>Search</h1>
+    <p class="page-subtitle">Find sermons, messages, and updates</p>
+
+    <form
+      class="search-page-form"
+      id="search-form"
+      role="search"
+      data-index-url="{{ '/assets/search-index.json' | relative_url }}">
+      <label for="search-input" class="sr-only">Search the site</label>
+      <input
+        type="search"
+        id="search-input"
+        name="q"
+        placeholder="Search&hellip;"
+        autocomplete="off"
+        autofocus>
+      <button type="submit" class="btn btn--accent">Search</button>
+    </form>
+  </div>
+</section>
+
+<section class="page-content section">
+  <div class="container">
+    <div class="search-results" aria-live="polite" aria-label="Search results">
+      <p id="search-count" class="search-count"></p>
+      <div id="search-results"></div>
+    </div>
+  </div>
+</section>
+
+<script src="{{ '/assets/js/lunr.min.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/search.js' | relative_url }}"></script>

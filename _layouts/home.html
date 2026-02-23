@@ -53,11 +53,11 @@ layout: default
       Catch up on recent Sunday messages — streamed live every week
     </p>
 
-    <div class="video-grid stagger-children">
+    <div class="video-grid video-grid--portrait stagger-children">
 
-      {% comment %} Video 1 — 22 Feb 2026, 272 views {% endcomment %}
-      <div class="video-card">
-        <div class="video-embed video-card__embed">
+      {% comment %} Video 1 — 22 Feb 2026, 272 views (portrait/TikTok format) {% endcomment %}
+      <div class="video-card video-card--portrait">
+        <div class="video-embed video-embed--portrait video-card__embed">
           <iframe
             src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fthewellreading%2Fvideos%2F1232556278437226%2F&show_text=false&appId"
             title="The Well Sunday Service — 22 February 2026"
@@ -73,8 +73,8 @@ layout: default
       </div>
 
       {% comment %} Video 2 — 15 Feb 2026, 438 views {% endcomment %}
-      <div class="video-card">
-        <div class="video-embed video-card__embed">
+      <div class="video-card video-card--portrait">
+        <div class="video-embed video-embed--portrait video-card__embed">
           <iframe
             src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fthewellreading%2Fvideos%2F760989896666345%2F&show_text=false&appId"
             title="The Well Sunday Service — 15 February 2026"
@@ -90,8 +90,8 @@ layout: default
       </div>
 
       {% comment %} Video 3 — 1 Feb 2026, 582 views {% endcomment %}
-      <div class="video-card">
-        <div class="video-embed video-card__embed">
+      <div class="video-card video-card--portrait">
+        <div class="video-embed video-embed--portrait video-card__embed">
           <iframe
             src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fthewellreading%2Fvideos%2F1409583690563413%2F&show_text=false&appId"
             title="The Well Sunday Service — 1 February 2026"
@@ -120,55 +120,179 @@ layout: default
   </div>
 </section>
 
-{% comment %} 4. Life at The Well — photo gallery {% endcomment %}
-<section class="section" aria-labelledby="gallery-heading">
+{% comment %} 4. What to Expect — icon card grid {% endcomment %}
+<section class="section" aria-labelledby="expect-heading">
+  <div class="container">
+
+    <h2 id="expect-heading" style="text-align:center; margin-bottom:0.25rem;">What to Expect</h2>
+    <p class="section-subtitle" style="text-align:center;">
+      Your first visit is important to us &mdash; here&rsquo;s what Sunday looks like
+    </p>
+
+    <div class="expect-grid stagger-children">
+
+      <div class="expect-card">
+        <div class="expect-card__icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <h3 class="expect-card__title">Warm Welcome</h3>
+        <p class="expect-card__text">
+          Friendly faces will greet you at the door. No dress code, no judgement &mdash; come exactly as you are.
+        </p>
+      </div>
+
+      <div class="expect-card">
+        <div class="expect-card__icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 18V5l12-2v13"/>
+            <circle cx="6" cy="18" r="3"/>
+            <circle cx="18" cy="16" r="3"/>
+          </svg>
+        </div>
+        <h3 class="expect-card__title">Heartfelt Worship</h3>
+        <p class="expect-card__text">
+          Lively, Spirit-led worship with a mix of contemporary songs and timeless hymns that draw us closer to God.
+        </p>
+      </div>
+
+      <div class="expect-card">
+        <div class="expect-card__icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+          </svg>
+        </div>
+        <h3 class="expect-card__title">Biblical Teaching</h3>
+        <p class="expect-card__text">
+          Practical, relevant messages grounded in Scripture that equip you for everyday life and deepen your faith.
+        </p>
+      </div>
+
+      <div class="expect-card">
+        <div class="expect-card__icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
+        <h3 class="expect-card__title">Prayer &amp; Support</h3>
+        <p class="expect-card__text">
+          Our prayer team is available every Sunday. Whatever you are going through, you do not have to face it alone.
+        </p>
+      </div>
+
+      <div class="expect-card">
+        <div class="expect-card__icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+        </div>
+        <h3 class="expect-card__title">Kids &amp; Youth</h3>
+        <p class="expect-card__text">
+          Engaging, age-appropriate programmes for children and young people &mdash; so the whole family can grow in faith.
+        </p>
+      </div>
+
+      <div class="expect-card">
+        <div class="expect-card__icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+        </div>
+        <h3 class="expect-card__title">Multicultural Family</h3>
+        <p class="expect-card__text">
+          People from every background and nation, united in Christ. Our diversity is one of our greatest strengths.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="section-cta">
+      <a href="{{ '/services/' | relative_url }}" class="btn--primary">Plan Your Visit &rarr;</a>
+    </div>
+
+  </div>
+</section>
+
+{% comment %} 5. Life at The Well — real photo gallery {% endcomment %}
+<section class="section--alt" aria-labelledby="gallery-heading">
   <div class="container">
 
     <h2 id="gallery-heading" style="text-align:center; margin-bottom:0.25rem;">Life at The Well</h2>
     <p class="section-subtitle" style="text-align:center;">
-      A glimpse into our community &mdash; Sunday worship, fellowship, and celebration
+      A glimpse into our community &mdash; worship, fellowship, and celebration
     </p>
 
-    <div class="gallery-grid">
+    <div class="gallery-grid stagger-children">
 
       <div class="gallery-item gallery-item--wide">
         <img
-          src="{{ '/assets/images/facebook/screenshot_cover_photo_clean.png' | relative_url }}"
-          alt="The Well congregation worshipping together — a diverse, multicultural community of believers"
+          src="{{ '/assets/images/church/conference-wide.jpg' | relative_url }}"
+          alt="Women's Conference at The Well Church — congregation gathered for worship and teaching"
           loading="lazy">
-        <span class="gallery-item__caption">Our congregation worshipping together</span>
+        <span class="gallery-item__caption">Women&rsquo;s Conference</span>
       </div>
 
       <div class="gallery-item">
         <img
-          src="{{ '/assets/images/facebook/screenshot_photos_grid.png' | relative_url }}"
-          alt="Photos from The Well Church community life and events"
+          src="{{ '/assets/images/church/worship-singing.jpg' | relative_url }}"
+          alt="Worship team singing at The Well Church"
           loading="lazy">
-        <span class="gallery-item__caption">Community life &amp; events</span>
+        <span class="gallery-item__caption">Worship</span>
       </div>
 
       <div class="gallery-item">
         <img
-          src="{{ '/assets/images/facebook/photo_01_text.jpg' | relative_url }}"
-          alt="Encouraging message from The Well Church"
+          src="{{ '/assets/images/church/pastor-preaching.jpg' | relative_url }}"
+          alt="Pastor preaching at The Well Church podium"
           loading="lazy">
-        <span class="gallery-item__caption">Word of encouragement</span>
+        <span class="gallery-item__caption">Sunday Message</span>
       </div>
 
       <div class="gallery-item">
         <img
-          src="{{ '/assets/images/facebook/screenshot_video_post.png' | relative_url }}"
-          alt="A recent Sunday message at The Well Church in Reading"
+          src="{{ '/assets/images/church/community-meal.jpg' | relative_url }}"
+          alt="Church community sharing a meal together"
           loading="lazy">
-        <span class="gallery-item__caption">Sunday message in action</span>
+        <span class="gallery-item__caption">Community Meal</span>
       </div>
 
       <div class="gallery-item">
         <img
-          src="{{ '/assets/images/facebook/profile_388x388.png' | relative_url }}"
-          alt="The Well Church logo — a blue cross symbol representing our faith"
+          src="{{ '/assets/images/church/christmas-dinner.jpg' | relative_url }}"
+          alt="Christmas celebration dinner at The Well Church"
           loading="lazy">
-        <span class="gallery-item__caption">The Well Reading</span>
+        <span class="gallery-item__caption">Christmas Celebration</span>
+      </div>
+
+      <div class="gallery-item gallery-item--wide">
+        <img
+          src="{{ '/assets/images/church/community-event.jpg' | relative_url }}"
+          alt="Community event with music and fellowship"
+          loading="lazy">
+        <span class="gallery-item__caption">Community Event</span>
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="{{ '/assets/images/church/prayer-ministry.jpg' | relative_url }}"
+          alt="Prayer and ministry moments at The Well Church"
+          loading="lazy">
+        <span class="gallery-item__caption">Prayer Ministry</span>
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="{{ '/assets/images/church/worship-band.jpg' | relative_url }}"
+          alt="Worship band playing at The Well Church"
+          loading="lazy">
+        <span class="gallery-item__caption">Worship Band</span>
       </div>
 
     </div>
@@ -178,14 +302,14 @@ layout: default
          class="btn--outline-primary"
          target="_blank"
          rel="noopener noreferrer">
-        See More Photos on Facebook &rarr;
+        See More on Facebook &rarr;
       </a>
     </div>
 
   </div>
 </section>
 
-{% comment %} 5. Community Stats {% endcomment %}
+{% comment %} 6. Community Stats {% endcomment %}
 <section class="section--alt" aria-labelledby="stats-heading">
   <div class="container">
 

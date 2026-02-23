@@ -1,20 +1,46 @@
 {% comment %} ============================================================
-  HERO — full-bleed cover photo with gradient overlay and animated content
+  HERO — Photo mosaic background with gradient overlay
+  Uses real church photos in a CSS grid, overlaid with text
 ============================================================ {% endcomment %}
 
 <section
   class="hero hero-animate"
-  aria-label="Welcome to The Well Church"
-  style="background-image: url('{{ '/assets/images/facebook/screenshot_cover_photo_clean.png' | relative_url }}');">
+  aria-label="Welcome to The Well Church">
 
+  <!-- Photo mosaic background -->
+  <div class="hero__mosaic" aria-hidden="true">
+    <img src="{{ '/assets/images/church/worship-singing.jpg' | relative_url }}" alt="" loading="eager">
+    <img src="{{ '/assets/images/church/pastor-preaching.jpg' | relative_url }}" alt="" loading="eager">
+    <img src="{{ '/assets/images/church/community-event.jpg' | relative_url }}" alt="" loading="eager">
+    <img src="{{ '/assets/images/church/fellowship-hall.jpg' | relative_url }}" alt="" loading="eager">
+    <img src="{{ '/assets/images/church/conference-speakers.jpg' | relative_url }}" alt="" loading="eager">
+    <img src="{{ '/assets/images/church/worship-band.jpg' | relative_url }}" alt="" loading="eager">
+    <img src="{{ '/assets/images/church/christmas-dinner.jpg' | relative_url }}" alt="" loading="eager">
+    <img src="{{ '/assets/images/church/community-meal.jpg' | relative_url }}" alt="" loading="eager">
+    <img src="{{ '/assets/images/church/prayer-ministry.jpg' | relative_url }}" alt="" loading="eager">
+    <img src="{{ '/assets/images/church/conference-wide.jpg' | relative_url }}" alt="" loading="eager">
+    <img src="{{ '/assets/images/church/worship-prayer.jpg' | relative_url }}" alt="" loading="eager">
+    <img src="{{ '/assets/images/church/backstage-fellowship.jpg' | relative_url }}" alt="" loading="eager">
+    <img src="{{ '/assets/images/church/community-gathering.jpg' | relative_url }}" alt="" loading="eager">
+    <img src="{{ '/assets/images/church/welcome-banner.jpg' | relative_url }}" alt="" loading="eager">
+    <img src="{{ '/assets/images/church/small-group.jpg' | relative_url }}" alt="" loading="eager">
+    <img src="{{ '/assets/images/church/speaker-keys.jpg' | relative_url }}" alt="" loading="eager">
+  </div>
+
+  <!-- Dark overlay for text readability -->
   <div class="hero__overlay" aria-hidden="true"></div>
 
   <div class="hero__content container">
 
-    <h1 class="hero__title">Welcome to The Well Church</h1>
+    <!-- Exact church logo -->
+    <div class="hero__logo" aria-hidden="true">
+      <img src="{{ '/assets/images/LOGO.png' | relative_url }}" alt="The Well Church logo" width="90" height="90">
+    </div>
+
+    <h1 class="hero__title">Welcome to<br>The Well Church</h1>
 
     <p class="hero__subtitle">
-      A community church in Reading &mdash; come as you are
+      A growing, multicultural family of believers in Reading &mdash; come as you are
     </p>
 
     <blockquote class="hero__scripture">

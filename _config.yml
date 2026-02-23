@@ -1,0 +1,56 @@
+title: The Well Church
+description: A community church in Reading
+url: "https://thewell-church.com"
+baseurl: ""
+
+church:
+  name: "The Well Church"
+  address: "Dawlish Road, Reading, RG2 7SD"
+  phone: "0118 9755822"
+  email: "life@thewell-church.com"
+  facebook: "https://www.facebook.com/thewellreading"
+  map_lat: 51.4340
+  map_lng: -0.9690
+
+markdown: kramdown
+permalink: pretty
+sass:
+  style: compressed
+
+collections:
+  sermons:
+    output: true
+    permalink: /sermons/:slug/
+  events:
+    output: true
+    permalink: /events/:slug/
+
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "sermons"
+    values:
+      layout: "video"
+  - scope:
+      path: ""
+      type: "events"
+    values:
+      layout: "page"
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - scripts/
+  - docs/
+  - README.md
+  - node_modules/

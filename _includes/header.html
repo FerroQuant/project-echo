@@ -1,0 +1,109 @@
+<header class="site-header" role="banner">
+  <nav class="site-nav" aria-label="Main navigation">
+    <!-- Logo -->
+    <a href="{{ '/' | relative_url }}" class="site-logo" aria-label="{{ site.title }} home">
+      <img src="{{ '/assets/images/logo.svg' | relative_url }}"
+           alt="{{ site.title }} logo"
+           width="40"
+           height="40">
+      <span class="site-logo__text">The Well Church</span>
+    </a>
+
+    <!-- Mobile hamburger toggle -->
+    <button class="nav-toggle"
+            type="button"
+            aria-controls="nav-menu"
+            aria-expanded="false"
+            aria-label="Toggle navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg"
+           width="24"
+           height="24"
+           viewBox="0 0 24 24"
+           fill="none"
+           stroke="currentColor"
+           stroke-width="2"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           aria-hidden="true"
+           focusable="false">
+        <line x1="3" y1="6"  x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+
+    <!-- Nav menu -->
+    <div class="nav-menu" id="nav-menu" role="navigation">
+      <ul class="nav-links" role="list">
+        <li class="nav-links__item">
+          <a href="{{ '/about/' | relative_url }}"
+             class="nav-links__link"
+             {% if page.url == '/about/' %}aria-current="page"{% endif %}>
+            About
+          </a>
+        </li>
+        <li class="nav-links__item">
+          <a href="{{ '/services/' | relative_url }}"
+             class="nav-links__link"
+             {% if page.url == '/services/' %}aria-current="page"{% endif %}>
+            Services
+          </a>
+        </li>
+        <li class="nav-links__item">
+          <a href="{{ '/sermons/' | relative_url }}"
+             class="nav-links__link"
+             {% if page.url contains '/sermons' %}aria-current="page"{% endif %}>
+            Sermons
+          </a>
+        </li>
+        <li class="nav-links__item">
+          <a href="{{ '/events/' | relative_url }}"
+             class="nav-links__link"
+             {% if page.url contains '/events' %}aria-current="page"{% endif %}>
+            Events
+          </a>
+        </li>
+        <li class="nav-links__item">
+          <a href="{{ '/well-centre/' | relative_url }}"
+             class="nav-links__link"
+             {% if page.url == '/well-centre/' %}aria-current="page"{% endif %}>
+            The Well Centre
+          </a>
+        </li>
+        <li class="nav-links__item">
+          <a href="{{ '/our-family/' | relative_url }}"
+             class="nav-links__link"
+             {% if page.url == '/our-family/' %}aria-current="page"{% endif %}>
+            Our Family
+          </a>
+        </li>
+        <li class="nav-links__item">
+          <a href="{{ '/contact/' | relative_url }}"
+             class="nav-links__link"
+             {% if page.url == '/contact/' %}aria-current="page"{% endif %}>
+            Contact
+          </a>
+        </li>
+      </ul>
+
+      <!-- Search + CTA -->
+      <div class="nav-actions">
+        <form class="nav-search" action="{{ '/search/' | relative_url }}" method="get" role="search">
+          <label for="nav-search-input" class="sr-only">Search the site</label>
+          <input type="search"
+                 id="nav-search-input"
+                 name="q"
+                 placeholder="Search…"
+                 aria-label="Search"
+                 autocomplete="off">
+        </form>
+
+        <a href="{{ '/prayer/' | relative_url }}"
+           class="btn--accent"
+           style="white-space: nowrap; font-size: 0.875rem; padding: 0.5rem 1rem;">
+          Request Prayer
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>

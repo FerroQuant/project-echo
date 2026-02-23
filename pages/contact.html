@@ -1,0 +1,121 @@
+---
+layout: default
+title: "Contact"
+subtitle: "We'd love to hear from you"
+permalink: /contact/
+description: "Get in touch with The Well Church in Reading. Find us, send a message, or come and visit."
+---
+
+<section class="page-header">
+  <div class="container">
+    <h1>Contact</h1>
+    <p class="page-subtitle">We'd love to hear from you</p>
+  </div>
+</section>
+
+<section class="page-content section">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- Left column: contact info -->
+      <div class="contact-info">
+        <h2>Find Us</h2>
+        <address>
+          The Well Church<br>
+          Dawlish Road<br>
+          Reading<br>
+          RG2 7SD
+        </address>
+
+        <ul class="contact-details" aria-label="Contact details">
+          <li>
+            <strong>Phone:</strong>
+            <a href="tel:{{ site.church.phone | remove: ' ' }}">{{ site.church.phone }}</a>
+          </li>
+          <li>
+            <strong>Email:</strong>
+            <a href="mailto:{{ site.church.email }}">{{ site.church.email }}</a>
+          </li>
+          <li>
+            <strong>Facebook:</strong>
+            <a href="{{ site.church.facebook }}" target="_blank" rel="noopener noreferrer">
+              The Well Church Reading
+            </a>
+          </li>
+        </ul>
+
+        <h3>Service Times</h3>
+        <p>Sunday mornings at <strong>10:30am</strong></p>
+        <p>All are welcome. Come as you are.</p>
+      </div>
+
+      <!-- Right column: contact form -->
+      <div class="contact-form-wrap">
+        <h2>Send a Message</h2>
+        <form class="contact-form" action="https://formspree.io/f/FORMSPREE_ID" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="Message from The Well Church Website">
+
+          <div class="form-group">
+            <label for="contact-name">
+              Name <span class="required" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="text"
+              id="contact-name"
+              name="name"
+              required
+              autocomplete="name"
+              placeholder="Your full name">
+          </div>
+
+          <div class="form-group">
+            <label for="contact-email">
+              Email <span class="required" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="email"
+              id="contact-email"
+              name="email"
+              required
+              autocomplete="email"
+              placeholder="your@email.com">
+          </div>
+
+          <div class="form-group">
+            <label for="contact-message">
+              Message <span class="required" aria-hidden="true">*</span>
+            </label>
+            <textarea
+              id="contact-message"
+              name="message"
+              required
+              rows="6"
+              placeholder="How can we help you?"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--full">Send Message</button>
+        </form>
+      </div>
+
+    </div><!-- /.contact-grid -->
+  </div>
+</section>
+
+<!-- Map section -->
+<section class="section section--alt map-section">
+  <div class="container">
+    <h2 class="text-center">How to Find Us</h2>
+    <div class="map-embed" aria-label="Map showing location of The Well Church, Dawlish Road, Reading">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2485.9!2d-0.9690!3d51.4340!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDI2JzAyLjQiTiAwwrA1OCcwOC40Ilc!5e0!3m2!1sen!2suk!4v1"
+        width="100%"
+        height="400"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="The Well Church location map">
+      </iframe>
+    </div>
+  </div>
+</section>

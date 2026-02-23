@@ -1,0 +1,136 @@
+---
+layout: default
+---
+
+{% comment %} ============================================================
+  HOME LAYOUT
+  Sections: hero, facebook posts, video clips, prayer CTA, service info
+============================================================ {% endcomment %}
+
+{% comment %} 1. Hero {% endcomment %}
+{% include hero.html %}
+
+{% comment %} 2. Latest from The Well (Facebook posts) {% endcomment %}
+<section class="section" aria-labelledby="posts-heading">
+  <div class="container">
+    <h2 id="posts-heading">Latest from The Well</h2>
+    <p class="section-subtitle">News, updates, and encouragement from our community</p>
+
+    {% if site.data.facebook_posts and site.data.facebook_posts.data %}
+      {% assign posts = site.data.facebook_posts.data | limit: 6 %}
+      <div class="card-grid">
+        {% for post in posts %}
+          {% include facebook-post-card.html post=post %}
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="placeholder-text">
+        <p>
+          Follow us on Facebook to stay up to date with everything happening
+          at The Well Church.
+        </p>
+        <a href="https://www.facebook.com/TheWellChurchReading"
+           class="btn--primary"
+           target="_blank"
+           rel="noopener noreferrer">
+          Visit Our Facebook Page &rarr;
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% comment %} 3. Watch Live Clips (Facebook videos) {% endcomment %}
+<section class="section--alt" aria-labelledby="videos-heading">
+  <div class="container">
+    <h2 id="videos-heading">Watch Live Clips</h2>
+    <p class="section-subtitle">Catch up on recent sermons and worship moments</p>
+
+    {% if site.data.facebook_videos and site.data.facebook_videos.data %}
+      {% assign videos = site.data.facebook_videos.data | limit: 6 %}
+      <div class="card-grid">
+        {% for video in videos %}
+          {% include video-card.html video=video %}
+        {% endfor %}
+      </div>
+      <div class="section-cta">
+        <a href="{{ '/sermons/' | relative_url }}" class="btn--primary">View All Sermons</a>
+      </div>
+    {% else %}
+      <div class="placeholder-text">
+        <p>
+          Watch our services and sermons live on Facebook, or browse our
+          growing library of recordings.
+        </p>
+        <a href="https://www.facebook.com/TheWellChurchReading/videos"
+           class="btn--outline-primary"
+           target="_blank"
+           rel="noopener noreferrer">
+          Watch on Facebook &rarr;
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% comment %} 4. Prayer CTA banner {% endcomment %}
+{% include cta-banner.html %}
+
+{% comment %} 5. Join Us This Sunday {% endcomment %}
+<section class="section" aria-labelledby="join-heading">
+  <div class="container">
+    <h2 id="join-heading">Join Us This Sunday</h2>
+    <p class="section-subtitle">We would love to see you</p>
+
+    {% assign st = site.data.service_times %}
+    <div class="service-map-grid">
+
+      {% comment %} Service info column {% endcomment %}
+      <div class="service-time-card">
+        {% for service in st.services %}
+        <p class="service-time">{{ service.day }}s at {{ service.time }}</p>
+        <p class="section-subtitle" style="margin-top:0; margin-bottom: 1rem;">
+          {{ service.description }}
+        </p>
+        {% endfor %}
+
+        <div class="service-address">
+          <address>
+            {{ st.address | newline_to_br }}
+          </address>
+        </div>
+
+        {% if st.phone %}
+        <p style="margin-bottom: 0.5rem;">
+          <strong>Phone:</strong>
+          <a href="tel:{{ st.phone | remove: ' ' }}">{{ st.phone }}</a>
+        </p>
+        {% endif %}
+
+        {% if st.email %}
+        <p style="margin-bottom: 1.5rem;">
+          <strong>Email:</strong>
+          <a href="mailto:{{ st.email }}">{{ st.email }}</a>
+        </p>
+        {% endif %}
+
+        <a href="{{ '/services/' | relative_url }}" class="btn--primary">Plan Your Visit</a>
+      </div>
+
+      {% comment %} Google Maps column {% endcomment %}
+      <div>
+        <iframe
+          title="The Well Church location on Google Maps"
+          src="https://maps.google.com/maps?q={{ st.map_coords.lat }},{{ st.map_coords.lng }}&z=15&output=embed"
+          width="100%"
+          height="400"
+          style="border:0; border-radius: 16px; display: block;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+    </div>
+  </div>
+</section>

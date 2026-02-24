@@ -9,12 +9,22 @@
       menu.classList.toggle('is-open');
     });
 
+    // Close menu on Escape key
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape' && menu.classList.contains('is-open')) {
         menu.classList.remove('is-open');
         toggle.setAttribute('aria-expanded', 'false');
         toggle.focus();
       }
+    });
+
+    // Close menu when a nav link is clicked (mobile)
+    var navLinks = menu.querySelectorAll('.nav-links__link');
+    navLinks.forEach(function(link) {
+      link.addEventListener('click', function() {
+        menu.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
     });
   }
 

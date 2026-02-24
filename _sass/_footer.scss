@@ -135,7 +135,8 @@
     font-size: $text-sm;
     color: $text-light;
     text-decoration: none;
-    padding: 4px 0;
+    padding: $spacing-sm 0;
+    min-height: 44px;
     transition: color $transition-fast;
 
     &:hover {
@@ -211,13 +212,13 @@
 
   p {
     font-size: $text-sm;
-    color: rgba($white, 0.55);
+    color: rgba($white, 0.75);
     margin: 0;
     max-width: none;
   }
 
   a {
-    color: rgba($white, 0.70);
+    color: rgba($white, 0.85);
     text-decoration: underline;
 
     &:hover {

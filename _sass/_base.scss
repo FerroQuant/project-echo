@@ -7,8 +7,10 @@
 // -----------------------------------------------------------------------------
 // Box-sizing reset
 // -----------------------------------------------------------------------------
-html {
-  scroll-behavior: smooth;
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 *,
@@ -57,11 +59,16 @@ h6 { font-size: $text-base; }
 // -----------------------------------------------------------------------------
 p {
   margin-bottom: $spacing-md;
-  max-width: 68ch;
 
   &:last-child {
     margin-bottom: 0;
   }
+}
+
+// Readable line length for prose sections
+.page-content p,
+.content-intro {
+  max-width: 68ch;
 }
 
 // -----------------------------------------------------------------------------
@@ -231,7 +238,7 @@ hr {
   }
 
   &:active {
-    background-color: darken($primary-dark, 5%);
+    background-color: #052e52;
   }
 }
 
@@ -250,7 +257,7 @@ hr {
   }
 
   &:active {
-    background-color: darken($accent-dark, 5%);
+    background-color: #10607e;
   }
 }
 

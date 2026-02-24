@@ -1,15 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
-  <!-- Outer ring - darkest blue -->
-  <circle cx="24" cy="24" r="24" fill="#0a5a9e"/>
-  <!-- Second ring -->
-  <circle cx="24" cy="24" r="19" fill="#1a7ab8"/>
-  <!-- Third ring - bright blue -->
-  <circle cx="24" cy="24" r="14.5" fill="#1f92c8"/>
-  <!-- Inner ring - lightest blue -->
-  <circle cx="24" cy="24" r="11" fill="#4eadd4"/>
-  <!-- White circle with cross -->
-  <circle cx="24" cy="24" r="8" fill="#ffffff"/>
-  <!-- Cross -->
-  <rect x="22.5" y="17" width="3" height="14" rx="1" fill="#0a5a9e"/>
-  <rect x="19" y="22" width="10" height="3" rx="1" fill="#0a5a9e"/>
+  <!-- Outer ring - lightest blue -->
+  <circle cx="24" cy="24" r="24" fill="#88cfeb"/>
+  <!-- Bright blue ring -->
+  <circle cx="24" cy="24" r="21.5" fill="#1c96cf"/>
+  <!-- Main dark ring -->
+  <circle cx="24" cy="24" r="19" fill="#0a5aa4"/>
+  <!-- Inner dark ring -->
+  <circle cx="24" cy="24" r="14.5" fill="#0c60a8"/>
+  <!-- White circle -->
+  <circle cx="24" cy="24" r="11" fill="#ffffff"/>
+  <!-- Cross - vertical bar -->
+  <rect x="22.25" y="17" width="3.5" height="14" rx="1" fill="#2c74b5"/>
+  <!-- Cross - horizontal bar -->
+  <rect x="18" y="22" width="12" height="3.5" rx="1" fill="#2c74b5"/>
 </svg>

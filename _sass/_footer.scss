@@ -189,6 +189,26 @@
 }
 
 // -----------------------------------------------------------------------------
+// Footer Facebook CTA
+// -----------------------------------------------------------------------------
+.footer-facebook-cta {
+  font-size: $text-sm;
+  color: rgba($white, 0.75);
+  margin-top: $spacing-md;
+
+  a {
+    color: $accent-light;
+    text-decoration: none;
+    font-weight: $font-semibold;
+
+    &:hover {
+      color: $white;
+      text-decoration: underline;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
 // Footer bottom bar
 // -----------------------------------------------------------------------------
 .footer-bottom {

@@ -1,0 +1,54 @@
+{% comment %}
+  JSON-LD structured data for search engines.
+  - Church/Organization schema on homepage
+  - WebSite schema with search action
+{% endcomment %}
+{% if page.url == '/' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Church",
+  "name": "{{ site.title }}",
+  "description": "{{ site.description }}",
+  "url": "{{ site.url }}",
+  "logo": "{{ '/assets/images/logo.svg' | absolute_url }}",
+  "image": "{{ '/assets/images/church/hero.jpg' | absolute_url }}",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Between 29 & 31 Dawlish Road",
+    "addressLocality": "Reading",
+    "addressRegion": "Berkshire",
+    "postalCode": "RG2 7SD",
+    "addressCountry": "GB"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": {{ site.church.map_lat }},
+    "longitude": {{ site.church.map_lng }}
+  },
+  "sameAs": [
+    "{{ site.church.facebook }}"
+  ],
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": "Sunday",
+    "opens": "10:30",
+    "closes": "12:00"
+  },
+  "hasMap": "https://www.google.com/maps?q=The+Well+Church,+Dawlish+Road,+Reading+RG2+7SD"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "{{ site.title }}",
+  "url": "{{ site.url }}",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "{{ site.url }}/search/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+{% endif %}

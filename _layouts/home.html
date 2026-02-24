@@ -54,59 +54,27 @@ layout: default
       Catch up on recent Sunday messages — streamed live every week on Facebook. YouTube coming soon.
     </p>
 
+    {% assign recent_sermons = site.sermons | sort: 'date' | reverse | slice: 0, 3 %}
     <div class="video-grid video-grid--portrait stagger-children">
-
-      {% comment %} Video 1 — 22 Feb 2026, 272 views (portrait/TikTok format) {% endcomment %}
+      {% for sermon in recent_sermons %}
       <div class="video-card video-card--portrait">
-        <div class="video-embed video-embed--portrait video-card__embed">
-          <iframe
-            src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fthewellreading%2Fvideos%2F1232556278437226%2F&show_text=false&appId"
-            title="The Well Sunday Service — 22 February 2026"
-            allowfullscreen
-            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-            loading="lazy">
-          </iframe>
+        <div class="video-facade video-facade--portrait video-card__embed"
+             data-video-id="{{ sermon.facebook_id }}"
+             data-title="{{ sermon.title }} — {{ sermon.date | date: '%-d %B %Y' }}"
+             role="button"
+             tabindex="0"
+             aria-label="Play video: {{ sermon.title }} — {{ sermon.date | date: '%-d %B %Y' }}">
         </div>
         <div class="video-card__meta">
-          <p class="video-card__date">22 February 2026</p>
-          <p class="video-card__views">272 views &bull; 31 min live stream</p>
+          <p class="video-card__date">{{ sermon.date | date: "%-d %B %Y" }}</p>
+          <p class="video-card__views">
+            {% if sermon.views %}{{ sermon.views }} views{% endif %}
+            {% if sermon.views and sermon.duration %}&bull;{% endif %}
+            {% if sermon.duration %}{{ sermon.duration }} live stream{% endif %}
+          </p>
         </div>
       </div>
-
-      {% comment %} Video 2 — 15 Feb 2026, 438 views {% endcomment %}
-      <div class="video-card video-card--portrait">
-        <div class="video-embed video-embed--portrait video-card__embed">
-          <iframe
-            src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fthewellreading%2Fvideos%2F760989896666345%2F&show_text=false&appId"
-            title="The Well Sunday Service — 15 February 2026"
-            allowfullscreen
-            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-            loading="lazy">
-          </iframe>
-        </div>
-        <div class="video-card__meta">
-          <p class="video-card__date">15 February 2026</p>
-          <p class="video-card__views">438 views &bull; 49 min live stream</p>
-        </div>
-      </div>
-
-      {% comment %} Video 3 — 1 Feb 2026, 582 views {% endcomment %}
-      <div class="video-card video-card--portrait">
-        <div class="video-embed video-embed--portrait video-card__embed">
-          <iframe
-            src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fthewellreading%2Fvideos%2F1409583690563413%2F&show_text=false&appId"
-            title="The Well Sunday Service — 1 February 2026"
-            allowfullscreen
-            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-            loading="lazy">
-          </iframe>
-        </div>
-        <div class="video-card__meta">
-          <p class="video-card__date">1 February 2026</p>
-          <p class="video-card__views">582 views &bull; 26 min live stream</p>
-        </div>
-      </div>
-
+      {% endfor %}
     </div>
 
     <div class="section-cta">

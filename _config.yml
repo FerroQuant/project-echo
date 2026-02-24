@@ -8,8 +8,8 @@ church:
   address: "Dawlish Road, Reading, RG2 7SD"
   email: "life@thewell-church.com"
   facebook: "https://www.facebook.com/thewellreading"
-  map_lat: 51.4305
-  map_lng: -0.9638
+  map_lat: 51.4322331
+  map_lng: -0.9635016
 
 markdown: kramdown
 permalink: pretty

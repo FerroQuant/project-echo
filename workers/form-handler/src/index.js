@@ -21,7 +21,8 @@ const FROM_NAME = 'The Well Church Website';
 
 const ALLOWED_ORIGINS = [
   'https://thewell-church.com',
-  'https://www.thewell-church.com'
+  'https://www.thewell-church.com',
+  'https://thewell-church.pages.dev'
 ];
 
 // Simple in-memory rate limit: max 5 submissions per IP per 10 minutes

@@ -167,7 +167,7 @@
    * Attach a fetch-based submit handler to a form element.
    *
    * @param {HTMLFormElement} formEl     - The <form> element to handle.
-   * @param {string}          scriptUrl - The Google Apps Script web app URL.
+   * @param {string}          scriptUrl - The Worker endpoint URL.
    * @param {object}          [options]
    * @param {string}          [options.formType]      - 'contact' or 'prayer'
    * @param {string}          [options.honeypotName]  - Name of the honeypot field

@@ -3,4 +3,4 @@
   X-Frame-Options: SAMEORIGIN
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' https://challenges.cloudflare.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; frame-src https://www.facebook.com https://www.google.com https://challenges.cloudflare.com; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://challenges.cloudflare.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; frame-src https://www.facebook.com https://www.google.com https://challenges.cloudflare.com; img-src 'self' data:; connect-src 'self' https://thewell-form-handler.thewell-church.workers.dev; base-uri 'self'; form-action 'self' https://thewell-form-handler.thewell-church.workers.dev; upgrade-insecure-requests

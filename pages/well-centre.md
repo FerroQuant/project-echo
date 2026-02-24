@@ -18,6 +18,8 @@ The Well Centre is the social action arm of The Well Church, based at Dawlish Ro
 
 We offer practical support to people in the local area, including signposting to other organisations and helping people navigate the help available to them. If you are not sure where to start, come and talk to us.
 
+We work closely with refugees and asylum seekers in Reading, helping with integration, language barriers, and the practical challenges of starting life in a new country. We also partner with a vibrant Amharic-speaking congregation, providing a spiritual home for the Ethiopian and Eritrean community in our area.
+
 ### A Welcoming Space
 
 Our doors are open. Whether you need somewhere to sit, a cup of tea, or someone to talk to, you are welcome here. We believe that sometimes what people need most is simply to be received with kindness.

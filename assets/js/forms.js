@@ -232,6 +232,12 @@
         building_hire: 'New Building Hire Enquiry — The Well Church Website'
       };
       var subjectPrefix = subjectMap[formType] || 'New Contact Message — The Well Church Website';
+
+      // Include enquiry type in subject line when present
+      var enquiryField = formEl.querySelector('[name="enquiry_type"]');
+      if (enquiryField && enquiryField.value) {
+        subjectPrefix = enquiryField.value + ' — The Well Church Website';
+      }
       var data = {
         form_type: formType,
         _honeypot: '',

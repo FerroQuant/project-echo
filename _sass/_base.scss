@@ -2,7 +2,6 @@
 // BASE
 // Box model reset, body, headings, links, containers, sections, buttons
 // =============================================================================
-@use 'sass:color';
 @import 'variables';
 
 // -----------------------------------------------------------------------------
@@ -228,7 +227,7 @@ hr {
   }
 
   &:active {
-    background-color: color.adjust($primary-dark, $lightness: -5%);
+    background-color: darken($primary-dark, 5%);
   }
 }
 
@@ -247,7 +246,7 @@ hr {
   }
 
   &:active {
-    background-color: color.adjust($accent-dark, $lightness: -5%);
+    background-color: darken($accent-dark, 5%);
   }
 }
 

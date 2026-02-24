@@ -1,28 +1,22 @@
-name: Deploy to GitHub Pages
+name: Deploy Site & Worker to Cloudflare
 
 on:
   push:
     branches: [master]
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 concurrency:
-  group: "pages"
+  group: deploy
   cancel-in-progress: false
 
 jobs:
-  build:
+  deploy-site:
+    name: Build Jekyll & Deploy to Cloudflare Pages
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
+      - uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
           bundler-cache: true
@@ -32,16 +26,27 @@ jobs:
         env:
           JEKYLL_ENV: production
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy _site --project-name=thewell-church --branch=master
 
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  deploy-worker:
+    name: Deploy Form Handler Worker
     runs-on: ubuntu-latest
-    needs: build
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - uses: actions/checkout@v4
+
+      - name: Deploy Worker
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: workers/form-handler
+          command: deploy
+          secrets: |
+            TURNSTILE_SECRET
+        env:
+          TURNSTILE_SECRET: ${{ secrets.TURNSTILE_SECRET }}

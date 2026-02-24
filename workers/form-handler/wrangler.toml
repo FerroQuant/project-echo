@@ -1,0 +1,20 @@
+name = "thewell-form-handler"
+main = "src/index.js"
+compatibility_date = "2024-01-01"
+
+# Route: thewell-church.com/api/form*
+# Uncomment after enabling Cloudflare proxy (orange cloud) on the domain:
+# routes = [{ pattern = "thewell-church.com/api/form*", zone_name = "thewell-church.com" }]
+
+# Email Workers binding — sends to verified Email Routing destinations
+[[send_email]]
+name = "SEND_EMAIL"
+allowed_destination_addresses = [
+  "rod@thewell-church.com",
+  "keith@thewell-church.com",
+  "tib@thewell-church.com",
+  "nadew@thewell-church.com"
+]
+
+# Secrets (set via wrangler secret put):
+# TURNSTILE_SECRET — Cloudflare Turnstile secret key (from dashboard)

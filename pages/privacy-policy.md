@@ -48,7 +48,7 @@ Our website uses the following third-party services that may process your data:
 
 | Service | Purpose | Privacy Policy |
 |---------|---------|----------------|
-| [formsubmit.co](https://formsubmit.co) | Processes form submissions | [formsubmit.co/privacy](https://formsubmit.co/privacy) |
+| [Cloudflare Workers](https://workers.cloudflare.com) | Processes form submissions (self-hosted) | [cloudflare.com/privacypolicy](https://www.cloudflare.com/privacypolicy/) |
 | [Cloudflare Turnstile](https://www.cloudflare.com/products/turnstile/) | CAPTCHA protection on forms | [cloudflare.com/privacypolicy](https://www.cloudflare.com/privacypolicy/) |
 | [Google Maps](https://maps.google.com) | Embedded map on contact page | [google.com/privacy](https://policies.google.com/privacy) |
 | [Facebook](https://www.facebook.com) | Embedded video on homepage | [facebook.com/privacy](https://www.facebook.com/privacy/policy/) |

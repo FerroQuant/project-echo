@@ -184,8 +184,7 @@ description: "Get in touch with The Well Church in Reading. Find us, send a mess
     var form = document.getElementById('contact-form');
     if (!form || typeof WellForms === 'undefined') return;
 
-    var _u = ['rod', 'thewell-church', 'com'];
-    var FORM_ENDPOINT = 'https://formsubmit.co/ajax/' + _u[0] + '\x40' + _u[1] + '.' + _u[2];
+    var FORM_ENDPOINT = '/api/form';
 
     WellForms.handleFormSubmit(form, FORM_ENDPOINT, {
       formType:     'contact',

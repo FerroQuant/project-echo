@@ -1,9 +1,7 @@
 /**
- * forms.js — Reusable form submission logic for The Well Church website.
- *
- * Replace GOOGLE_SCRIPT_URL in each form page with the actual deployed
- * Google Apps Script web app URL after completing the setup steps in
- * scripts/google-apps-script-form.js.
+ * forms.js — Form submission logic for The Well Church website.
+ * Posts to the self-hosted Cloudflare Worker at /api/form
+ * (see workers/form-handler/ for the backend).
  */
 
 (function () {
@@ -227,25 +225,13 @@
       }
 
       // ── Build payload ────────────────────────────────────────────────────
-      var subjectMap = {
-        prayer: 'New Prayer Request — The Well Church Website',
-        building_hire: 'New Building Hire Enquiry — The Well Church Website'
-      };
-      var subjectPrefix = subjectMap[formType] || 'New Contact Message — The Well Church Website';
+      var data = { form_type: formType, _honeypot: '' };
 
-      // Include enquiry type in subject line when present
+      // Include enquiry type when present
       var enquiryField = formEl.querySelector('[name="enquiry_type"]');
       if (enquiryField && enquiryField.value) {
-        subjectPrefix = enquiryField.value + ' — The Well Church Website';
+        data.enquiry_type = enquiryField.value;
       }
-      var data = {
-        form_type: formType,
-        _honeypot: '',
-        _subject: subjectPrefix,
-        _captcha: false,
-        _template: 'table',
-        _autoresponse: 'Thank you for your message. We will be in touch soon.'
-      };
 
       var fields = formEl.querySelectorAll('input, textarea, select');
       for (var i = 0; i < fields.length; i++) {
@@ -279,7 +265,7 @@
           });
         })
         .then(function (result) {
-          // Apps Script always returns HTTP 200; check { success } field
+          // Worker returns { success: true/false, message?: string }
           if (result.body && result.body.success) {
             var formWrap = formWrapId ? document.getElementById(formWrapId) : formEl.parentNode;
             var thankyou = thankyouId ? document.getElementById(thankyouId) : null;

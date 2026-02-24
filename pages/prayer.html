@@ -74,7 +74,7 @@ description: "Submit a prayer request to The Well Church. We believe in the powe
           </div>
 
           <!-- Cloudflare Turnstile CAPTCHA (free, privacy-friendly) -->
-          <div class="cf-turnstile" data-sitekey="TURNSTILE_SITE_KEY" data-theme="light" data-size="normal"></div>
+          <div class="cf-turnstile" data-sitekey="1x00000000000000000000AA" data-theme="light" data-size="normal"></div>
 
           <button type="submit" class="btn btn--primary btn--full" id="prayer-submit">
             Submit Prayer Request
@@ -132,11 +132,9 @@ description: "Submit a prayer request to The Well Church. We believe in the powe
     var form = document.getElementById('prayer-form');
     if (!form || typeof WellForms === 'undefined') return;
 
-    // Replace GOOGLE_SCRIPT_URL with your deployed Apps Script web app URL.
-    // See scripts/google-apps-script-form.js for setup instructions.
-    var GOOGLE_SCRIPT_URL = 'GOOGLE_SCRIPT_URL';
+    var FORM_ENDPOINT = 'https://formsubmit.co/ajax/life@thewell-church.com';
 
-    WellForms.handleFormSubmit(form, GOOGLE_SCRIPT_URL, {
+    WellForms.handleFormSubmit(form, FORM_ENDPOINT, {
       formType:     'prayer',
       honeypotName: '_honeypot',
       thankyouId:   'prayer-thankyou',

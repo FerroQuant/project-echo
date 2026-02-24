@@ -116,7 +116,7 @@ description: "Get in touch with The Well Church in Reading. Find us, send a mess
           </div>
 
           <!-- Cloudflare Turnstile CAPTCHA (free, privacy-friendly) -->
-          <div class="cf-turnstile" data-sitekey="TURNSTILE_SITE_KEY" data-theme="light" data-size="normal"></div>
+          <div class="cf-turnstile" data-sitekey="1x00000000000000000000AA" data-theme="light" data-size="normal"></div>
 
           <button type="submit" class="btn btn--primary btn--full" id="contact-submit">
             Send Message
@@ -175,11 +175,9 @@ description: "Get in touch with The Well Church in Reading. Find us, send a mess
     var form = document.getElementById('contact-form');
     if (!form || typeof WellForms === 'undefined') return;
 
-    // Replace GOOGLE_SCRIPT_URL with your deployed Apps Script web app URL.
-    // See scripts/google-apps-script-form.js for setup instructions.
-    var GOOGLE_SCRIPT_URL = 'GOOGLE_SCRIPT_URL';
+    var FORM_ENDPOINT = 'https://formsubmit.co/ajax/life@thewell-church.com';
 
-    WellForms.handleFormSubmit(form, GOOGLE_SCRIPT_URL, {
+    WellForms.handleFormSubmit(form, FORM_ENDPOINT, {
       formType:     'contact',
       honeypotName: '_honeypot',
       thankyouId:   'contact-thankyou',

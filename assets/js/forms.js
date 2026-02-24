@@ -227,9 +227,15 @@
       }
 
       // ── Build payload ────────────────────────────────────────────────────
+      var subjectPrefix = formType === 'prayer'
+        ? 'New Prayer Request — The Well Church Website'
+        : 'New Contact Message — The Well Church Website';
       var data = {
         form_type: formType,
-        _honeypot: ''
+        _honeypot: '',
+        _subject: subjectPrefix,
+        _captcha: false,
+        _template: 'table'
       };
 
       var fields = formEl.querySelectorAll('input, textarea, select');

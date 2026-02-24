@@ -2,19 +2,16 @@
   {
     "name": "Destined to Win (D2W)",
     "description": "A ministry empowering believers to walk in victory.",
-    "url": "#",
-    "logo": "/assets/images/partners/d2w.png"
+    "url": "https://destinedtowin.co.uk/"
   },
   {
-    "name": "Kharris Church",
+    "name": "Kharis Church",
     "description": "Youth church serving the young people of Reading.",
-    "url": "#",
-    "logo": "/assets/images/partners/kharris.png"
+    "url": "https://kharis.org/reading/"
   },
   {
     "name": "The Well Ethiopian Church Reading",
     "description": "Ethiopian fellowship of The Well Church family.",
-    "url": "#",
-    "logo": "/assets/images/partners/well-ethiopian.png"
+    "url": "#"
   }
 ]

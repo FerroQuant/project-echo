@@ -37,10 +37,7 @@ The Well Centre building is available for hire. Our space on Dawlish Road is sui
 **Located at:**
 Between 29 & 31 Dawlish Road, Reading, RG2 7SD
 
-If you would like to enquire about availability and pricing, please get in touch and we will do our best to accommodate you.
-
-**Phone:** 0118 975 5822
-**Email:** [life@thewell-church.com](mailto:life@thewell-church.com)
+If you would like to enquire about availability and pricing, please [submit a building hire enquiry]({{ '/building-hire/' | relative_url }}) and we will do our best to accommodate you.
 
 ## Get Involved
 

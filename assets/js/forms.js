@@ -227,9 +227,11 @@
       }
 
       // ── Build payload ────────────────────────────────────────────────────
-      var subjectPrefix = formType === 'prayer'
-        ? 'New Prayer Request — The Well Church Website'
-        : 'New Contact Message — The Well Church Website';
+      var subjectMap = {
+        prayer: 'New Prayer Request — The Well Church Website',
+        building_hire: 'New Building Hire Enquiry — The Well Church Website'
+      };
+      var subjectPrefix = subjectMap[formType] || 'New Contact Message — The Well Church Website';
       var data = {
         form_type: formType,
         _honeypot: '',

@@ -43,7 +43,6 @@ RG2 7SD
 
 Parking is available nearby. The venue is also accessible by public transport. [Get in touch]({{ '/contact/' | relative_url }}) if you need help with directions.
 
-**Phone:** 0118 975 5822
 **Email:** [life@thewell-church.com](mailto:life@thewell-church.com)
 
 ## Children

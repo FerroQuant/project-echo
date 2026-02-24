@@ -580,7 +580,7 @@
   &--white   { fill: $white; }
   &--bg      { fill: $bg; }
   &--bg-alt  { fill: $bg-alt; }
-  &--primary { fill: $primary-dark; }
+  &--primary { fill: $primary-dark; background-color: $primary-dark; }
 }
 
 // =============================================================================

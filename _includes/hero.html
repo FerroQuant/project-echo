@@ -1,41 +1,24 @@
 {% comment %} ============================================================
-  HERO — Photo mosaic background with gradient overlay
-  Uses real church photos in a CSS grid, overlaid with text
+  HERO — Single background image with gradient overlay
+  Uses a real church photo as the backdrop for text content
 ============================================================ {% endcomment %}
 
 <section
   class="hero hero-animate"
   aria-label="Welcome to The Well Church">
 
-  <!-- Photo mosaic background -->
-  <div class="hero__mosaic" aria-hidden="true">
-    <img src="{{ '/assets/images/church/worship-singing.jpg' | relative_url }}" alt="" loading="eager">
-    <img src="{{ '/assets/images/church/pastor-preaching.jpg' | relative_url }}" alt="" loading="eager">
-    <img src="{{ '/assets/images/church/community-event.jpg' | relative_url }}" alt="" loading="eager">
-    <img src="{{ '/assets/images/church/fellowship-hall.jpg' | relative_url }}" alt="" loading="eager">
-    <img src="{{ '/assets/images/church/conference-speakers.jpg' | relative_url }}" alt="" loading="eager">
-    <img src="{{ '/assets/images/church/worship-band.jpg' | relative_url }}" alt="" loading="eager">
-    <img src="{{ '/assets/images/church/christmas-dinner.jpg' | relative_url }}" alt="" loading="eager">
-    <img src="{{ '/assets/images/church/community-meal.jpg' | relative_url }}" alt="" loading="eager">
-    <img src="{{ '/assets/images/church/prayer-ministry.jpg' | relative_url }}" alt="" loading="eager">
-    <img src="{{ '/assets/images/church/conference-wide.jpg' | relative_url }}" alt="" loading="eager">
-    <img src="{{ '/assets/images/church/worship-prayer.jpg' | relative_url }}" alt="" loading="eager">
-    <img src="{{ '/assets/images/church/backstage-fellowship.jpg' | relative_url }}" alt="" loading="eager">
-    <img src="{{ '/assets/images/church/community-gathering.jpg' | relative_url }}" alt="" loading="eager">
-    <img src="{{ '/assets/images/church/welcome-banner.jpg' | relative_url }}" alt="" loading="eager">
-    <img src="{{ '/assets/images/church/small-group.jpg' | relative_url }}" alt="" loading="eager">
-    <img src="{{ '/assets/images/church/speaker-keys.jpg' | relative_url }}" alt="" loading="eager">
-  </div>
+  <!-- Single background image -->
+  <img
+    class="hero__bg"
+    src="{{ '/assets/images/church/hero.jpg' | relative_url }}"
+    alt=""
+    loading="eager"
+    aria-hidden="true">
 
   <!-- Dark overlay for text readability -->
   <div class="hero__overlay" aria-hidden="true"></div>
 
   <div class="hero__content container">
-
-    <!-- Exact church logo -->
-    <div class="hero__logo" aria-hidden="true">
-      <img src="{{ '/assets/images/LOGO.png' | relative_url }}" alt="The Well Church logo" width="90" height="90">
-    </div>
 
     <h1 class="hero__title">Welcome to<br>The Well Church</h1>
 

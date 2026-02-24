@@ -97,7 +97,7 @@ function parseParams(e) {
     raw = e.parameter;
   }
 
-  return {
+  var parsed = {
     form_type:  sanitise(raw.form_type  || 'contact'),
     name:       sanitise(raw.name       || raw.first_name || ''),
     email:      sanitise(raw.email      || ''),
@@ -108,6 +108,19 @@ function parseParams(e) {
     // Cloudflare Turnstile CAPTCHA token
     turnstile_token: raw['cf-turnstile-response'] || ''
   };
+
+  // Building hire additional fields
+  if (parsed.form_type === 'building_hire') {
+    parsed.organisation_name = sanitise(raw.organisation_name || '');
+    parsed.organisation_type = sanitise(raw.organisation_type || '');
+    parsed.organisation_description = sanitise(raw.organisation_description || '');
+    parsed.booking_type = sanitise(raw.booking_type || '');
+    parsed.preferred_days_times = sanitise(raw.preferred_days_times || '');
+    parsed.start_date = sanitise(raw.start_date || '');
+    parsed.additional_info = sanitise(raw.additional_info || '');
+  }
+
+  return parsed;
 }
 
 /** Basic HTML-strip and trim to prevent formula injection in the Sheet. */
@@ -157,6 +170,7 @@ function validateParams(params) {
   }
 
   var isPrayer = params.form_type === 'prayer';
+  var isHire = params.form_type === 'building_hire';
 
   if (!params.name) {
     throw new Error('Name is required.');
@@ -166,7 +180,14 @@ function validateParams(params) {
     throw new Error('Email is required.');
   }
 
-  if (!params.message) {
+  if (isHire) {
+    if (!params.organisation_name) throw new Error('Organisation name is required.');
+    if (!params.organisation_type) throw new Error('Organisation type is required.');
+    if (!params.organisation_description) throw new Error('Organisation description is required.');
+    if (!params.booking_type) throw new Error('Booking type is required.');
+    if (!params.preferred_days_times) throw new Error('Preferred days and times are required.');
+    if (!params.start_date) throw new Error('Start date is required.');
+  } else if (!params.message) {
     throw new Error(isPrayer ? 'Prayer request is required.' : 'Message is required.');
   }
 
@@ -180,7 +201,12 @@ function validateParams(params) {
 /** Append one row to the correct tab in the Google Sheet. */
 function storeInSheet(params) {
   var ss = openOrCreateSheet();
-  var tabName = params.form_type === 'prayer' ? 'Prayer Requests' : 'Contact Messages';
+  var tabNames = {
+    prayer: 'Prayer Requests',
+    building_hire: 'Building Hire Enquiries',
+    contact: 'Contact Messages'
+  };
+  var tabName = tabNames[params.form_type] || 'Contact Messages';
   var sheet = ss.getSheetByName(tabName) || createTab(ss, tabName, params.form_type);
   var now = new Date();
 
@@ -190,6 +216,20 @@ function storeInSheet(params) {
       params.name,
       params.phone,
       params.message
+    ]);
+  } else if (params.form_type === 'building_hire') {
+    sheet.appendRow([
+      now,
+      params.organisation_name,
+      params.organisation_type,
+      params.organisation_description,
+      params.name,
+      params.email,
+      params.phone,
+      params.booking_type,
+      params.preferred_days_times,
+      params.start_date,
+      params.additional_info
     ]);
   } else {
     sheet.appendRow([
@@ -219,6 +259,12 @@ function createTab(ss, tabName, formType) {
   var sheet = ss.insertSheet(tabName);
   if (formType === 'prayer') {
     sheet.appendRow(['Timestamp', 'First Name', 'Phone', 'Prayer Request']);
+  } else if (formType === 'building_hire') {
+    sheet.appendRow([
+      'Timestamp', 'Organisation Name', 'Organisation Type', 'Organisation Description',
+      'Contact Name', 'Email', 'Phone', 'Booking Type',
+      'Preferred Days & Times', 'Start Date', 'Additional Information'
+    ]);
   } else {
     sheet.appendRow(['Timestamp', 'Name', 'Email', 'Phone', 'Message']);
   }
@@ -232,9 +278,12 @@ function createTab(ss, tabName, formType) {
 /** Send a formatted notification email to NOTIFY_EMAIL. */
 function sendNotificationEmail(params) {
   var isPrayer = params.form_type === 'prayer';
-  var subject = isPrayer
-    ? 'New Prayer Request — The Well Church Website'
-    : 'New Contact Message — The Well Church Website';
+  var isHire = params.form_type === 'building_hire';
+  var subjects = {
+    prayer: 'New Prayer Request — The Well Church Website',
+    building_hire: 'New Building Hire Enquiry — The Well Church Website'
+  };
+  var subject = subjects[params.form_type] || 'New Contact Message — The Well Church Website';
 
   var body = buildEmailBody(params, isPrayer);
 
@@ -249,27 +298,43 @@ function sendNotificationEmail(params) {
 
 /** Build an HTML email body from the submission details. */
 function buildEmailBody(params, isPrayer) {
+  var isHire = params.form_type === 'building_hire';
   var rows = '';
 
   rows += tableRow('Submitted', new Date().toLocaleString('en-GB', { timeZone: 'Europe/London' }));
-  rows += tableRow('Form', isPrayer ? 'Prayer Request' : 'Contact Form');
-  rows += tableRow(isPrayer ? 'First Name' : 'Name', params.name || '—');
 
-  if (!isPrayer) {
+  if (isHire) {
+    rows += tableRow('Form', 'Building Hire Enquiry');
+    rows += tableRow('Organisation', params.organisation_name || '—');
+    rows += tableRow('Organisation Type', params.organisation_type || '—');
+    rows += tableRow('About Organisation', nl2br(params.organisation_description));
+    rows += tableRow('Contact Name', params.name || '—');
     rows += tableRow('Email', params.email || '—');
-  }
+    if (params.phone) rows += tableRow('Phone', params.phone);
+    rows += tableRow('Booking Type', params.booking_type || '—');
+    rows += tableRow('Preferred Days & Times', nl2br(params.preferred_days_times));
+    rows += tableRow('Start Date', params.start_date || '—');
+    if (params.additional_info) rows += tableRow('Additional Info', nl2br(params.additional_info));
+  } else {
+    rows += tableRow('Form', isPrayer ? 'Prayer Request' : 'Contact Form');
+    rows += tableRow(isPrayer ? 'First Name' : 'Name', params.name || '—');
 
-  if (params.phone) {
-    rows += tableRow('Phone', params.phone);
-  }
+    if (!isPrayer) {
+      rows += tableRow('Email', params.email || '—');
+    }
 
-  rows += tableRow(isPrayer ? 'Prayer Request' : 'Message', nl2br(params.message));
+    if (params.phone) {
+      rows += tableRow('Phone', params.phone);
+    }
+
+    rows += tableRow(isPrayer ? 'Prayer Request' : 'Message', nl2br(params.message));
+  }
 
   return [
     '<div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto">',
     '<div style="background:#1e5fa8;padding:24px 32px;border-radius:8px 8px 0 0">',
     '<h1 style="color:#ffffff;margin:0;font-size:22px">',
-    isPrayer ? 'New Prayer Request' : 'New Contact Message',
+    isHire ? 'New Building Hire Enquiry' : (isPrayer ? 'New Prayer Request' : 'New Contact Message'),
     '</h1>',
     '<p style="color:#c3d9f5;margin:8px 0 0">The Well Church Website</p>',
     '</div>',

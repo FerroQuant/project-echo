@@ -1,0 +1,238 @@
+---
+layout: default
+title: "Building Hire"
+subtitle: "Enquire about hiring our venue"
+permalink: /building-hire/
+description: "Hire The Well Centre building on Dawlish Road, Reading for your church, charity, or community group."
+---
+
+<section class="page-header">
+  <div class="container">
+    <h1>Building Hire</h1>
+    <p class="page-subtitle">Enquire about hiring our venue</p>
+  </div>
+</section>
+
+<section class="page-content section">
+  <div class="container">
+
+    <div class="hire-intro">
+      <p>
+        The Well Centre building on Dawlish Road is available for hire by churches, charities,
+        and verified community groups. We give preference to long-term regular hire arrangements,
+        though one-off events are also considered. Family functions may be accommodated by special
+        request.
+      </p>
+      <p>
+        All enquiries are reviewed by our team — please note that not all requests can be
+        accommodated. Complete the form below and we will be in touch within 5 working days.
+      </p>
+    </div>
+
+    <div class="hire-form-wrap" id="hire-form-wrap">
+
+      <form class="hire-form" id="hire-form" novalidate>
+
+        <!-- Honeypot anti-spam field -->
+        <input
+          type="text"
+          name="_honeypot"
+          style="display:none"
+          tabindex="-1"
+          aria-hidden="true"
+          autocomplete="off">
+
+        <fieldset class="hire-fieldset">
+          <legend>About Your Organisation</legend>
+
+          <div class="form-group">
+            <label for="hire-org-name">
+              Organisation Name <span class="required" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="text"
+              id="hire-org-name"
+              name="organisation_name"
+              required
+              placeholder="e.g. Hope Community Church">
+          </div>
+
+          <div class="form-group">
+            <label for="hire-org-type">
+              Organisation Type <span class="required" aria-hidden="true">*</span>
+            </label>
+            <select id="hire-org-type" name="organisation_type" required>
+              <option value="">Please select…</option>
+              <option value="Church">Church</option>
+              <option value="Charity">Charity</option>
+              <option value="Community Group">Community Group</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="hire-org-desc">
+              Describe Your Organisation <span class="required" aria-hidden="true">*</span>
+            </label>
+            <textarea
+              id="hire-org-desc"
+              name="organisation_description"
+              required
+              rows="3"
+              placeholder="A brief description of what your organisation does"></textarea>
+          </div>
+        </fieldset>
+
+        <fieldset class="hire-fieldset">
+          <legend>Your Details</legend>
+
+          <div class="form-group">
+            <label for="hire-contact-name">
+              Contact Name <span class="required" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="text"
+              id="hire-contact-name"
+              name="name"
+              required
+              autocomplete="name"
+              placeholder="Your full name">
+          </div>
+
+          <div class="form-group">
+            <label for="hire-email">
+              Email <span class="required" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="email"
+              id="hire-email"
+              name="email"
+              required
+              autocomplete="email"
+              placeholder="your@email.com">
+          </div>
+
+          <div class="form-group">
+            <label for="hire-phone">
+              Phone Number
+              <span class="optional">(optional)</span>
+            </label>
+            <input
+              type="tel"
+              id="hire-phone"
+              name="phone"
+              autocomplete="tel"
+              placeholder="e.g. 07700 900000">
+          </div>
+        </fieldset>
+
+        <fieldset class="hire-fieldset">
+          <legend>Booking Details</legend>
+
+          <div class="form-group">
+            <label>
+              Booking Type <span class="required" aria-hidden="true">*</span>
+            </label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="booking_type" value="Regular/Long-term Hire" required>
+                <span>Regular / Long-term Hire <span class="optional">(recommended)</span></span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="booking_type" value="One-off Event">
+                <span>One-off Event</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="booking_type" value="Family Function (by special request)">
+                <span>Family Function <span class="optional">(by special request)</span></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="hire-days-times">
+              Preferred Days &amp; Times <span class="required" aria-hidden="true">*</span>
+            </label>
+            <textarea
+              id="hire-days-times"
+              name="preferred_days_times"
+              required
+              rows="3"
+              placeholder="e.g. Saturdays 2pm–5pm, or Wednesdays 6pm–9pm"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="hire-start-date">
+              Preferred Start Date <span class="required" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="date"
+              id="hire-start-date"
+              name="start_date"
+              required>
+          </div>
+
+          <div class="form-group">
+            <label for="hire-additional">
+              Additional Information
+              <span class="optional">(optional)</span>
+            </label>
+            <textarea
+              id="hire-additional"
+              name="additional_info"
+              rows="4"
+              placeholder="Any other details about your requirements"></textarea>
+          </div>
+        </fieldset>
+
+        <!-- Cloudflare Turnstile CAPTCHA -->
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAAChTrJIEHP3dUZmG" data-theme="light" data-size="normal"></div>
+
+        <button type="submit" class="btn btn--primary btn--full" id="hire-submit">
+          Submit Enquiry
+        </button>
+
+      </form>
+
+      <!-- Thank-you message shown after successful submission -->
+      <div class="hire-thankyou" id="hire-thankyou" aria-live="polite" tabindex="-1">
+        <div class="thankyou-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg"
+               width="48" height="48"
+               viewBox="0 0 24 24"
+               fill="none"
+               stroke="currentColor"
+               stroke-width="2"
+               stroke-linecap="round"
+               stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+        </div>
+        <h3>Thank you for your enquiry</h3>
+        <p>We will review your request and be in touch within 5 working days.</p>
+      </div>
+
+    </div><!-- /.hire-form-wrap -->
+
+  </div>
+</section>
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<script src="{{ '/assets/js/forms.js' | relative_url }}" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var form = document.getElementById('hire-form');
+    if (!form || typeof WellForms === 'undefined') return;
+
+    var FORM_ENDPOINT = 'https://formsubmit.co/ajax/life@thewell-church.com';
+
+    WellForms.handleFormSubmit(form, FORM_ENDPOINT, {
+      formType:     'building_hire',
+      honeypotName: '_honeypot',
+      thankyouId:   'hire-thankyou',
+      formWrapId:   'hire-form-wrap',
+      phoneFieldId: 'hire-phone'
+    });
+  });
+</script>

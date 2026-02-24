@@ -138,3 +138,73 @@
     line-height: 1.7;
   }
 }
+
+// -----------------------------------------------------------------------------
+// Find Us card (homepage — links to map section)
+// -----------------------------------------------------------------------------
+.find-us-section {
+  padding-top: $spacing-2xl;
+  padding-bottom: $spacing-2xl;
+}
+
+.find-us-card {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xl;
+  max-width: 680px;
+  margin: 0 auto;
+  background-color: $white;
+  padding: $spacing-xl $spacing-2xl;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-md;
+
+  @media (max-width: $bp-md) {
+    flex-direction: column;
+    text-align: center;
+    padding: $spacing-xl;
+  }
+}
+
+.find-us-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  background-color: rgba($primary, 0.08);
+  border-radius: 50%;
+  flex-shrink: 0;
+
+  svg {
+    color: $primary;
+  }
+}
+
+.find-us-card__content {
+  flex: 1;
+}
+
+.find-us-card__heading {
+  font-size: $text-xl;
+  font-weight: $font-bold;
+  color: $primary-dark;
+  margin-bottom: $spacing-xs;
+}
+
+.find-us-card__address {
+  font-size: $text-base;
+  color: $text-primary;
+  margin-bottom: $spacing-xs;
+  font-weight: $font-semibold;
+}
+
+.find-us-card__detail {
+  font-size: $text-sm;
+  color: $text-muted;
+  margin-bottom: 0;
+}
+
+.find-us-card__btn {
+  flex-shrink: 0;
+  white-space: nowrap;
+}

@@ -19,7 +19,7 @@ layout: default
 {% include hero.html %}
 
 {% comment %} ---- Wave divider ---- {% endcomment %}
-<div class="section-wave" aria-hidden="true">
+<div class="section-wave section-wave--primary" aria-hidden="true">
   <svg viewBox="0 0 1440 56" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
     <path d="M0,32 C360,72 1080,0 1440,40 L1440,56 L0,56 Z" fill="#f5f8fb"/>
   </svg>
@@ -309,6 +309,26 @@ layout: default
   </div>
 </section>
 
+{% comment %} Find Us mini-card — scrolls to the full map in Join Us section {% endcomment %}
+<section class="section find-us-section" aria-label="Find us">
+  <div class="container">
+    <div class="find-us-card fade-in">
+      <div class="find-us-card__icon" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+      </div>
+      <div class="find-us-card__content">
+        <h2 class="find-us-card__heading">Find Us</h2>
+        <p class="find-us-card__address">Dawlish Road, Reading, RG2 7SD</p>
+        <p class="find-us-card__detail">Sundays at 10:30am &mdash; all are welcome</p>
+      </div>
+      <a href="#join-heading" class="btn--primary find-us-card__btn">View on Map &darr;</a>
+    </div>
+  </div>
+</section>
+
 {% comment %} 6. Community Stats {% endcomment %}
 <section class="section--alt" aria-labelledby="stats-heading">
   <div class="container">
@@ -378,13 +398,6 @@ layout: default
             {{ st.address | newline_to_br }}
           </address>
         </div>
-
-        {% if st.phone %}
-        <p style="margin-bottom:0.5rem;">
-          <strong>Phone:</strong>
-          <a href="tel:{{ st.phone | remove: ' ' }}">{{ st.phone }}</a>
-        </p>
-        {% endif %}
 
         {% if st.email %}
         <p style="margin-bottom:1.5rem;">

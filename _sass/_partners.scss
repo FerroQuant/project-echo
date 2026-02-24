@@ -57,6 +57,21 @@
   object-fit: contain;
 }
 
+.partner-card__initial {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: $primary;
+  color: $white;
+  font-family: $font-heading;
+  font-size: $text-2xl;
+  font-weight: $font-bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto $spacing-lg;
+}
+
 .partner-card__name {
   font-family: $font-heading;
   font-size: $text-xl;
@@ -70,4 +85,75 @@
   color: $text-secondary;
   margin-bottom: $spacing-lg;
   line-height: $line-height;
+}
+
+// -----------------------------------------------------------------------------
+// Leadership grid (Our Family page — team section)
+// -----------------------------------------------------------------------------
+.leadership-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-2xl;
+  margin-bottom: $spacing-3xl;
+
+  @media (min-width: $bp-md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: $bp-lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.leader-card {
+  text-align: center;
+  background-color: $white;
+  padding: $spacing-2xl $spacing-xl;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-sm;
+  transition: box-shadow $transition-normal, transform $transition-normal;
+
+  &:hover {
+    box-shadow: $shadow-md;
+    transform: translateY(-2px);
+  }
+}
+
+.leader-card__photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  background-color: $bg-alt;
+  border-radius: 50%;
+  margin: 0 auto $spacing-lg;
+
+  svg {
+    color: $text-muted;
+  }
+}
+
+.leader-card__name {
+  font-family: $font-heading;
+  font-size: $text-xl;
+  font-weight: $font-semibold;
+  color: $primary-dark;
+  margin-bottom: $spacing-xs;
+}
+
+.leader-card__role {
+  font-size: $text-sm;
+  color: $accent;
+  font-weight: $font-semibold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: $spacing-md;
+}
+
+.leader-card__bio {
+  font-size: $text-base;
+  color: $text-secondary;
+  line-height: $line-height;
+  margin-bottom: 0;
 }

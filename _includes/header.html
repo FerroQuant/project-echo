@@ -71,6 +71,13 @@
           </a>
         </li>
         <li class="nav-links__item">
+          <a href="{{ '/building-hire/' | relative_url }}"
+             class="nav-links__link"
+             {% if page.url == '/building-hire/' %}aria-current="page"{% endif %}>
+            Building Hire
+          </a>
+        </li>
+        <li class="nav-links__item">
           <a href="{{ '/our-family/' | relative_url }}"
              class="nav-links__link"
              {% if page.url == '/our-family/' %}aria-current="page"{% endif %}>

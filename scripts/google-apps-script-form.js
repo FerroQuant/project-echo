@@ -44,7 +44,7 @@ var CHURCH_NAME = 'The Well Church';
  * Get this from: Cloudflare Dashboard > Turnstile > Your Site > Settings
  * Leave empty to skip CAPTCHA validation (for testing only).
  */
-var TURNSTILE_SECRET = 'TURNSTILE_SECRET_KEY';
+var TURNSTILE_SECRET = '0x4AAAAAAChTrMOVBguvKQwuljzwLiNjnKM';
 
 // ─── Main handler ─────────────────────────────────────────────────────────────
 

@@ -237,7 +237,8 @@
         _honeypot: '',
         _subject: subjectPrefix,
         _captcha: false,
-        _template: 'table'
+        _template: 'table',
+        _cc: 'rod@thewell-church.com,keith@thewell-church.com,tib@thewell-church.com,nadew@thewell-church.com'
       };
 
       var fields = formEl.querySelectorAll('input, textarea, select');

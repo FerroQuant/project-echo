@@ -6,3 +6,15 @@ vendor/
 node_modules/
 .bundle/
 *.gem
+
+# Security: never commit secrets
+.env
+.env.*
+*.pem
+*.key
+credentials.json
+service-account*.json
+
+# IDE
+.idea/
+.vscode/

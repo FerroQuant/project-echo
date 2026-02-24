@@ -244,7 +244,7 @@
         _subject: subjectPrefix,
         _captcha: false,
         _template: 'table',
-        _cc: 'rod@thewell-church.com,keith@thewell-church.com,tib@thewell-church.com,nadew@thewell-church.com'
+        _autoresponse: 'Thank you for your message. We will be in touch soon.'
       };
 
       var fields = formEl.querySelectorAll('input, textarea, select');

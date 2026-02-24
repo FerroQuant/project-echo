@@ -194,3 +194,99 @@
     text-decoration: underline;
   }
 }
+
+// -----------------------------------------------------------------------------
+// Video facade — lightweight click-to-load placeholder
+// Replaces heavy Facebook iframe with a thumbnail + play button
+// -----------------------------------------------------------------------------
+.video-facade {
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: $border-radius-lg;
+  background-color: $primary-dark;
+
+  &:focus-visible {
+    outline: 3px solid $accent;
+    outline-offset: 2px;
+  }
+
+  // Play button overlay
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 68px;
+    height: 68px;
+    transform: translate(-50%, -50%);
+    background: rgba($white, 0.92);
+    border-radius: 50%;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+    // Play triangle via clip-path
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230a5a9e'%3E%3Cpath d='M8 5v14l11-7z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 55% center;
+    background-size: 32px 32px;
+    transition: transform $transition-fast, box-shadow $transition-fast;
+    z-index: 2;
+  }
+
+  &:hover::after {
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  // Dark gradient overlay for visual depth
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 60%, rgba(0,0,0,0.3));
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  // Once activated, remove overlays
+  &--active {
+    cursor: default;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+}
+
+// Portrait facade maintains 9:16 aspect ratio
+.video-facade--portrait {
+  padding-top: 177.78%; // 9:16 aspect ratio
+}
+
+// Landscape facade maintains 16:9 aspect ratio
+.video-facade--landscape {
+  padding-top: 56.25%;
+}
+
+// Facade thumbnail image
+.video-facade__thumb {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+// Label shown at bottom of facade
+.video-facade__label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: $spacing-md;
+  color: $white;
+  font-size: $text-sm;
+  font-weight: $font-semibold;
+  z-index: 2;
+}

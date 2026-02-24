@@ -3,7 +3,7 @@ layout: default
 title: "Sermons"
 subtitle: "Watch and listen to messages from The Well"
 permalink: /sermons/
-description: "Watch sermons and messages from The Well Church Reading. Browse our recent Sunday services."
+description: "Watch sermons and messages from The Well Church Reading. Browse our recent Sunday services streamed live on Facebook."
 ---
 
 <section class="page-header">
@@ -31,27 +31,30 @@ description: "Watch sermons and messages from The Well Church Reading. Browse ou
       </a>
     </div>
 
+    {% assign sermons = site.sermons | sort: 'date' | reverse %}
+
     <div class="video-grid video-grid--portrait">
-
-      <!-- 22 Feb 2026 -->
+      {% for sermon in sermons %}
       <article class="card card--portrait">
-        <div class="video-embed video-embed--portrait">
-          <iframe
-            src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/thewellreading/videos/1232556278437226/&show_text=false"
-            width="560" height="315"
-            style="border:none;overflow:hidden"
-            scrolling="no" frameborder="0"
-            allowfullscreen="true"
-            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-            allowFullScreen="true">
-          </iframe>
+        <div class="video-facade video-facade--portrait"
+             data-video-id="{{ sermon.facebook_id }}"
+             data-title="{{ sermon.title }} — {{ sermon.date | date: '%-d %B %Y' }}"
+             role="button"
+             tabindex="0"
+             aria-label="Play video: {{ sermon.title }} — {{ sermon.date | date: '%-d %B %Y' }}">
         </div>
         <div class="card__body">
-          <p class="card__date">22 February 2026</p>
-          <h2 class="card__title">Sunday Service</h2>
-          <p class="card__meta">31:09 &nbsp;&middot;&nbsp; 272 views</p>
+          <p class="card__date">{{ sermon.date | date: "%-d %B %Y" }}</p>
+          <h2 class="card__title">{{ sermon.title }}</h2>
+          {% if sermon.duration or sermon.views %}
+          <p class="card__meta">
+            {% if sermon.duration %}{{ sermon.duration }}{% endif %}
+            {% if sermon.duration and sermon.views %}&nbsp;&middot;&nbsp;{% endif %}
+            {% if sermon.views %}{{ sermon.views }} views{% endif %}
+          </p>
+          {% endif %}
           <a
-            href="https://www.facebook.com/watch/?v=1232556278437226"
+            href="https://www.facebook.com/watch/?v={{ sermon.facebook_id }}"
             class="card__link card-link"
             target="_blank"
             rel="noopener noreferrer">
@@ -59,169 +62,7 @@ description: "Watch sermons and messages from The Well Church Reading. Browse ou
           </a>
         </div>
       </article>
-
-      <!-- 15 Feb 2026 -->
-      <article class="card card--portrait">
-        <div class="video-embed video-embed--portrait">
-          <iframe
-            src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/thewellreading/videos/760989896666345/&show_text=false"
-            width="560" height="315"
-            style="border:none;overflow:hidden"
-            scrolling="no" frameborder="0"
-            allowfullscreen="true"
-            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-            allowFullScreen="true">
-          </iframe>
-        </div>
-        <div class="card__body">
-          <p class="card__date">15 February 2026</p>
-          <h2 class="card__title">Sunday Service</h2>
-          <p class="card__meta">49:14 &nbsp;&middot;&nbsp; 438 views</p>
-          <a
-            href="https://www.facebook.com/watch/?v=760989896666345"
-            class="card__link card-link"
-            target="_blank"
-            rel="noopener noreferrer">
-            Watch on Facebook
-          </a>
-        </div>
-      </article>
-
-      <!-- 11 Feb 2026 -->
-      <article class="card card--portrait">
-        <div class="video-embed video-embed--portrait">
-          <iframe
-            src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/thewellreading/videos/1659591164923913/&show_text=false"
-            width="560" height="315"
-            style="border:none;overflow:hidden"
-            scrolling="no" frameborder="0"
-            allowfullscreen="true"
-            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-            allowFullScreen="true">
-          </iframe>
-        </div>
-        <div class="card__body">
-          <p class="card__date">11 February 2026</p>
-          <h2 class="card__title">Sunday Service</h2>
-          <p class="card__meta">8:11 &nbsp;&middot;&nbsp; Sunday message</p>
-          <a
-            href="https://www.facebook.com/watch/?v=1659591164923913"
-            class="card__link card-link"
-            target="_blank"
-            rel="noopener noreferrer">
-            Watch on Facebook
-          </a>
-        </div>
-      </article>
-
-      <!-- 4 Feb 2026 -->
-      <article class="card card--portrait">
-        <div class="video-embed video-embed--portrait">
-          <iframe
-            src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/thewellreading/videos/1935804250344502/&show_text=false"
-            width="560" height="315"
-            style="border:none;overflow:hidden"
-            scrolling="no" frameborder="0"
-            allowfullscreen="true"
-            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-            allowFullScreen="true">
-          </iframe>
-        </div>
-        <div class="card__body">
-          <p class="card__date">4 February 2026</p>
-          <h2 class="card__title">Sunday Service</h2>
-          <p class="card__meta">Sunday message</p>
-          <a
-            href="https://www.facebook.com/watch/?v=1935804250344502"
-            class="card__link card-link"
-            target="_blank"
-            rel="noopener noreferrer">
-            Watch on Facebook
-          </a>
-        </div>
-      </article>
-
-      <!-- 1 Feb 2026 -->
-      <article class="card card--portrait">
-        <div class="video-embed video-embed--portrait">
-          <iframe
-            src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/thewellreading/videos/1409583690563413/&show_text=false"
-            width="560" height="315"
-            style="border:none;overflow:hidden"
-            scrolling="no" frameborder="0"
-            allowfullscreen="true"
-            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-            allowFullScreen="true">
-          </iframe>
-        </div>
-        <div class="card__body">
-          <p class="card__date">1 February 2026</p>
-          <h2 class="card__title">Sunday Service</h2>
-          <p class="card__meta">26:47 &nbsp;&middot;&nbsp; 582 views</p>
-          <a
-            href="https://www.facebook.com/watch/?v=1409583690563413"
-            class="card__link card-link"
-            target="_blank"
-            rel="noopener noreferrer">
-            Watch on Facebook
-          </a>
-        </div>
-      </article>
-
-      <!-- 28 Jan 2026 -->
-      <article class="card card--portrait">
-        <div class="video-embed video-embed--portrait">
-          <iframe
-            src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/thewellreading/videos/1497326738622320/&show_text=false"
-            width="560" height="315"
-            style="border:none;overflow:hidden"
-            scrolling="no" frameborder="0"
-            allowfullscreen="true"
-            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-            allowFullScreen="true">
-          </iframe>
-        </div>
-        <div class="card__body">
-          <p class="card__date">28 January 2026</p>
-          <h2 class="card__title">Sunday Service</h2>
-          <p class="card__meta">Sunday message</p>
-          <a
-            href="https://www.facebook.com/watch/?v=1497326738622320"
-            class="card__link card-link"
-            target="_blank"
-            rel="noopener noreferrer">
-            Watch on Facebook
-          </a>
-        </div>
-      </article>
-
-      <!-- 21 Jan 2026 -->
-      <article class="card card--portrait">
-        <div class="video-embed video-embed--portrait">
-          <iframe
-            src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/thewellreading/videos/1954817302121848/&show_text=false"
-            width="560" height="315"
-            style="border:none;overflow:hidden"
-            scrolling="no" frameborder="0"
-            allowfullscreen="true"
-            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-            allowFullScreen="true">
-          </iframe>
-        </div>
-        <div class="card__body">
-          <p class="card__date">21 January 2026</p>
-          <h2 class="card__title">Sunday Service</h2>
-          <p class="card__meta">12:05 &nbsp;&middot;&nbsp; 66 views</p>
-          <a
-            href="https://www.facebook.com/watch/?v=1954817302121848"
-            class="card__link card-link"
-            target="_blank"
-            rel="noopener noreferrer">
-            Watch on Facebook
-          </a>
-        </div>
-      </article>
-
+      {% endfor %}
     </div><!-- /.video-grid -->
 
     <div class="text-center" style="margin-top: 3rem;">
@@ -237,3 +78,5 @@ description: "Watch sermons and messages from The Well Church Reading. Browse ou
 
   </div>
 </section>
+
+<script src="{{ '/assets/js/video-facade.js' | relative_url }}" defer></script>

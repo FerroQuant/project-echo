@@ -225,7 +225,8 @@ description: "Hire The Well Centre building on Dawlish Road, Reading for your ch
     var form = document.getElementById('hire-form');
     if (!form || typeof WellForms === 'undefined') return;
 
-    var FORM_ENDPOINT = 'https://formsubmit.co/ajax/rod@thewell-church.com';
+    var _u = ['rod', 'thewell-church', 'com'];
+    var FORM_ENDPOINT = 'https://formsubmit.co/ajax/' + _u[0] + '\x40' + _u[1] + '.' + _u[2];
 
     WellForms.handleFormSubmit(form, FORM_ENDPOINT, {
       formType:     'building_hire',

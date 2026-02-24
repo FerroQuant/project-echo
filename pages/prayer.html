@@ -132,7 +132,7 @@ description: "Submit a prayer request to The Well Church. We believe in the powe
     var form = document.getElementById('prayer-form');
     if (!form || typeof WellForms === 'undefined') return;
 
-    var FORM_ENDPOINT = '/api/form';
+    var FORM_ENDPOINT = 'https://thewell-form-handler.thewell-church.workers.dev';
 
     WellForms.handleFormSubmit(form, FORM_ENDPOINT, {
       formType:     'prayer',

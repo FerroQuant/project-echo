@@ -45,6 +45,18 @@
   {% feed_meta %}
 </head>
 <body>
+  <!-- SVG water ripple filter for logo animation -->
+  <svg width="0" height="0" style="position:absolute;" aria-hidden="true">
+    <defs>
+      <filter id="water-filter" x="-3%" y="-3%" width="106%" height="106%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="2" seed="1">
+          <animate attributeName="seed" from="1" to="80" dur="12s" repeatCount="indefinite"/>
+        </feTurbulence>
+        <feDisplacementMap in="SourceGraphic" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+    </defs>
+  </svg>
+
   <!-- Skip to main content (screen reader / keyboard nav) -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 

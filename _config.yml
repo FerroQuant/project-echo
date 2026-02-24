@@ -6,7 +6,7 @@ baseurl: ""
 church:
   name: "The Well Church"
   address: "Dawlish Road, Reading, RG2 7SD"
-  email: "life@thewell-church.com"
+  email: "rod@thewell-church.com"
   facebook: "https://www.facebook.com/thewellreading"
   map_lat: 51.4322331
   map_lng: -0.9635016
@@ -53,3 +53,4 @@ exclude:
   - docs/
   - README.md
   - node_modules/
+  - workers/

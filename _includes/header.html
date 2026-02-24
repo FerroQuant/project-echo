@@ -68,27 +68,6 @@
           </a>
         </li>
         <li class="nav-links__item">
-          <a href="{{ '/well-centre/' | relative_url }}"
-             class="nav-links__link"
-             {% if page.url == '/well-centre/' %}aria-current="page"{% endif %}>
-            The Well Centre
-          </a>
-        </li>
-        <li class="nav-links__item">
-          <a href="{{ '/building-hire/' | relative_url }}"
-             class="nav-links__link"
-             {% if page.url == '/building-hire/' %}aria-current="page"{% endif %}>
-            Building Hire
-          </a>
-        </li>
-        <li class="nav-links__item">
-          <a href="{{ '/our-family/' | relative_url }}"
-             class="nav-links__link"
-             {% if page.url == '/our-family/' %}aria-current="page"{% endif %}>
-            Our Family
-          </a>
-        </li>
-        <li class="nav-links__item">
           <a href="{{ '/contact/' | relative_url }}"
              class="nav-links__link"
              {% if page.url == '/contact/' %}aria-current="page"{% endif %}>
@@ -108,6 +87,15 @@
                  aria-label="Search"
                  autocomplete="off">
         </form>
+
+        <a href="https://www.facebook.com/thewellreading/videos"
+           class="btn--live js-live-btn"
+           style="display:none"
+           target="_blank"
+           rel="noopener noreferrer">
+          <span class="live-dot" aria-hidden="true"></span>
+          Live
+        </a>
 
         <a href="{{ '/prayer/' | relative_url }}"
            class="btn--accent"

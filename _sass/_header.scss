@@ -244,6 +244,49 @@
   }
 }
 
+// Live button (conditional — shown when streaming)
+.btn--live {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  font-family: $font-body;
+  font-size: $text-sm;
+  font-weight: $font-bold;
+  color: $white;
+  background-color: #dc2626;
+  padding: $spacing-sm $spacing-md;
+  border-radius: $border-radius;
+  text-decoration: none;
+  transition: background-color $transition-fast;
+
+  &:hover {
+    background-color: #b91c1c;
+    color: $white;
+    text-decoration: none;
+  }
+
+  &:focus-visible {
+    outline: 3px solid $accent;
+    outline-offset: 2px;
+  }
+}
+
+.live-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: $white;
+  flex-shrink: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .live-dot {
+    animation: livePulse 1.5s ease-in-out infinite;
+  }
+}
+
 // Search form
 .nav-search {
   display: flex;

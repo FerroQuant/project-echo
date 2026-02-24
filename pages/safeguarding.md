@@ -25,7 +25,7 @@ Our safeguarding lead is **Rodney Alan Carkett**. The safeguarding lead is respo
 
 If you have a safeguarding concern, or if you believe a child or vulnerable adult may be at risk, please contact us immediately:
 
-- **Email:** [life@thewell-church.com](mailto:life@thewell-church.com)
+- **Contact:** [Use our contact form]({{ '/contact/' | relative_url }})
 - **Safeguarding lead:** Rodney Alan Carkett
 
 All concerns will be taken seriously, handled sensitively, and dealt with in accordance with our safeguarding procedures.
@@ -40,6 +40,6 @@ If you would like to speak to someone outside the church, you can contact:
 
 ## Safeguarding Policy
 
-We are in the process of making our full safeguarding policy available to download. In the meantime, if you would like to see a copy of our safeguarding policy, please contact us at [life@thewell-church.com](mailto:life@thewell-church.com).
+We are in the process of making our full safeguarding policy available to download. In the meantime, if you would like to see a copy of our safeguarding policy, please [use our contact form]({{ '/contact/' | relative_url }}).
 
 **Last updated:** February 2026

@@ -43,7 +43,7 @@ RG2 7SD
 
 Parking is available nearby. The venue is also accessible by public transport. [Get in touch]({{ '/contact/' | relative_url }}) if you need help with directions.
 
-**Email:** [life@thewell-church.com](mailto:life@thewell-church.com)
+**Get in touch:** [Contact us]({{ '/contact/' | relative_url }})
 
 ## Children
 

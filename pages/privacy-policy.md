@@ -12,7 +12,7 @@ This website is operated by **The Well Church** (Whitley Community Church Trust)
 
 - **Charity number:** 1067611
 - **Address:** Dawlish Road, Reading RG2 7SD
-- **Email:** [life@thewell-church.com](mailto:life@thewell-church.com)
+- **Contact:** [Use our contact form]({{ '/contact/' | relative_url }})
 
 ## What Data We Collect
 
@@ -83,7 +83,7 @@ Under UK GDPR, you have the right to:
 - **Data portability** — receive your data in a structured format
 - **Object** to our processing of your data
 
-To exercise any of these rights, please email us at [life@thewell-church.com](mailto:life@thewell-church.com).
+To exercise any of these rights, please [use our contact form]({{ '/contact/' | relative_url }}).
 
 If you are not satisfied with our response, you have the right to lodge a complaint with the [Information Commissioner's Office (ICO)](https://ico.org.uk/make-a-complaint/).
 

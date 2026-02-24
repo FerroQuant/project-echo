@@ -289,7 +289,7 @@
           showError(
             submitBtn,
             statusRegion,
-            'Could not send your message. Please check your connection and try again, or email us at life@thewell-church.com.'
+            'Could not send your message. Please check your connection and try again.'
           );
         });
     });

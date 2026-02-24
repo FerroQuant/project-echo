@@ -33,9 +33,20 @@ We are also a community that takes character seriously. Our ongoing series, **Bu
 - **Outreach** — The love of God is not meant to stay inside four walls. We reach out to our neighbours, our city, and the world.
 - **Growth** — We encourage every person to grow — in faith, in character, and in their relationship with God and one another.
 
+## Community Impact
+
+The Well Church is not just a place of worship — it is a place of practical action. Through The Well Centre, we serve some of the most vulnerable people in our community:
+
+- **Refugee support and integration** — We walk alongside refugees and asylum seekers as they rebuild their lives in Reading, offering practical help, friendship, and a sense of belonging.
+- **Emergency assistance** — We provide food, clothing, household items, and other essentials to individuals and families in crisis.
+- **Amharic-speaking congregation** — We partner with a thriving Amharic-speaking congregation, creating a welcoming spiritual home for the Ethiopian and Eritrean community in Reading.
+- **Multicultural integration** — Our church brings together people from many nations and backgrounds, building genuine community across cultural lines.
+
+This work is at the heart of who we are. We believe the love of God is meant to be given away — and we are committed to reaching our neighbours with practical compassion.
+
 ## A Church With Roots and Reach
 
-We are a local church with a global heart. We meet at Dawlish Road in Reading, and we care deeply about this neighbourhood. But our services are live-streamed on Facebook every Sunday, and our community extends far beyond Reading. Whether you are joining us in person or watching from another country, you are part of the family.
+We are a local church with a global heart. We meet at Dawlish Road in Reading, and we care deeply about this neighbourhood. Our services are live-streamed on Facebook every Sunday, and we are working towards launching on YouTube soon. Our community extends far beyond Reading — whether you are joining us in person or watching from another country, you are part of the family.
 
 ## Get in Touch
 

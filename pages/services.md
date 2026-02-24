@@ -12,6 +12,8 @@ description: "Join us for Sunday services at The Well Church in Reading. Find ou
 
 Whether you are visiting for the first time or coming home, you are welcome. Our Sunday gathering is the heartbeat of our week — a time to worship together, hear from the Bible, pray, and encourage one another in faith.
 
+Each week carries a different focus — from worship themes and character-building series to seasons of prayer and fasting. There is always something fresh happening, and every Sunday is a good Sunday to visit.
+
 Services run for approximately 45 to 60 minutes.
 
 ## What to Expect
@@ -28,6 +30,8 @@ A typical Sunday morning looks like this:
 ## Watch Live Online
 
 Can't make it in person? We live-stream every Sunday service on Facebook. You can join from anywhere in the world — and many do. Friends have tuned in from across the UK and from as far as Liberia, West Africa.
+
+We are also working towards launching on YouTube — stay tuned.
 
 **Watch live every Sunday at 10:30am:**
 [facebook.com/thewellreading](https://www.facebook.com/thewellreading){:target="_blank" rel="noopener noreferrer"}
@@ -56,3 +60,19 @@ Find out more on our [Kids & Youth page]({{ '/kids-youth/' | relative_url }}).
 If this is your first visit, do not worry — there are no expectations. Come along, have a coffee, and see what the well is all about. We would genuinely love to meet you.
 
 [Get in touch]({{ '/contact/' | relative_url }}) if you have any questions before you come.
+
+## Serve on Sundays
+
+There are practical ways to get involved and make a real difference every week.
+
+### Join the Worship Team
+
+We are looking for musicians to grow our Sunday worship band — especially a **bass player**. We currently have piano, violin, and flute, and we want to build something bigger. If you play an instrument or sing, we would love to hear from you.
+
+Here is the deal: our building has a fully equipped **recording studio on site**. Musicians who anchor the Sunday worship band get weekly access to the studio for their own projects. It is a genuine exchange — you bring your gift on Sundays, and the studio is yours to use during the week.
+
+### Sound Desk Volunteer
+
+We also need a **Sound Desk Operator** for Sunday services. The setup has been simplified and full training is provided — no prior experience needed. If you are reliable and willing to learn, this is a great way to serve behind the scenes.
+
+**Interested in joining the worship team?** [Get in touch]({{ '/contact/?subject=worship-team' | relative_url }}) — or if the sound desk is more your thing, [let us know]({{ '/contact/?subject=sound-desk' | relative_url }}). We will take it from there.

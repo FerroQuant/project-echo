@@ -30,6 +30,14 @@ Youth activities include Sunday morning groups, social events, and opportunities
 
 The Well Church is a place where families are genuinely welcome. We are a multicultural community, and we love the energy and joy that children bring. Whether you are a young family visiting for the first time or you have been coming for years, we want your whole family to feel at home here.
 
+## Join the Team
+
+We are looking for a dedicated **Children's Ministry Worker** to help lead our English-language children's programme on Sunday mornings. This is a genuinely rewarding role — you will be shaping young lives, building lasting relationships, and helping the next generation discover faith in a fun, safe environment.
+
+A DBS check is required, and full training and support will be provided. No formal qualifications are needed — just a heart for children and a willingness to serve.
+
+If this sounds like you, we would love to hear from you. [Get in touch]({{ '/contact/?subject=childrens-ministry' | relative_url }}) and let's talk.
+
 ## Get in Touch
 
 If you have questions about children's or youth ministry, or if you would like to find out more before bringing your family along, we would love to hear from you.

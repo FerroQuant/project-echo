@@ -57,6 +57,21 @@ description: "Get in touch with The Well Church in Reading. Find us, send a mess
             autocomplete="off">
 
           <div class="form-group">
+            <label for="contact-subject">
+              What is your enquiry about? <span class="required" aria-hidden="true">*</span>
+            </label>
+            <select id="contact-subject" name="enquiry_type" required>
+              <option value="">Please select…</option>
+              <option value="General Enquiry">General Enquiry</option>
+              <option value="Worship Team / Musician">Worship Team / Musician</option>
+              <option value="Sound Desk Volunteer">Sound Desk Volunteer</option>
+              <option value="Children's Ministry Worker">Children's Ministry Worker</option>
+              <option value="Volunteering">Volunteering (other)</option>
+              <option value="Something Else">Something Else</option>
+            </select>
+          </div>
+
+          <div class="form-group">
             <label for="contact-name">
               Name <span class="required" aria-hidden="true">*</span>
             </label>
@@ -176,5 +191,22 @@ description: "Get in touch with The Well Church in Reading. Find us, send a mess
       formWrapId:   'contact-form-wrap',
       phoneFieldId: 'contact-phone'
     });
+
+    // Pre-select enquiry type from URL parameter, e.g. /contact/?subject=worship-team
+    var params = new URLSearchParams(window.location.search);
+    var subject = params.get('subject');
+    if (subject) {
+      var subjectMap = {
+        'worship-team': 'Worship Team / Musician',
+        'sound-desk':   'Sound Desk Volunteer',
+        'childrens-ministry': "Children's Ministry Worker",
+        'volunteering': 'Volunteering',
+        'general':      'General Enquiry'
+      };
+      var select = document.getElementById('contact-subject');
+      if (select && subjectMap[subject]) {
+        select.value = subjectMap[subject];
+      }
+    }
   });
 </script>

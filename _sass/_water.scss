@@ -354,25 +354,17 @@
     animation: bubbleRise linear infinite;
   }
 
-  // 12 bubbles spread across the viewport — varied sizes, speeds, positions
+  // 10 bubbles spread across the viewport — varied sizes, speeds, positions
   .page-bubble:nth-child(1)  { left: 3%;  width: 22px; height: 22px; animation-duration: 16s; animation-delay: 0s; }
-  .page-bubble:nth-child(2)  { left: 12%; width: 14px; height: 14px; animation-duration: 20s; animation-delay: 2s; }
-  .page-bubble:nth-child(3)  { left: 22%; width: 30px; height: 30px; animation-duration: 18s; animation-delay: 5s; }
-  .page-bubble:nth-child(4)  { left: 35%; width: 12px; height: 12px; animation-duration: 24s; animation-delay: 1s; }
-  .page-bubble:nth-child(5)  { left: 45%; width: 20px; height: 20px; animation-duration: 19s; animation-delay: 3s; }
-  .page-bubble:nth-child(6)  { left: 55%; width: 26px; height: 26px; animation-duration: 17s; animation-delay: 7s; }
-  .page-bubble:nth-child(7)  { left: 65%; width: 10px; height: 10px; animation-duration: 25s; animation-delay: 2s; }
-  .page-bubble:nth-child(8)  { left: 72%; width: 28px; height: 28px; animation-duration: 18s; animation-delay: 4s; }
-  .page-bubble:nth-child(9)  { left: 80%; width: 16px; height: 16px; animation-duration: 22s; animation-delay: 6s; }
-  .page-bubble:nth-child(10) { left: 88%; width: 20px; height: 20px; animation-duration: 20s; animation-delay: 1s; }
-  .page-bubble:nth-child(11) { left: 8%;  width: 18px; height: 18px; animation-duration: 21s; animation-delay: 9s; }
-  .page-bubble:nth-child(12) { left: 95%; width: 12px; height: 12px; animation-duration: 23s; animation-delay: 11s; }
-  .page-bubble:nth-child(13) { left: 18%; width: 24px; height: 24px; animation-duration: 17s; animation-delay: 0s; }
-  .page-bubble:nth-child(14) { left: 40%; width: 15px; height: 15px; animation-duration: 23s; animation-delay: 4s; }
-  .page-bubble:nth-child(15) { left: 58%; width: 20px; height: 20px; animation-duration: 16s; animation-delay: 2s; }
-  .page-bubble:nth-child(16) { left: 78%; width: 28px; height: 28px; animation-duration: 19s; animation-delay: 6s; }
-  .page-bubble:nth-child(17) { left: 50%; width: 12px; height: 12px; animation-duration: 24s; animation-delay: 8s; }
-  .page-bubble:nth-child(18) { left: 30%; width: 22px; height: 22px; animation-duration: 15s; animation-delay: 1s; }
+  .page-bubble:nth-child(2)  { left: 14%; width: 14px; height: 14px; animation-duration: 20s; animation-delay: 2s; }
+  .page-bubble:nth-child(3)  { left: 25%; width: 28px; height: 28px; animation-duration: 18s; animation-delay: 5s; }
+  .page-bubble:nth-child(4)  { left: 36%; width: 12px; height: 12px; animation-duration: 24s; animation-delay: 1s; }
+  .page-bubble:nth-child(5)  { left: 47%; width: 20px; height: 20px; animation-duration: 19s; animation-delay: 3s; }
+  .page-bubble:nth-child(6)  { left: 56%; width: 24px; height: 24px; animation-duration: 17s; animation-delay: 7s; }
+  .page-bubble:nth-child(7)  { left: 66%; width: 10px; height: 10px; animation-duration: 25s; animation-delay: 2s; }
+  .page-bubble:nth-child(8)  { left: 75%; width: 26px; height: 26px; animation-duration: 18s; animation-delay: 4s; }
+  .page-bubble:nth-child(9)  { left: 85%; width: 16px; height: 16px; animation-duration: 22s; animation-delay: 6s; }
+  .page-bubble:nth-child(10) { left: 93%; width: 18px; height: 18px; animation-duration: 20s; animation-delay: 1s; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -390,8 +382,9 @@
 
 // --- Flight path: 14s total ---
 // Key positions (dove faces left via scaleX(-1)):
-//   Request Prayer button ≈ 60vw, 58vh  (top-left of dove)
-//   Plan Your Visit button ≈ 47vw, 58vh
+//   Request Prayer button center ≈ 715px → dove left 51vw
+//   Plan Your Visit button center ≈ 546px → dove left 38vw
+//   Button tops ≈ 550px → dove feet (at 82/90px) need top ≈ 58vh
 @keyframes doveFlightPath {
   0% {
     transform: translate(110vw, -10vh) scaleX(-1) rotate(-8deg);
@@ -400,42 +393,42 @@
   3% { opacity: 1; }
   // Swoop in toward Request Prayer button
   14% {
-    transform: translate(60vw, 58vh) scaleX(-1) rotate(3deg);
+    transform: translate(51vw, 58vh) scaleX(-1) rotate(3deg);
   }
-  // Landed on Request Prayer
-  18% {
-    transform: translate(60vw, 58vh) scaleX(-1) rotate(0deg);
+  // Landed on Request Prayer — instant settle
+  15% {
+    transform: translate(51vw, 58vh) scaleX(-1) rotate(0deg);
   }
   // Head bobs — looking around on Request Prayer
-  22% { transform: translate(60vw, 58vh) scaleX(-1) rotate(5deg); }
-  24% { transform: translate(60vw, 58vh) scaleX(-1) rotate(0deg); }
-  27% { transform: translate(60vw, 58vh) scaleX(-1) rotate(4deg); }
-  29% { transform: translate(60vw, 58vh) scaleX(-1) rotate(0deg); }
+  22% { transform: translate(51vw, 58vh) scaleX(-1) rotate(5deg); }
+  24% { transform: translate(51vw, 58vh) scaleX(-1) rotate(0deg); }
+  27% { transform: translate(51vw, 58vh) scaleX(-1) rotate(4deg); }
+  29% { transform: translate(51vw, 58vh) scaleX(-1) rotate(0deg); }
   // Hop arc to Plan Your Visit (jump up then down)
   33% {
-    transform: translate(53vw, 50vh) scaleX(-1) rotate(-3deg);
+    transform: translate(44vw, 50vh) scaleX(-1) rotate(-3deg);
   }
   38% {
-    transform: translate(47vw, 58vh) scaleX(-1) rotate(0deg);
+    transform: translate(38vw, 58vh) scaleX(-1) rotate(0deg);
   }
   // Standing on Plan Your Visit — pause
   42% {
-    transform: translate(47vw, 58vh) scaleX(-1) rotate(0deg);
+    transform: translate(38vw, 58vh) scaleX(-1) rotate(0deg);
   }
   // Bend down to drink — three sips
-  46% { transform: translate(47vw, 58vh) scaleX(-1) rotate(22deg); }
-  49% { transform: translate(47vw, 58vh) scaleX(-1) rotate(0deg); }
-  52% { transform: translate(47vw, 58vh) scaleX(-1) rotate(24deg); }
-  55% { transform: translate(47vw, 58vh) scaleX(-1) rotate(0deg); }
-  58% { transform: translate(47vw, 58vh) scaleX(-1) rotate(20deg); }
-  61% { transform: translate(47vw, 58vh) scaleX(-1) rotate(0deg); }
+  46% { transform: translate(38vw, 58vh) scaleX(-1) rotate(22deg); }
+  49% { transform: translate(38vw, 58vh) scaleX(-1) rotate(0deg); }
+  52% { transform: translate(38vw, 58vh) scaleX(-1) rotate(24deg); }
+  55% { transform: translate(38vw, 58vh) scaleX(-1) rotate(0deg); }
+  58% { transform: translate(38vw, 58vh) scaleX(-1) rotate(20deg); }
+  61% { transform: translate(38vw, 58vh) scaleX(-1) rotate(0deg); }
   // Look around
   66% {
-    transform: translate(47vw, 58vh) scaleX(-1) rotate(-4deg);
+    transform: translate(38vw, 58vh) scaleX(-1) rotate(-4deg);
   }
   // Take off — fly left and upward
   75% {
-    transform: translate(28vw, 30vh) scaleX(-1) rotate(-10deg);
+    transform: translate(20vw, 30vh) scaleX(-1) rotate(-10deg);
   }
   88% {
     transform: translate(-10vw, -15vh) scaleX(-1) rotate(-18deg);
@@ -449,41 +442,44 @@
 
 // --- Wing flap synced to flight/standing phases ---
 @keyframes doveWingFlap {
-  // Flying in — flapping
+  // Flying in — flapping (big strokes)
   0%  { transform: rotate(0deg); }
-  3%  { transform: rotate(-45deg); }
-  5%  { transform: rotate(10deg); }
-  7%  { transform: rotate(-45deg); }
-  9%  { transform: rotate(10deg); }
-  11% { transform: rotate(-45deg); }
-  13% { transform: rotate(10deg); }
+  2%  { transform: rotate(-60deg); }
+  4%  { transform: rotate(10deg); }
+  6%  { transform: rotate(-60deg); }
+  8%  { transform: rotate(10deg); }
+  10% { transform: rotate(-60deg); }
+  12% { transform: rotate(10deg); }
+  // Landing flare
+  14% { transform: rotate(-30deg); }
   // Landed — wings folded
-  18%, 29% { transform: rotate(0deg); }
+  16%, 29% { transform: rotate(0deg); }
   // Hop — small flutter
-  31% { transform: rotate(-25deg); }
+  31% { transform: rotate(-35deg); }
   33% { transform: rotate(5deg); }
-  35% { transform: rotate(-25deg); }
+  35% { transform: rotate(-35deg); }
   37% { transform: rotate(5deg); }
   // Standing/drinking — wings folded
   38%, 66% { transform: rotate(0deg); }
-  // Flying out — flapping
-  70% { transform: rotate(-45deg); }
-  73% { transform: rotate(10deg); }
-  76% { transform: rotate(-45deg); }
-  79% { transform: rotate(10deg); }
-  82% { transform: rotate(-45deg); }
-  85% { transform: rotate(10deg); }
-  88% { transform: rotate(-45deg); }
-  91% { transform: rotate(10deg); }
-  100% { transform: rotate(-30deg); }
+  // Flying out — flapping (big strokes)
+  68% { transform: rotate(-60deg); }
+  71% { transform: rotate(10deg); }
+  74% { transform: rotate(-60deg); }
+  77% { transform: rotate(10deg); }
+  80% { transform: rotate(-60deg); }
+  83% { transform: rotate(10deg); }
+  86% { transform: rotate(-60deg); }
+  89% { transform: rotate(10deg); }
+  92% { transform: rotate(-60deg); }
+  100% { transform: rotate(-40deg); }
 }
 
-// --- Legs: hidden in flight, visible when standing ---
+// --- Legs: hidden in flight, snap-visible when standing ---
 @keyframes doveLegShow {
-  0%, 14% { opacity: 0; }
-  18% { opacity: 1; }
+  0%, 14.9% { opacity: 0; }
+  15% { opacity: 1; }
   66% { opacity: 1; }
-  72%, 100% { opacity: 0; }
+  67%, 100% { opacity: 0; }
 }
 
 .dove-animation {
@@ -505,8 +501,8 @@
 }
 
 .dove-wing {
-  transform-box: fill-box;
-  transform-origin: right bottom;
+  // Explicit SVG viewport coordinates — fill-box calculates wrong origin on curves
+  transform-origin: 44px 44px;
 }
 
 .dove-legs {
@@ -520,11 +516,12 @@
   }
 
   .dove-wing {
-    animation: doveWingFlap 14s ease-in-out 1s forwards;
+    // Linear timing ensures rapid keyframe flaps are visually crisp
+    animation: doveWingFlap 14s linear 1s forwards;
   }
 
   .dove-legs {
-    animation: doveLegShow 14s ease-in-out 1s forwards;
+    animation: doveLegShow 14s linear 1s forwards;
   }
 }
 

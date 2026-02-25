@@ -73,16 +73,8 @@
     </defs>
   </svg>
 
-  <!-- Page-wide floating bubbles -->
+  <!-- Page-wide floating bubbles (10 — kept lean for memory) -->
   <div class="page-bubbles" aria-hidden="true">
-    <span class="page-bubble"></span>
-    <span class="page-bubble"></span>
-    <span class="page-bubble"></span>
-    <span class="page-bubble"></span>
-    <span class="page-bubble"></span>
-    <span class="page-bubble"></span>
-    <span class="page-bubble"></span>
-    <span class="page-bubble"></span>
     <span class="page-bubble"></span>
     <span class="page-bubble"></span>
     <span class="page-bubble"></span>
@@ -99,28 +91,31 @@
   {% if page.url == '/' %}
   <div class="dove-animation" aria-hidden="true">
     <svg class="dove-svg" viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg">
-      <!-- Body -->
-      <ellipse cx="55" cy="46" rx="22" ry="14" fill="currentColor" opacity="0.95"/>
+      <!-- Tail feathers (behind body) -->
+      <path d="M33,44 Q16,36 8,44 Q18,43 30,47" fill="currentColor" opacity="0.8"/>
+      <path d="M33,48 Q12,42 6,52 Q16,49 30,51" fill="currentColor" opacity="0.7"/>
+      <path d="M35,42 Q20,32 14,38 Q22,40 32,44" fill="currentColor" opacity="0.75"/>
+      <!-- Body — slightly egg-shaped -->
+      <ellipse cx="56" cy="46" rx="22" ry="13" fill="currentColor" opacity="0.95"/>
+      <!-- Wing (big, visible, on top of body) -->
+      <path class="dove-wing" d="M44,44 Q18,6 4,18 Q22,30 40,44" fill="currentColor" opacity="0.9"/>
+      <!-- Chest highlight -->
+      <ellipse cx="64" cy="48" rx="8" ry="7" fill="currentColor" opacity="0.4"/>
       <!-- Neck -->
-      <path d="M67,40 Q74,34 75,28" stroke="currentColor" stroke-width="9" fill="none" stroke-linecap="round" opacity="0.92"/>
+      <path d="M68,40 Q75,33 76,27" stroke="currentColor" stroke-width="9" fill="none" stroke-linecap="round" opacity="0.92"/>
       <!-- Head -->
-      <circle cx="76" cy="26" r="10" fill="currentColor" opacity="0.95"/>
-      <!-- Beak -->
-      <path d="M86,25 L95,29 L86,31" fill="#c8892a"/>
+      <circle cx="77" cy="25" r="10" fill="currentColor" opacity="0.95"/>
+      <!-- Beak — slim, dove-like -->
+      <path d="M87,24 L96,28 L87,30" fill="#d4922a"/>
       <!-- Eye -->
-      <circle cx="81" cy="23.5" r="2" fill="#1a1a1a"/>
-      <circle cx="81.6" cy="23" r="0.6" fill="white"/>
-      <!-- Wing -->
-      <path class="dove-wing" d="M42,44 Q24,14 12,22 Q28,32 38,42" fill="currentColor" opacity="0.88"/>
-      <!-- Tail feathers -->
-      <path d="M33,44 Q16,37 10,45 Q20,43 30,47" fill="currentColor" opacity="0.8"/>
-      <path d="M33,48 Q14,43 8,52 Q18,49 30,51" fill="currentColor" opacity="0.72"/>
-      <!-- Legs with 3-toed feet -->
+      <circle cx="81" cy="23" r="1.8" fill="#1a1a1a"/>
+      <circle cx="81.5" cy="22.5" r="0.5" fill="white"/>
+      <!-- Legs with feet -->
       <g class="dove-legs">
-        <line x1="48" y1="58" x2="45" y2="76" stroke="#9a8070" stroke-width="2" stroke-linecap="round"/>
-        <path d="M45,76 L40,81 M45,76 L45,82 M45,76 L50,81" stroke="#9a8070" stroke-width="1.4" fill="none" stroke-linecap="round"/>
-        <line x1="62" y1="57" x2="65" y2="76" stroke="#9a8070" stroke-width="2" stroke-linecap="round"/>
-        <path d="M65,76 L60,81 M65,76 L65,82 M65,76 L70,81" stroke="#9a8070" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+        <line x1="49" y1="57" x2="46" y2="76" stroke="#9a8070" stroke-width="2" stroke-linecap="round"/>
+        <path d="M46,76 L41,80 M46,76 L46,82 M46,76 L51,80" stroke="#9a8070" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+        <line x1="63" y1="56" x2="66" y2="76" stroke="#9a8070" stroke-width="2" stroke-linecap="round"/>
+        <path d="M66,76 L61,80 M66,76 L66,82 M66,76 L71,80" stroke="#9a8070" stroke-width="1.3" fill="none" stroke-linecap="round"/>
       </g>
     </svg>
   </div>

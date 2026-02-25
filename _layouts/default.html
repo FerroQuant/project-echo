@@ -15,6 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="dns-prefetch" href="https://www.facebook.com">
+  <link rel="dns-prefetch" href="https://www.google.com">
 
   <!-- Google Fonts — swap prevents FOIT (flash of invisible text) -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;600;700&display=swap"
@@ -58,7 +59,7 @@
 </head>
 <body>
   <!-- SVG water ripple filter for logo animation -->
-  <svg width="0" height="0" style="position:absolute;" aria-hidden="true">
+  <svg class="sr-only" aria-hidden="true">
     <defs>
       <filter id="water-filter" x="-3%" y="-3%" width="106%" height="106%">
         <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="2" seed="1">
@@ -100,8 +101,5 @@
 
   <!-- Facebook Live auto-detection -->
   <script src="{{ '/assets/js/live-status.js' | relative_url }}" defer></script>
-
-  <!-- Back-to-top button visibility -->
-  <script src="{{ '/assets/js/back-to-top.js' | relative_url }}" defer></script>
 </body>
 </html>

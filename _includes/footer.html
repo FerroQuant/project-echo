@@ -107,6 +107,13 @@
 
   <!-- Footer bottom bar -->
   <div class="footer-bottom">
-    <p>{% assign current_year = 'now' | date: "%Y" %}Registered Charity No. 1067611 &nbsp;&middot;&nbsp; &copy; {{ current_year }} {{ site.title }}. All rights reserved. &nbsp;&middot;&nbsp; <a href="{{ '/privacy-policy/' | relative_url }}">Privacy Policy</a> <span aria-hidden="true">|</span> <a href="{{ '/disclaimer/' | relative_url }}">Disclaimer</a> <span aria-hidden="true">|</span> <a href="{{ '/safeguarding/' | relative_url }}">Safeguarding</a></p>
+    <p>{% assign current_year = 'now' | date: "%Y" %}Registered Charity No. 1067611 &nbsp;&middot;&nbsp; &copy; {{ current_year }} {{ site.title }}. All rights reserved.</p>
+    <nav class="footer-bottom__links" aria-label="Legal">
+      <a href="{{ '/privacy-policy/' | relative_url }}">Privacy Policy</a>
+      <span aria-hidden="true">|</span>
+      <a href="{{ '/disclaimer/' | relative_url }}">Disclaimer</a>
+      <span aria-hidden="true">|</span>
+      <a href="{{ '/safeguarding/' | relative_url }}">Safeguarding</a>
+    </nav>
   </div>
 </footer>

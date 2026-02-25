@@ -310,6 +310,7 @@
   color: $white;
   border: none;
   cursor: pointer;
+  touch-action: manipulation;
   box-shadow: $shadow-md;
   display: flex;
   align-items: center;
@@ -459,6 +460,28 @@
   gap: $spacing-md;
   justify-content: center;
   margin-bottom: $spacing-xl;
+}
+
+.error-page__search {
+  display: flex;
+  gap: $spacing-sm;
+  max-width: 400px;
+  margin: $spacing-md auto 0;
+
+  input[type="search"] {
+    flex: 1;
+    padding: $spacing-sm $spacing-md;
+    border: 2px solid $border-color;
+    border-radius: $border-radius;
+    font-size: $text-base;
+    font-family: $font-body;
+
+    &:focus {
+      outline: none;
+      border-color: $primary;
+      box-shadow: 0 0 0 3px rgba($primary, 0.15);
+    }
+  }
 }
 
 // -----------------------------------------------------------------------------

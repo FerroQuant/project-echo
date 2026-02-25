@@ -101,4 +101,20 @@
       for (var j = 0; j < fadeEls.length; j++) { observer.observe(fadeEls[j]); }
     }
   }
+
+  // ── Back-to-top button ─────────────────────────────────────────────
+  var topBtn = document.getElementById('back-to-top');
+  if (topBtn) {
+    var topVisible = false;
+    window.addEventListener('scroll', function () {
+      var show = window.scrollY > 400;
+      if (show !== topVisible) {
+        topVisible = show;
+        topBtn.classList.toggle('is-visible', show);
+      }
+    }, { passive: true });
+    topBtn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 })();

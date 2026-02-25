@@ -28,9 +28,12 @@ sitemap: false
       <a href="{{ '/contact/' | relative_url }}" class="btn btn--outline-primary">Contact Us</a>
     </div>
 
-    <p>
-      Or try <a href="{{ '/search/' | relative_url }}">searching the site</a>.
-    </p>
+    <p>Or try searching:</p>
+    <form action="{{ '/search/' | relative_url }}" method="get" role="search" class="error-page__search">
+      <label for="error-search" class="sr-only">Search the site</label>
+      <input type="search" id="error-search" name="q" placeholder="Search&hellip;" autocomplete="off">
+      <button type="submit" class="btn btn--primary">Search</button>
+    </form>
 
   </div>
 </section>

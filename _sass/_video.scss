@@ -131,6 +131,9 @@
   max-height: 500px;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: $border-color transparent;
 }
 
 .transcript-segment {
@@ -209,6 +212,7 @@
   position: relative;
   width: 100%;
   cursor: pointer;
+  touch-action: manipulation;
   overflow: hidden;
   border-radius: $border-radius-lg;
   background-color: $primary-dark;

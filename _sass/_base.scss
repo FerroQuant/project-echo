@@ -67,6 +67,8 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
   color: $primary-dark;
   margin-bottom: $spacing-md;
+  text-rendering: optimizeLegibility;
+  text-wrap: balance;
 }
 
 h1 { font-size: $text-4xl; }
@@ -99,6 +101,7 @@ p {
 a {
   color: $primary;
   text-decoration: underline;
+  touch-action: manipulation;
   transition: color $transition-fast;
 
   &:hover {
@@ -234,6 +237,7 @@ hr {
   border: 2px solid transparent;
   border-radius: $border-radius;
   cursor: pointer;
+  touch-action: manipulation;
   transition: background-color $transition-fast, color $transition-fast, border-color $transition-fast, box-shadow $transition-fast;
 
   &:focus-visible {

@@ -256,3 +256,16 @@
     }
   }
 }
+
+.footer-bottom__links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: $spacing-sm;
+  margin-top: $spacing-xs;
+  font-size: $text-sm;
+
+  span {
+    color: rgba($white, 0.4);
+  }
+}

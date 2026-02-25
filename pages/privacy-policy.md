@@ -52,7 +52,8 @@ Our website uses the following third-party services that may process your data:
 | [Cloudflare Turnstile](https://www.cloudflare.com/products/turnstile/) | CAPTCHA protection on forms | [cloudflare.com/privacypolicy](https://www.cloudflare.com/privacypolicy/) |
 | [Google Maps](https://maps.google.com) | Embedded map on contact page | [google.com/privacy](https://policies.google.com/privacy) |
 | [Facebook](https://www.facebook.com) | Embedded video on homepage | [facebook.com/privacy](https://www.facebook.com/privacy/policy/) |
-| [Cloudflare Pages](https://pages.cloudflare.com) | Website hosting, CDN, and security | [cloudflare.com/privacypolicy](https://www.cloudflare.com/privacypolicy/) |
+| [GitHub Pages](https://pages.github.com) | Website hosting | [github.com/privacy](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement) |
+| [Cloudflare](https://www.cloudflare.com) | DNS and security | [cloudflare.com/privacypolicy](https://www.cloudflare.com/privacypolicy/) |
 
 ## Cookies
 

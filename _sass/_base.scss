@@ -161,12 +161,16 @@ hr {
   padding-top: $spacing-3xl;
   padding-bottom: $spacing-3xl;
   background-color: $bg;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
 }
 
 .section--alt {
   padding-top: $spacing-3xl;
   padding-bottom: $spacing-3xl;
   background-color: $bg-alt;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
 }
 
 // -----------------------------------------------------------------------------

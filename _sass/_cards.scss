@@ -32,6 +32,7 @@
   transition: box-shadow $transition-normal, transform $transition-normal;
   display: flex;
   flex-direction: column;
+  contain: layout style;
 
   @media (prefers-reduced-motion: no-preference) {
     &:hover {

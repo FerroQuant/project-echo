@@ -15,6 +15,9 @@ node_modules/
 credentials.json
 service-account*.json
 
+# Cloudflare Wrangler cache
+.wrangler/
+
 # IDE
 .idea/
 .vscode/

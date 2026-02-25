@@ -25,14 +25,14 @@
   "profile_picture": {
     "url_200": "https://graph.facebook.com/thewellreading/picture?type=large",
     "note": "Blue circular logo with white cross/plus symbol on light blue background",
-    "local_200": "assets/images/facebook/profile_200x200.png",
-    "local_388": "assets/images/facebook/profile_388x388.png"
+    "local_200": "",
+    "local_388": ""
   },
 
   "cover_photo": {
     "facebook_url": "https://www.facebook.com/photo/?fbid=240297468327082&set=a.240297448327084",
     "description": "Grid collage of approximately 30+ church congregation members, each in their own video call tile, worshipping and singing from home. Diverse, multicultural congregation. Posted January 2023.",
-    "local_screenshot": "assets/images/facebook/screenshot_cover_photo_clean.png"
+    "local_screenshot": ""
   },
 
   "recent_videos": [
@@ -171,7 +171,7 @@
         "filename": "484332214_686927730330718"
       }
     ],
-    "photo_grid_screenshot": "assets/images/facebook/screenshot_photos_grid.png",
+    "photo_grid_screenshot": "",
     "photo_grid_description": "Grid shows: person speaking at front (preacher), woman in red top, Christmas/red decoration, woman in orange coat with Santa hat singing, the Well Welcome banner with Christmas tree, Christmas gathering at tables, congregation seated, congregation around tables, stairs with congregation, announcement graphic with cross (Reading Passion Play 2024), Christmas service graphic with star, daily devotion graphics (Morning Devotion Word Based), the Well logo (blue circle), group video call grid, daily devotional theme graphics (Abiding with Christ, Spiritual Growth, Receiving, Dealing with Failure, The Flesh, Speech), event poster (Fasting and Prayer - 2 Chronicles 20:1-37), The Mind of Christ graphic, woman speaker, Fasting and Praying Luke 12:35-48 poster"
   },
 
@@ -205,12 +205,5 @@
     "facebook_page_id": "100070404915135"
   },
 
-  "screenshots": {
-    "main_page": "assets/images/facebook/screenshot_main.png",
-    "full_page": "assets/images/facebook/screenshot_page_clean.png",
-    "photos_grid": "assets/images/facebook/screenshot_photos_grid.png",
-    "cover_photo": "assets/images/facebook/screenshot_cover_photo_clean.png",
-    "videos_page": "assets/images/facebook/screenshot_videos.png",
-    "video_post": "assets/images/facebook/screenshot_video_post.png"
-  }
+  "screenshots_note": "Reference screenshots removed from repo to save space. Re-capture from Facebook if needed."
 }

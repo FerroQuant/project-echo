@@ -42,6 +42,12 @@ description: "Watch sermons and messages from The Well Church Reading. Browse ou
              role="button"
              tabindex="0"
              aria-label="Play video: {{ sermon.title }} — {{ sermon.date | date: '%-d %B %Y' }}">
+          <img src="{{ '/assets/images/church/hero.jpg' | relative_url }}"
+               alt=""
+               class="video-facade__thumb"
+               loading="lazy"
+               decoding="async">
+          <span class="video-facade__label">{{ sermon.title }}<br>{{ sermon.date | date: "%-d %B %Y" }}</span>
         </div>
         <div class="card__body">
           <p class="card__date">{{ sermon.date | date: "%-d %B %Y" }}</p>

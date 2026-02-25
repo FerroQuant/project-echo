@@ -80,18 +80,27 @@
   width: 100%;
   overflow: hidden;
   line-height: 0;
-  margin: 0;
+  // Overlap adjacent sections to eliminate dead space
+  margin-top: -30px;
+  margin-bottom: -30px;
+  z-index: 2;
   // Default height — override with modifier
   height: 60px;
 
   @media (min-width: $bp-md) {
     height: 80px;
+    margin-top: -40px;
+    margin-bottom: -40px;
   }
 
   &--tall {
     height: 80px;
+    margin-top: -40px;
+    margin-bottom: -40px;
     @media (min-width: $bp-md) {
       height: 110px;
+      margin-top: -55px;
+      margin-bottom: -55px;
     }
   }
 

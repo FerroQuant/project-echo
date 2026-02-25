@@ -3,7 +3,7 @@ layout: page
 title: "About Us"
 subtitle: "Who we are and what we believe"
 permalink: /about/
-description: "Learn about The Well Church — our story, vision, values, and community in Reading."
+description: "The Well Church is a multicultural community church in Reading, Berkshire. Learn about our story, values, refugee support, kids ministry, and Amharic-speaking congregation."
 ---
 
 ## Welcome

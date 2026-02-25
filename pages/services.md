@@ -3,7 +3,7 @@ layout: page
 title: "Services"
 subtitle: "Plan your visit"
 permalink: /services/
-description: "Join us for Sunday services at The Well Church in Reading. Find out what to expect and how to get here."
+description: "Sunday worship at 10:30am and Thursday prayer at The Well Church, Dawlish Road, Reading. Bilingual English and Amharic services, live-streamed on Facebook."
 ---
 
 ## Sunday Morning Service

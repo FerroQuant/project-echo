@@ -21,6 +21,11 @@
   padding: 0;
 }
 
+// Ensure [hidden] attribute always hides, even when CSS sets display
+[hidden] {
+  display: none !important;
+}
+
 // -----------------------------------------------------------------------------
 // Body
 // -----------------------------------------------------------------------------

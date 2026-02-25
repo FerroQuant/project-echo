@@ -19,7 +19,7 @@ sass:
 collections:
   sermons:
     output: true
-    permalink: /sermons/:slug/
+    permalink: /sermons/:year-:month-:day-:slug/
   events:
     output: true
     permalink: /events/:slug/

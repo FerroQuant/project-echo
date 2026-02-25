@@ -484,19 +484,6 @@
   }
 }
 
-// -----------------------------------------------------------------------------
-// Map embed
-// -----------------------------------------------------------------------------
-.map-embed {
-  border-radius: $border-radius-lg;
-  overflow: hidden;
-  box-shadow: $shadow-md;
-
-  iframe {
-    display: block;
-  }
-}
-
 .map-iframe {
   border: 0;
   border-radius: $border-radius-lg;

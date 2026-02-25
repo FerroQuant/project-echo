@@ -24,3 +24,10 @@
 
 /feed.xml
   Cache-Control: public, max-age=3600
+
+/assets/images/favicon.*
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.html
+  X-Content-Type-Options: nosniff
+  Link: </assets/css/main.css?v=7>; rel=preload; as=style

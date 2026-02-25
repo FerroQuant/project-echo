@@ -3,7 +3,7 @@
   X-Frame-Options: SAMEORIGIN
   X-XSS-Protection: 1; mode=block
   Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()
   Strict-Transport-Security: max-age=31536000; includeSubDomains
   Content-Security-Policy: default-src 'self'; script-src 'self' https://challenges.cloudflare.com https://connect.facebook.net; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; frame-src https://www.facebook.com https://www.google.com https://challenges.cloudflare.com; img-src 'self' data: https://www.facebook.com https://*.fbcdn.net; connect-src 'self' https://thewell-form-handler.thewell-church.workers.dev; base-uri 'self'; form-action 'self' https://thewell-form-handler.thewell-church.workers.dev; upgrade-insecure-requests
 
@@ -18,3 +18,9 @@
 
 /assets/images/church/*
   Cache-Control: public, max-age=604800
+
+/assets/search-index.json
+  Cache-Control: public, max-age=3600
+
+/feed.xml
+  Cache-Control: public, max-age=3600

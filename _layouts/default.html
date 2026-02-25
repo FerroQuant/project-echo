@@ -23,7 +23,7 @@
         rel="stylesheet">
 
   <!-- Main stylesheet -->
-  <link rel="stylesheet" href="{{ '/assets/css/main.css?v=11' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css?v=12' | relative_url }}">
 
   <!-- Preload hero image on homepage for faster LCP -->
   {% if page.url == '/' %}
@@ -87,7 +87,33 @@
     <span class="page-bubble"></span>
     <span class="page-bubble"></span>
     <span class="page-bubble"></span>
+    <span class="page-bubble"></span>
+    <span class="page-bubble"></span>
+    <span class="page-bubble"></span>
+    <span class="page-bubble"></span>
+    <span class="page-bubble"></span>
+    <span class="page-bubble"></span>
   </div>
+
+  <!-- Dove animation — flies in, drinks from the well, flies off (homepage only) -->
+  {% if page.url == '/' %}
+  <div class="dove-animation" aria-hidden="true">
+    <svg class="dove-svg" viewBox="0 0 80 60" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Body -->
+      <ellipse cx="35" cy="35" rx="14" ry="8" fill="currentColor" stroke="none" opacity="0.9"/>
+      <!-- Head -->
+      <circle cx="50" cy="28" r="6" fill="currentColor" stroke="none" opacity="0.9"/>
+      <!-- Beak -->
+      <path d="M56,28 L62,30 L56,31" fill="currentColor" stroke="none"/>
+      <!-- Eye -->
+      <circle cx="52" cy="27" r="1.2" fill="white"/>
+      <!-- Wing -->
+      <path class="dove-wing" d="M28,32 Q15,10 8,15 Q18,22 25,28" fill="currentColor" stroke="none" opacity="0.85"/>
+      <!-- Tail -->
+      <path d="M21,35 Q10,30 8,38 Q15,36 21,37" fill="currentColor" stroke="none" opacity="0.8"/>
+    </svg>
+  </div>
+  {% endif %}
 
   <!-- Skip to main content (screen reader / keyboard nav) -->
   <a href="#main-content" class="skip-link">Skip to main content</a>

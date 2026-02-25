@@ -367,10 +367,127 @@
   .page-bubble:nth-child(10) { left: 88%; width: 20px; height: 20px; animation-duration: 20s; animation-delay: 1s; }
   .page-bubble:nth-child(11) { left: 8%;  width: 18px; height: 18px; animation-duration: 21s; animation-delay: 9s; }
   .page-bubble:nth-child(12) { left: 95%; width: 12px; height: 12px; animation-duration: 23s; animation-delay: 11s; }
+  .page-bubble:nth-child(13) { left: 18%; width: 24px; height: 24px; animation-duration: 17s; animation-delay: 0s; }
+  .page-bubble:nth-child(14) { left: 40%; width: 15px; height: 15px; animation-duration: 23s; animation-delay: 4s; }
+  .page-bubble:nth-child(15) { left: 58%; width: 20px; height: 20px; animation-duration: 16s; animation-delay: 2s; }
+  .page-bubble:nth-child(16) { left: 78%; width: 28px; height: 28px; animation-duration: 19s; animation-delay: 6s; }
+  .page-bubble:nth-child(17) { left: 50%; width: 12px; height: 12px; animation-duration: 24s; animation-delay: 8s; }
+  .page-bubble:nth-child(18) { left: 30%; width: 22px; height: 22px; animation-duration: 15s; animation-delay: 1s; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .page-bubbles {
+    display: none;
+  }
+}
+
+// =============================================================================
+// DOVE ANIMATION — flies in, drinks from the well, flies off
+// Plays once on page load. Dove is a symbol of the Holy Spirit.
+// =============================================================================
+
+@keyframes doveFlightPath {
+  0% {
+    // Off-screen right, high up
+    transform: translate(110vw, -20vh) scaleX(-1) rotate(-15deg);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  20% {
+    // Swooping in toward the wave area
+    transform: translate(55vw, 60vh) scaleX(-1) rotate(5deg);
+  }
+  30% {
+    // Landed near the wave — settled
+    transform: translate(50vw, 65vh) scaleX(-1) rotate(0deg);
+  }
+  // Drinking bobs
+  35% { transform: translate(50vw, 65vh) scaleX(-1) rotate(20deg); }
+  38% { transform: translate(50vw, 65vh) scaleX(-1) rotate(0deg); }
+  42% { transform: translate(50vw, 65vh) scaleX(-1) rotate(22deg); }
+  45% { transform: translate(50vw, 65vh) scaleX(-1) rotate(0deg); }
+  50% { transform: translate(50vw, 65vh) scaleX(-1) rotate(18deg); }
+  53% { transform: translate(50vw, 65vh) scaleX(-1) rotate(0deg); }
+  // Pause, look around
+  60% {
+    transform: translate(50vw, 65vh) scaleX(-1) rotate(-5deg);
+  }
+  // Take off — fly left and upward
+  70% {
+    transform: translate(30vw, 40vh) scaleX(-1) rotate(-10deg);
+  }
+  85% {
+    transform: translate(-5vw, -10vh) scaleX(-1) rotate(-20deg);
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-30vw, -30vh) scaleX(-1) rotate(-25deg);
+    opacity: 0;
+  }
+}
+
+@keyframes doveWingFlap {
+  0%, 30%, 53%, 60% {
+    // Wings folded while landed/drinking
+    transform: rotate(0deg);
+  }
+  5%, 15%, 25% {
+    // Flying in — wings flapping
+    transform: rotate(-40deg);
+  }
+  10%, 20% {
+    transform: rotate(10deg);
+  }
+  65%, 75%, 85% {
+    // Flying out — wings flapping
+    transform: rotate(-40deg);
+  }
+  70%, 80% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(-30deg);
+  }
+}
+
+.dove-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 70px;
+  height: 52px;
+  z-index: 100;
+  pointer-events: none;
+  color: $white;
+  filter: drop-shadow(0 2px 8px rgba($primary-dark, 0.3));
+}
+
+.dove-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.dove-wing {
+  transform-origin: 28px 32px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .dove-animation {
+    animation: doveFlightPath 10s ease-in-out 1s forwards;
+    opacity: 0;
+  }
+
+  .dove-wing {
+    animation: doveWingFlap 10s ease-in-out 1s forwards;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dove-animation {
     display: none;
   }
 }

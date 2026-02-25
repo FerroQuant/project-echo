@@ -29,7 +29,13 @@
   grid-template-columns: 1fr;
   gap: $spacing-lg;
 
-  // Tablet: 2 columns
+  // Small tablet: 2 columns
+  @media (min-width: #{$bp-sm}) {
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-lg;
+  }
+
+  // Desktop: 4 columns
   @media (min-width: #{$bp-md}) {
     grid-template-columns: 2fr 1fr 1fr 1fr;
     padding-left: $spacing-lg;

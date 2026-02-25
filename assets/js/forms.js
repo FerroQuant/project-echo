@@ -295,6 +295,51 @@
     }
   }
 
-  // Expose globally for inline use in individual page scripts
+  // ─── Auto-initialize forms with data attributes ───────────────────────────
+  // Any <form data-form-endpoint="..."> will be auto-initialized.
+  // Supported data attributes:
+  //   data-form-endpoint  (required) — Worker URL
+  //   data-form-type      — 'contact', 'prayer', 'building_hire'
+  //   data-honeypot-name  — honeypot field name (default: '_honeypot')
+  //   data-thankyou-id    — ID of thank-you element
+  //   data-form-wrap-id   — ID of form wrapper element
+  //   data-phone-field-id — ID of phone field to validate
+  //   data-subject-param  — URL param name to pre-select a <select> field
+  var autoForms = document.querySelectorAll('form[data-form-endpoint]');
+  for (var k = 0; k < autoForms.length; k++) {
+    (function (formEl) {
+      var endpoint = formEl.getAttribute('data-form-endpoint');
+      if (!endpoint) return;
+
+      handleFormSubmit(formEl, endpoint, {
+        formType:     formEl.getAttribute('data-form-type') || 'contact',
+        honeypotName: formEl.getAttribute('data-honeypot-name') || '_honeypot',
+        thankyouId:   formEl.getAttribute('data-thankyou-id') || null,
+        formWrapId:   formEl.getAttribute('data-form-wrap-id') || null,
+        phoneFieldId: formEl.getAttribute('data-phone-field-id') || null
+      });
+
+      // Pre-select subject from URL param (e.g. /contact/?subject=worship-team)
+      var subjectParam = formEl.getAttribute('data-subject-param');
+      if (subjectParam) {
+        var params = new URLSearchParams(window.location.search);
+        var subject = params.get(subjectParam);
+        if (subject) {
+          var subjectMap = formEl.getAttribute('data-subject-map');
+          if (subjectMap) {
+            try {
+              var map = JSON.parse(subjectMap);
+              var select = formEl.querySelector('select[name="enquiry_type"]');
+              if (select && map[subject]) {
+                select.value = map[subject];
+              }
+            } catch (e) { /* ignore parse errors */ }
+          }
+        }
+      }
+    })(autoForms[k]);
+  }
+
+  // Keep global API for backwards compatibility
   window.WellForms = { handleFormSubmit: handleFormSubmit };
 })();

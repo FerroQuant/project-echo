@@ -24,7 +24,12 @@ description: "Submit a prayer request to The Well Church. We believe in the powe
 
       <!-- Prayer request form -->
       <div class="prayer-form" id="prayer-form-wrap">
-        <form id="prayer-form" novalidate>
+        <form id="prayer-form" novalidate
+              data-form-endpoint="https://thewell-form-handler.thewell-church.workers.dev"
+              data-form-type="prayer"
+              data-thankyou-id="prayer-thankyou"
+              data-form-wrap-id="prayer-form-wrap"
+              data-phone-field-id="prayer-phone">
 
           <!-- Honeypot anti-spam field: hidden from real users, bots fill it in -->
           <input
@@ -127,19 +132,3 @@ description: "Submit a prayer request to The Well Church. We believe in the powe
 
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <script src="{{ '/assets/js/forms.js' | relative_url }}" defer></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var form = document.getElementById('prayer-form');
-    if (!form || typeof WellForms === 'undefined') return;
-
-    var FORM_ENDPOINT = 'https://thewell-form-handler.thewell-church.workers.dev';
-
-    WellForms.handleFormSubmit(form, FORM_ENDPOINT, {
-      formType:     'prayer',
-      honeypotName: '_honeypot',
-      thankyouId:   'prayer-thankyou',
-      formWrapId:   'prayer-form-wrap',
-      phoneFieldId: 'prayer-phone'
-    });
-  });
-</script>

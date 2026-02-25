@@ -45,7 +45,14 @@ description: "Get in touch with The Well Church in Reading. Find us, send a mess
       <div class="contact-form-wrap" id="contact-form-wrap">
         <h2>Send a Message</h2>
 
-        <form class="contact-form" id="contact-form" novalidate>
+        <form class="contact-form" id="contact-form" novalidate
+              data-form-endpoint="https://thewell-form-handler.thewell-church.workers.dev"
+              data-form-type="contact"
+              data-thankyou-id="contact-thankyou"
+              data-form-wrap-id="contact-form-wrap"
+              data-phone-field-id="contact-phone"
+              data-subject-param="subject"
+              data-subject-map='{"worship-team":"Worship Team / Musician","sound-desk":"Sound Desk Volunteer","childrens-ministry":"Children&#39;s Ministry Worker","volunteering":"Volunteering","giving":"Giving","small-groups":"Small Groups","general":"General Enquiry"}'>
 
           <!-- Honeypot anti-spam field: hidden from real users, bots fill it in -->
           <input
@@ -179,38 +186,3 @@ description: "Get in touch with The Well Church in Reading. Find us, send a mess
 
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <script src="{{ '/assets/js/forms.js' | relative_url }}" defer></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var form = document.getElementById('contact-form');
-    if (!form || typeof WellForms === 'undefined') return;
-
-    var FORM_ENDPOINT = 'https://thewell-form-handler.thewell-church.workers.dev';
-
-    WellForms.handleFormSubmit(form, FORM_ENDPOINT, {
-      formType:     'contact',
-      honeypotName: '_honeypot',
-      thankyouId:   'contact-thankyou',
-      formWrapId:   'contact-form-wrap',
-      phoneFieldId: 'contact-phone'
-    });
-
-    // Pre-select enquiry type from URL parameter, e.g. /contact/?subject=worship-team
-    var params = new URLSearchParams(window.location.search);
-    var subject = params.get('subject');
-    if (subject) {
-      var subjectMap = {
-        'worship-team': 'Worship Team / Musician',
-        'sound-desk':   'Sound Desk Volunteer',
-        'childrens-ministry': "Children's Ministry Worker",
-        'volunteering': 'Volunteering',
-        'giving':       'Giving',
-        'small-groups': 'Small Groups',
-        'general':      'General Enquiry'
-      };
-      var select = document.getElementById('contact-subject');
-      if (select && subjectMap[subject]) {
-        select.value = subjectMap[subject];
-      }
-    }
-  });
-</script>

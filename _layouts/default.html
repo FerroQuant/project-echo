@@ -19,11 +19,11 @@
         rel="stylesheet">
 
   <!-- Main stylesheet -->
-  <link rel="stylesheet" href="{{ '/assets/css/main.css?v=5' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css?v=6' | relative_url }}">
 
   <!-- Preload hero image on homepage for faster LCP -->
   {% if page.url == '/' %}
-  <link rel="preload" as="image" href="{{ '/assets/images/church/hero.jpg' | relative_url }}">
+  <link rel="preload" as="image" href="{{ '/assets/images/church/hero.jpg' | relative_url }}" fetchpriority="high">
   {% endif %}
 
   <!-- Copy protection -->
@@ -106,8 +106,6 @@
   <script src="{{ '/assets/js/live-status.js' | relative_url }}" defer></script>
 
   <!-- Back-to-top button visibility -->
-  <script>
-  (function(){var b=document.getElementById('back-to-top');if(!b)return;var show=false;window.addEventListener('scroll',function(){var s=window.scrollY>400;if(s!==show){show=s;b.classList.toggle('is-visible',s);}},{passive:true});b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});})();
-  </script>
+  <script src="{{ '/assets/js/back-to-top.js' | relative_url }}" defer></script>
 </body>
 </html>

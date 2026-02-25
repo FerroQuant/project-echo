@@ -10,28 +10,19 @@
 
   var lunrIndex = null;
   var documents = {};
+  var debounceTimer = null;
 
   // -------------------------------------------------------------------------
-  // Load search index via XHR
+  // Load search index via fetch
   // -------------------------------------------------------------------------
   function loadIndex(callback) {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', searchForm.dataset.indexUrl || '/assets/search-index.json', true);
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState !== 4) return;
-      if (xhr.status === 200) {
-        var data;
-        try {
-          data = JSON.parse(xhr.responseText);
-        } catch (e) {
-          console.error('Failed to parse search index', e);
-          return;
-        }
-        // Store documents by id
+    var url = searchForm.dataset.indexUrl || '/assets/search-index.json';
+    fetch(url)
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
         data.forEach(function (doc) {
           documents[doc.id] = doc;
         });
-        // Build lunr index
         lunrIndex = lunr(function () {
           this.ref('id');
           this.field('title', { boost: 10 });
@@ -41,16 +32,70 @@
           }, this);
         });
         callback();
+      })
+      .catch(function (err) {
+        console.error('Failed to load search index', err);
+      });
+  }
+
+  // -------------------------------------------------------------------------
+  // Safely highlight matching terms using DOM nodes (no innerHTML)
+  // -------------------------------------------------------------------------
+  function appendHighlighted(parent, text, query) {
+    if (!query || !text) {
+      parent.appendChild(document.createTextNode(text || ''));
+      return;
+    }
+    var words = query.trim().split(/\s+/).filter(function (w) { return w.length > 1; });
+    if (!words.length) {
+      parent.appendChild(document.createTextNode(text));
+      return;
+    }
+    var pattern = new RegExp('(' + words.map(function (w) {
+      return w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }).join('|') + ')', 'gi');
+    var parts = text.split(pattern);
+    for (var i = 0; i < parts.length; i++) {
+      if (pattern.test(parts[i])) {
+        var mark = document.createElement('mark');
+        mark.textContent = parts[i];
+        parent.appendChild(mark);
+      } else {
+        parent.appendChild(document.createTextNode(parts[i]));
       }
-    };
-    xhr.send();
+      // Reset regex lastIndex since we're reusing it
+      pattern.lastIndex = 0;
+    }
+  }
+
+  // -------------------------------------------------------------------------
+  // Build a snippet around matching terms
+  // -------------------------------------------------------------------------
+  function buildSnippet(body, query) {
+    if (!body) return '';
+    var words = query.trim().split(/\s+/).filter(function (w) { return w.length > 1; });
+    if (!words.length) return body.substring(0, 200);
+
+    var lowerBody = body.toLowerCase();
+    var firstPos = -1;
+    for (var i = 0; i < words.length; i++) {
+      var pos = lowerBody.indexOf(words[i].toLowerCase());
+      if (pos !== -1 && (firstPos === -1 || pos < firstPos)) {
+        firstPos = pos;
+      }
+    }
+
+    if (firstPos === -1) return body.substring(0, 200);
+
+    var start = Math.max(0, firstPos - 60);
+    var end = Math.min(body.length, start + 200);
+    return (start > 0 ? '\u2026' : '') + body.substring(start, end) + (end < body.length ? '\u2026' : '');
   }
 
   // -------------------------------------------------------------------------
   // Render results
   // -------------------------------------------------------------------------
   function renderResults(query) {
-    // Clear previous results (safe DOM removal)
     while (resultsContainer.firstChild) {
       resultsContainer.removeChild(resultsContainer.firstChild);
     }
@@ -64,12 +109,16 @@
     try {
       hits = lunrIndex.search(query);
     } catch (e) {
-      hits = [];
+      try {
+        hits = lunrIndex.search(query + '*');
+      } catch (e2) {
+        hits = [];
+      }
     }
 
     if (countEl) {
       countEl.textContent = hits.length === 0
-        ? 'No results found.'
+        ? 'No results found for \u201c' + query + '\u201d'
         : hits.length + ' result' + (hits.length === 1 ? '' : 's') + ' for \u201c' + query + '\u201d';
     }
 
@@ -92,20 +141,20 @@
       var h3 = document.createElement('h3');
       var a = document.createElement('a');
       a.href = doc.url;
-      // External links (Facebook posts) open in new tab
       if (doc.url.indexOf('http') === 0) {
         a.target = '_blank';
         a.rel = 'noopener noreferrer';
       }
-      a.textContent = doc.title;
+      appendHighlighted(a, doc.title, query);
       h3.appendChild(a);
       article.appendChild(h3);
 
-      // Snippet
+      // Snippet with highlighted terms
       if (doc.body) {
         var p = document.createElement('p');
         p.className = 'search-result__snippet';
-        p.textContent = doc.body.substring(0, 180) + (doc.body.length > 180 ? '\u2026' : '');
+        var snippet = buildSnippet(doc.body, query);
+        appendHighlighted(p, snippet, query);
         article.appendChild(p);
       }
 
@@ -114,13 +163,9 @@
   }
 
   // -------------------------------------------------------------------------
-  // Form submit handler
+  // Search handler
   // -------------------------------------------------------------------------
-  function handleSearch(e) {
-    if (e) e.preventDefault();
-    var query = searchInput.value;
-
-    // Update URL without reloading
+  function doSearch(query) {
     if (window.history && window.history.replaceState) {
       var params = new URLSearchParams(window.location.search);
       if (query) {
@@ -140,7 +185,21 @@
     }
   }
 
-  searchForm.addEventListener('submit', handleSearch);
+  // Form submit
+  searchForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    clearTimeout(debounceTimer);
+    doSearch(searchInput.value);
+  });
+
+  // Live search-as-you-type with 300ms debounce
+  searchInput.addEventListener('input', function () {
+    clearTimeout(debounceTimer);
+    var query = searchInput.value;
+    debounceTimer = setTimeout(function () {
+      doSearch(query);
+    }, 300);
+  });
 
   // -------------------------------------------------------------------------
   // Run on load if query param is present

@@ -98,3 +98,11 @@
   line-height: 1.6;
   margin: 0;
 }
+
+// Highlighted search terms
+.search-result mark {
+  background-color: rgba($accent, 0.15);
+  color: inherit;
+  padding: 1px 2px;
+  border-radius: 2px;
+}

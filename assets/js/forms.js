@@ -217,6 +217,21 @@
         }
       }
 
+      // ── Required checkbox validation ────────────────────────────────────
+      var requiredCheckboxes = formEl.querySelectorAll('input[type="checkbox"][required]');
+      for (var c = 0; c < requiredCheckboxes.length; c++) {
+        var cb = requiredCheckboxes[c];
+        var cbLabel = cb.closest('label') || cb.parentNode;
+        if (!cb.checked) {
+          cbLabel.classList.add('checkbox-label--error');
+          showError(submitBtn, statusRegion, 'Please agree to the no-alcohol policy before submitting.');
+          cb.focus();
+          return;
+        } else {
+          cbLabel.classList.remove('checkbox-label--error');
+        }
+      }
+
       // ── Turnstile CAPTCHA check ─────────────────────────────────────────
       var turnstileResponse = formEl.querySelector('[name="cf-turnstile-response"]');
       if (turnstileResponse && !turnstileResponse.value) {
@@ -291,6 +306,18 @@
     for (var j = 0; j < allFields.length; j++) {
       allFields[j].addEventListener('input', function () {
         clearFieldError(this);
+      });
+    }
+
+    // Clear checkbox error styling on change
+    var checkboxes = formEl.querySelectorAll('input[type="checkbox"][required]');
+    for (var m = 0; m < checkboxes.length; m++) {
+      checkboxes[m].addEventListener('change', function () {
+        var lbl = this.closest('label') || this.parentNode;
+        if (this.checked) {
+          lbl.classList.remove('checkbox-label--error');
+          clearStatus(statusRegion);
+        }
       });
     }
   }

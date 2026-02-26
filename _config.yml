@@ -10,6 +10,7 @@ church:
   facebook: "https://www.facebook.com/thewellreading"
   map_lat: 51.4322331
   map_lng: -0.9635016
+  google_maps_key: "AIzaSyAqN_40Qp7XmBhm7QSUePybOZejBsJplig"
 
 markdown: kramdown
 permalink: pretty

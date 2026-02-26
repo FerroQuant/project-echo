@@ -357,8 +357,23 @@ layout: default
   </div>
 </section>
 
+{% comment %} 5b. Google Reviews {% endcomment %}
+{% include wave-animated.html fill="bg-alt" from="bg" %}
+<section class="section section--alt" aria-labelledby="reviews-heading">
+  <div class="container">
+    <h2 id="reviews-heading" class="section-heading">What People Are Saying</h2>
+    <p class="section-subtitle section-subtitle--center">
+      Real reviews from our community on Google
+    </p>
+    <div id="google-reviews"
+         data-endpoint="https://thewell-church.com/api/reviews"
+         style="display:none">
+    </div>
+  </div>
+</section>
+
 {% comment %} 6. Scripture Quote {% endcomment %}
-{% include wave-animated.html fill="bg-alt" from="bg" flip="true" %}
+{% include wave-animated.html fill="bg-alt" from="bg-alt" flip="true" %}
 <section class="section" aria-label="Scripture">
   <div class="container">
     <div class="scripture-quote fade-in">

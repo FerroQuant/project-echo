@@ -1,0 +1,18 @@
+name = "thewell-google-reviews"
+main = "src/index.js"
+compatibility_date = "2024-01-01"
+
+# Route: thewell-church.com/api/reviews*
+# Uncomment after enabling Cloudflare proxy (orange cloud) on the domain:
+# routes = [{ pattern = "thewell-church.com/api/reviews*", zone_name = "thewell-church.com" }]
+
+[[kv_namespaces]]
+binding = "REVIEWS_KV"
+id = "REPLACE_WITH_KV_NAMESPACE_ID"
+
+[vars]
+# Google Place ID for The Well Church, Dawlish Road, Reading
+PLACE_ID = "ChIJyQhsplqbdkgRV5n-XaVuVo4"
+
+# Secrets (set via `wrangler secret put`):
+# GOOGLE_API_KEY — Google Places API key (restricted to Places API)

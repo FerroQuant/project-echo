@@ -379,6 +379,12 @@
 // JS (fish.js) handles movement — CSS handles styling and animations.
 // =============================================================================
 
+// Subtle tail-swish — makes fish look alive while swimming
+@keyframes fishSwim {
+  0%, 100% { transform: scaleX(1) scaleY(1); }
+  50%      { transform: scaleX(0.96) scaleY(1.03); }
+}
+
 // Fish bubble rising animation
 @keyframes fishBubbleRise {
   0% {
@@ -392,8 +398,11 @@
 }
 
 .fish-tank {
-  position: fixed;
-  inset: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  // Height set dynamically by JS to match blue zone
   overflow: hidden;
   pointer-events: none;
   z-index: 1;
@@ -413,6 +422,12 @@
     height: auto;
     pointer-events: none;
     user-select: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .fish img {
+    animation: fishSwim 1.8s ease-in-out infinite;
   }
 }
 

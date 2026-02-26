@@ -4,6 +4,7 @@
  *
  * Uses photorealistic PNG images with transparent backgrounds.
  * All fish images face RIGHT — JS flips via scaleX(-1) when swimming left.
+ * Fish are confined to the hero / page-header blue zone at the top.
  */
 (function () {
   'use strict';
@@ -13,21 +14,7 @@
   var tank = document.querySelector('.fish-tank');
   if (!tank) return;
 
-  // ---- Configuration ----
-  var FISH_COUNT = window.innerWidth < 768 ? 4 : 7;
-  var MOUSE_RADIUS = 150;
-  var BASE_SPEED = 0.6;
-  var FLEE_FORCE = 0.18;
-  var EDGE_MARGIN = 80;
-  var EDGE_FORCE = 0.04;
-  var DAMPING = 0.992;
-  var MAX_SPEED = 3.5;
-  var BUBBLE_CHANCE = 0.003;
-  var MAX_BUBBLES = 15;
-  var DIR_CHANGE_MIN = 3000;
-  var DIR_CHANGE_MAX = 8000;
-
-  // ---- Fish image paths (all face RIGHT) ----
+  // ---- Fish image paths (all face RIGHT) — one of each, no duplicates ----
   var basePath = '/assets/images/fish/';
   var FISH_IMAGES = [
     'goldfish.png',
@@ -35,6 +22,30 @@
     'tiger-barb.png',
     'pink-snapper.png'
   ];
+
+  // ---- Configuration ----
+  var FISH_COUNT = FISH_IMAGES.length; // exactly one of each species
+  var MOUSE_RADIUS = 150;
+  var BASE_SPEED = 0.6;
+  var FLEE_FORCE = 0.18;
+  var EDGE_MARGIN = 60;
+  var EDGE_FORCE = 0.05;
+  var DAMPING = 0.992;
+  var MAX_SPEED = 3.5;
+  var BUBBLE_CHANCE = 0.003;
+  var MAX_BUBBLES = 15;
+  var DIR_CHANGE_MIN = 3000;
+  var DIR_CHANGE_MAX = 8000;
+
+  // ---- Determine the blue zone boundary (hero or page-header) ----
+  var blueZone = document.querySelector('.hero') || document.querySelector('.page-header');
+  var tankHeight = blueZone
+    ? blueZone.getBoundingClientRect().bottom + 60 // include wave overlap
+    : window.innerHeight * 0.5;
+
+  // Apply height to fish-tank so fish stay in the blue area
+  tank.style.height = tankHeight + 'px';
+  tank.style.bottom = 'auto';
 
   // ---- Mouse tracking ----
   var mouseX = -9999, mouseY = -9999;
@@ -65,7 +76,7 @@
   function rand(min, max) { return min + Math.random() * (max - min); }
 
   function createFish(i) {
-    var imgFile = FISH_IMAGES[i % FISH_IMAGES.length];
+    var imgFile = FISH_IMAGES[i]; // no modulo — each fish is unique
     var size = rand(48, 80);
     var el = document.createElement('div');
     el.className = 'fish';
@@ -84,8 +95,8 @@
 
     return {
       el: el,
-      x: rand(50, window.innerWidth - 50),
-      y: rand(50, window.innerHeight - 50),
+      x: rand(80, window.innerWidth - 80),
+      y: rand(40, tankHeight - 80),
       vx: Math.cos(angle) * speed,
       vy: Math.sin(angle) * speed,
       speed: speed,
@@ -97,7 +108,7 @@
   // ---- Animation loop ----
   function update() {
     var w = window.innerWidth;
-    var h = window.innerHeight;
+    var h = tankHeight; // constrain to blue zone, not full viewport
     var now = Date.now();
 
     for (var i = 0; i < fishes.length; i++) {
@@ -121,7 +132,7 @@
         f.nextDir = now + rand(DIR_CHANGE_MIN, DIR_CHANGE_MAX);
       }
 
-      // Edge avoidance (soft turn)
+      // Edge avoidance — constrained to blue zone
       if (f.x < EDGE_MARGIN) f.vx += EDGE_FORCE;
       else if (f.x > w - EDGE_MARGIN) f.vx -= EDGE_FORCE;
       if (f.y < EDGE_MARGIN) f.vy += EDGE_FORCE;
@@ -138,7 +149,7 @@
         f.vy = (f.vy / spd) * MAX_SPEED;
       }
 
-      // Ensure minimum speed
+      // Ensure minimum speed — keeps fish always moving (alive)
       if (spd < f.speed * 0.3 && spd > 0.01) {
         var boost = f.speed * 0.5 / spd;
         f.vx *= boost;
@@ -149,11 +160,11 @@
       f.x += f.vx;
       f.y += f.vy;
 
-      // Hard wrap (safety net)
-      if (f.x < -f.size * 2) f.x = w + f.size;
-      if (f.x > w + f.size * 2) f.x = -f.size;
-      if (f.y < -f.size * 2) f.y = h + f.size;
-      if (f.y > h + f.size * 2) f.y = -f.size;
+      // Hard clamp to blue zone (no wrapping — fish stay visible)
+      if (f.x < -f.size) f.x = -f.size + 1;
+      if (f.x > w + f.size) f.x = w + f.size - 1;
+      if (f.y < 0) { f.y = 1; f.vy = Math.abs(f.vy) * 0.5; }
+      if (f.y > h - f.size) { f.y = h - f.size - 1; f.vy = -Math.abs(f.vy) * 0.5; }
 
       // Render — flip based on swimming direction, tilt based on vertical movement
       var scaleX = f.vx < 0 ? -1 : 1;
@@ -190,7 +201,7 @@
     });
   }
 
-  // ---- Initialize ----
+  // ---- Initialize — one fish per species ----
   for (var i = 0; i < FISH_COUNT; i++) {
     fishes.push(createFish(i));
   }

@@ -173,3 +173,128 @@
     display: inline-block;
   }
 }
+
+// -----------------------------------------------------------------------------
+// Google Reviews
+// -----------------------------------------------------------------------------
+.reviews-summary {
+  text-align: center;
+  margin-bottom: $spacing-xl;
+}
+
+.reviews-summary__rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-xs;
+}
+
+.reviews-summary__number {
+  font-size: 3rem;
+  font-weight: $font-bold;
+  color: $primary-dark;
+  line-height: 1;
+}
+
+.reviews-summary__stars {
+  display: flex;
+  gap: 2px;
+}
+
+.reviews-summary__count {
+  font-size: $text-sm;
+  color: $text-muted;
+}
+
+.review-star {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.review-star--full  { color: #f4b400; }
+.review-star--half  { color: #f4b400; opacity: 0.6; }
+.review-star--empty { color: $border-color; }
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-lg;
+
+  @media (min-width: $bp-md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.review-card {
+  background: $white;
+  border-radius: $border-radius-lg;
+  padding: $spacing-lg;
+  box-shadow: $shadow-sm;
+  transition: box-shadow $transition-normal, transform $transition-normal;
+
+  &:hover {
+    box-shadow: $shadow-md;
+    transform: translateY(-2px);
+  }
+}
+
+.review-card__header {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-sm;
+}
+
+.review-card__photo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.review-card__photo-placeholder {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: $bg-alt;
+  flex-shrink: 0;
+}
+
+.review-card__author {
+  display: flex;
+  flex-direction: column;
+}
+
+.review-card__name {
+  font-weight: $font-semibold;
+  font-size: $text-sm;
+  color: $text-primary;
+}
+
+.review-card__time {
+  font-size: $text-xs;
+  color: $text-muted;
+}
+
+.review-card__stars {
+  display: flex;
+  gap: 1px;
+  margin-bottom: $spacing-sm;
+
+  .review-star {
+    font-size: 1rem;
+  }
+}
+
+.review-card__text {
+  font-size: $text-sm;
+  color: $text-secondary;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.reviews-cta {
+  text-align: center;
+  margin-top: $spacing-xl;
+}

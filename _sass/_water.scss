@@ -391,13 +391,6 @@
   }
 }
 
-// Subtle body wiggle — makes fish look alive while swimming
-@keyframes fishWiggle {
-  0%, 100% { transform: rotate(0deg) scaleY(1); }
-  25%      { transform: rotate(1.5deg) scaleY(0.97); }
-  75%      { transform: rotate(-1.5deg) scaleY(1.03); }
-}
-
 .fish-tank {
   position: fixed;
   inset: 0;
@@ -411,19 +404,15 @@
   top: 0;
   left: 0;
   will-change: transform;
-  filter: drop-shadow(0 1px 4px rgba($primary-dark, 0.15));
-  opacity: 0.8;
+  filter: drop-shadow(0 2px 6px rgba($primary-dark, 0.2));
+  opacity: 0.85;
 
-  svg {
+  img {
     display: block;
     width: 100%;
     height: auto;
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .fish svg {
-    animation: fishWiggle 0.8s ease-in-out infinite;
+    pointer-events: none;
+    user-select: none;
   }
 }
 

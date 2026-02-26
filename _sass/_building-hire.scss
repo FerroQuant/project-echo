@@ -125,6 +125,43 @@
   }
 }
 
+// Checkbox label (policy agreement)
+.checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: $spacing-sm;
+  font-weight: $font-normal;
+  cursor: pointer;
+  padding: $spacing-md;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  transition: border-color $transition-fast, background-color $transition-fast;
+  line-height: 1.5;
+
+  &:hover {
+    border-color: $primary-light;
+    background-color: $bg;
+  }
+
+  input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: $primary;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+}
+
+// Error state for unchecked required checkbox
+.checkbox-label--error {
+  border-color: #ef4444;
+  background-color: #fef2f2;
+}
+
+.policy-agreement {
+  margin-bottom: $spacing-lg;
+}
+
 // Thank-you state
 .hire-thankyou {
   text-align: center;

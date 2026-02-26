@@ -5,62 +5,6 @@
 @import 'variables';
 
 // -----------------------------------------------------------------------------
-// Breadcrumbs
-// -----------------------------------------------------------------------------
-.breadcrumbs {
-  background-color: $bg-alt;
-  padding: $spacing-sm 0;
-  font-size: $text-sm;
-}
-
-.breadcrumbs__list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: $spacing-xs;
-  max-width: $max-width;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: $spacing-md;
-  padding-right: $spacing-md;
-}
-
-.breadcrumbs__item {
-  display: flex;
-  align-items: center;
-  gap: $spacing-xs;
-  color: $text-muted;
-
-  &::before {
-    content: "/";
-    color: $border-color;
-  }
-
-  &:first-child::before {
-    content: none;
-  }
-
-  &--current {
-    color: $text-primary;
-    font-weight: $font-medium;
-  }
-}
-
-.breadcrumbs__link {
-  color: $text-muted;
-  text-decoration: none;
-  transition: color $transition-fast;
-
-  &:hover {
-    color: $primary;
-    text-decoration: underline;
-  }
-}
-
-// -----------------------------------------------------------------------------
 // Page header (used on interior pages)
 // -----------------------------------------------------------------------------
 .page-header {

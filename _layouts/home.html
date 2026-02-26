@@ -365,9 +365,54 @@ layout: default
     <p class="section-subtitle section-subtitle--center">
       Real reviews from our community on Google
     </p>
-    <div id="google-reviews"
-         data-endpoint="https://thewell-church.com/api/reviews"
-         style="display:none">
+
+    <div class="reviews-summary">
+      <div class="reviews-summary__rating">
+        <span class="reviews-summary__number">{{ site.data.reviews.rating }}</span>
+        <div class="reviews-summary__stars" aria-label="{{ site.data.reviews.rating }} out of 5 stars">
+          {% for i in (1..5) %}
+            {% if i <= site.data.reviews.rating %}
+              <span class="review-star review-star--full" aria-hidden="true">&#9733;</span>
+            {% else %}
+              <span class="review-star review-star--half" aria-hidden="true">&#9733;</span>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <span class="reviews-summary__count">{{ site.data.reviews.total_reviews }} reviews on Google</span>
+      </div>
+    </div>
+
+    <div class="reviews-grid">
+      {% for review in site.data.reviews.reviews %}
+      <div class="review-card">
+        <div class="review-card__header">
+          <div class="review-card__photo-placeholder" aria-hidden="true"></div>
+          <div class="review-card__author">
+            <span class="review-card__name">{{ review.author }}</span>
+            <span class="review-card__time">{{ review.time }}</span>
+          </div>
+        </div>
+        <div class="review-card__stars" aria-label="{{ review.rating }} out of 5 stars">
+          {% for i in (1..5) %}
+            {% if i <= review.rating %}
+              <span class="review-star review-star--full" aria-hidden="true">&#9733;</span>
+            {% else %}
+              <span class="review-star review-star--empty" aria-hidden="true">&#9734;</span>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <p class="review-card__text">&ldquo;{{ review.text }}&rdquo;</p>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="reviews-cta">
+      <a href="{{ site.data.reviews.google_maps_url }}"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="btn--outline-primary">
+        See All Reviews on Google &rarr;
+      </a>
     </div>
   </div>
 </section>

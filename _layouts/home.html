@@ -459,10 +459,10 @@ layout: default
         <a href="{{ '/services/' | relative_url }}" class="btn--primary">Plan Your Visit</a>
       </div>
 
-      <div>
+      <div class="map-embed" aria-label="Map showing location of The Well Church, Dawlish Road, Reading">
         <iframe
           title="The Well Church location on Google Maps"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1243!2d-0.9661105!3d51.4322369!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48769b5ea76c08c9%3A0x8e566ea5cdfe9957!2sThe%20Well!5e0!3m2!1sen!2suk!4v1"
+          src="https://www.google.com/maps/embed/v1/place?key={{ site.church.google_maps_key }}&q=The+Well,29+Dawlish+Rd,Reading+RG2+7SD&zoom=16"
           width="100%"
           height="400"
           class="map-iframe"

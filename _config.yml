@@ -8,6 +8,8 @@ church:
   address: "Dawlish Road, Reading, RG2 7SD"
   email: ""
   facebook: "https://www.facebook.com/thewellreading"
+  facebook_videos: "https://www.facebook.com/thewellreading/videos"
+  facebook_photos: "https://www.facebook.com/thewellreading/photos"
   map_lat: 51.4322331
   map_lng: -0.9635016
   google_maps_key: "AIzaSyAqN_40Qp7XmBhm7QSUePybOZejBsJplig"

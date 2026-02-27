@@ -88,12 +88,14 @@
     color: $primary-light;
     font-size: 0.75rem; // 12px
     letter-spacing: 0.08em;
-    margin-bottom: -4px;
+    line-height: 0.8;
+    margin-bottom: -2px;
   }
 
   &__well {
     color: $primary-dark;
     font-size: 1.5rem; // 24px
+    line-height: 0.8;
   }
 
   &:hover .site-logo__the {

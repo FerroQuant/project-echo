@@ -40,6 +40,6 @@ If you would like to speak to someone outside the church, you can contact:
 
 ## Safeguarding Policy
 
-We are in the process of making our full safeguarding policy available to download. In the meantime, if you would like to see a copy of our safeguarding policy, please [use our contact form]({{ '/contact/' | relative_url }}).
+If you would like to see a copy of our full safeguarding policy, please [get in touch]({{ '/contact/' | relative_url }}) and we will be happy to provide it.
 
 **Last updated:** February 2026

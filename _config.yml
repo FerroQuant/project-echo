@@ -2,11 +2,11 @@ title: The Well Church
 description: "A multicultural community church in Reading, Berkshire — Sunday worship, prayer, kids ministry, and community support at Dawlish Road"
 url: "https://thewell-church.com"
 baseurl: ""
+locale: en_GB
 
 church:
   name: "The Well Church"
   address: "Dawlish Road, Reading, RG2 7SD"
-  email: ""
   facebook: "https://www.facebook.com/thewellreading"
   facebook_videos: "https://www.facebook.com/thewellreading/videos"
   facebook_photos: "https://www.facebook.com/thewellreading/photos"
@@ -15,6 +15,9 @@ church:
   google_maps_key: "AIzaSyAqN_40Qp7XmBhm7QSUePybOZejBsJplig"
   map_query: "The+Well,29+Dawlish+Rd,Reading+RG2+7SD"
   map_zoom: 16
+
+twitter:
+  card: summary_large_image
 
 markdown: kramdown
 permalink: pretty
@@ -25,9 +28,6 @@ collections:
   sermons:
     output: true
     permalink: /sermons/:year-:month-:day-:slug/
-  events:
-    output: true
-    permalink: /events/:slug/
 
 defaults:
   - scope:
@@ -35,16 +35,13 @@ defaults:
       type: "pages"
     values:
       layout: "page"
+      image: /assets/images/church/hero.jpg
   - scope:
       path: ""
       type: "sermons"
     values:
       layout: "video"
-  - scope:
-      path: ""
-      type: "events"
-    values:
-      layout: "page"
+      image: /assets/images/church/hero.jpg
 
 plugins:
   - jekyll-feed

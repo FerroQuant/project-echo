@@ -142,10 +142,10 @@ description: "Hire The Well Centre building on Dawlish Road, Reading for your ch
           <legend>Booking Details</legend>
 
           <div class="form-group">
-            <label>
+            <label id="booking-type-label">
               Booking Type <span class="required" aria-hidden="true">*</span>
             </label>
-            <div class="radio-group">
+            <div class="radio-group" role="radiogroup" aria-labelledby="booking-type-label">
               <label class="radio-label">
                 <input type="radio" name="booking_type" value="Regular/Long-term Hire" required>
                 <span>Regular / Long-term Hire <span class="optional">(recommended)</span></span>

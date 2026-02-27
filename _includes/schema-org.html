@@ -46,26 +46,17 @@
       "opens": "10:30",
       "closes": "12:00",
       "description": "Sunday Morning Service"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "Thursday",
-      "opens": "19:00",
-      "closes": "20:00",
-      "description": "Thursday Prayer Meeting"
     }
   ],
   "hasMap": "https://www.google.com/maps?q={{ site.church.map_query }}",
   "isAccessibleForFree": true,
   "publicAccess": true,
-  "nonprofitStatus": "Charity",
+  "nonprofitStatus": "https://schema.org/Charitable",
   "knowsLanguage": ["en", "am"],
   "event": {
     "@type": "Event",
     "name": "Sunday Morning Service",
     "description": "Weekly worship service with praise, teaching, and kids ministry. Live-streamed on Facebook.",
-    "startDate": "{{ 'now' | date: '%Y-%m-%d' }}T10:30:00",
-    "endDate": "{{ 'now' | date: '%Y-%m-%d' }}T12:00:00",
     "eventSchedule": {
       "@type": "Schedule",
       "repeatFrequency": "P1W",

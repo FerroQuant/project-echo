@@ -137,11 +137,12 @@
       badge.textContent = doc.type;
       article.appendChild(badge);
 
-      // Title link
+      // Title link (sanitise URL — reject javascript: protocol)
       var h3 = document.createElement('h3');
       var a = document.createElement('a');
-      a.href = doc.url;
-      if (doc.url.indexOf('http') === 0) {
+      var safeUrl = (doc.url && !/^\s*javascript:/i.test(doc.url)) ? doc.url : '#';
+      a.href = safeUrl;
+      if (safeUrl.indexOf('http') === 0) {
         a.target = '_blank';
         a.rel = 'noopener noreferrer';
       }

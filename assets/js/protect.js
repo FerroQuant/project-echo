@@ -18,8 +18,8 @@
     if (e.ctrlKey && (key === 'u' || key === 'U' || key === 's' || key === 'S')) {
       e.preventDefault();
     }
-    // Ctrl+Shift+I/J (dev tools)
-    if (e.ctrlKey && e.shiftKey && (key === 'I' || key === 'i' || key === 'J' || key === 'j')) {
+    // Ctrl+Shift+I/J/C (dev tools, inspect element)
+    if (e.ctrlKey && e.shiftKey && (key === 'I' || key === 'i' || key === 'J' || key === 'j' || key === 'C' || key === 'c')) {
       e.preventDefault();
     }
     // F12 (dev tools)

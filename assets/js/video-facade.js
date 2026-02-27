@@ -13,7 +13,7 @@
     var iframe = document.createElement('iframe');
     iframe.src = 'https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fthewellreading%2Fvideos%2F' + encodeURIComponent(videoId) + '%2F&show_text=false&autoplay=true&appId';
     iframe.setAttribute('allowfullscreen', '');
-    iframe.setAttribute('allow', 'autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share');
+    iframe.setAttribute('allow', 'autoplay; clipboard-write; encrypted-media; picture-in-picture');
     iframe.setAttribute('loading', 'lazy');
     iframe.style.border = 'none';
     iframe.style.position = 'absolute';

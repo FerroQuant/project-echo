@@ -76,11 +76,6 @@
     font-weight: $font-bold;
     font-size: $text-lg;
     line-height: 1.1;
-    text-transform: uppercase;
-
-    .sc {
-      font-size: 0.75em;
-    }
 
     // Hide full text on very small screens, show just the logo image
     @media (max-width: 359px) {

@@ -75,7 +75,6 @@
     font-family: $font-heading;
     font-weight: $font-bold;
     font-size: $text-lg;
-    color: $primary-dark;
     line-height: 1.1;
     font-variant: small-caps;
 
@@ -85,9 +84,20 @@
     }
   }
 
-  &:hover .site-logo__text {
+  &__the {
+    color: $primary-light;
+  }
+
+  &__well {
+    color: $primary-dark;
+  }
+
+  &:hover .site-logo__the {
     color: $primary;
-    text-decoration: none;
+  }
+
+  &:hover .site-logo__well {
+    color: $primary;
   }
 
   &:focus-visible {

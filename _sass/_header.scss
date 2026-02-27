@@ -77,6 +77,7 @@
     font-size: $text-lg;
     color: $primary-dark;
     line-height: 1.1;
+    font-variant: small-caps;
 
     // Hide full text on very small screens, show just the logo image
     @media (max-width: 359px) {

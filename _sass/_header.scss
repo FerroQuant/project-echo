@@ -72,10 +72,11 @@
   }
 
   &__text {
+    display: flex;
+    flex-direction: column;
     font-family: $font-heading;
     font-weight: $font-bold;
-    font-size: $text-xl;
-    line-height: 1.1;
+    line-height: 1;
 
     // Hide full text on very small screens, show just the logo image
     @media (max-width: 359px) {
@@ -85,10 +86,14 @@
 
   &__the {
     color: $primary-light;
+    font-size: 0.625rem; // 10px
+    letter-spacing: 0.05em;
+    padding-left: 0.05em;
   }
 
   &__well {
     color: $primary-dark;
+    font-size: $text-xl; // 20px
   }
 
   &:hover .site-logo__the {

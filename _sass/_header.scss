@@ -86,14 +86,14 @@
 
   &__the {
     color: $primary-light;
-    font-size: 0.625rem; // 10px
-    letter-spacing: 0.05em;
-    padding-left: 0.05em;
+    font-size: 0.75rem; // 12px
+    letter-spacing: 0.08em;
+    margin-bottom: -2px;
   }
 
   &__well {
     color: $primary-dark;
-    font-size: $text-xl; // 20px
+    font-size: 1.5rem; // 24px
   }
 
   &:hover .site-logo__the {

@@ -171,18 +171,7 @@ description: "Contact The Well Church, Dawlish Road, Reading RG2 7SD. Send a mes
 <section class="section section--alt map-section">
   <div class="container">
     <h2 class="text-center">How to Find Us</h2>
-    <div class="map-embed" aria-label="Map showing location of The Well Church, Dawlish Road, Reading">
-      <iframe
-        src="https://www.google.com/maps/embed/v1/place?key={{ site.church.google_maps_key }}&q=The+Well,29+Dawlish+Rd,Reading+RG2+7SD&zoom=16"
-        width="100%"
-        height="400"
-        class="map-iframe"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        title="The Well Church location map">
-      </iframe>
-    </div>
+    {% include map-embed.html %}
   </div>
 </section>
 

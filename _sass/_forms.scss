@@ -135,24 +135,6 @@
   }
 }
 
-.map-label {
-  font-family: $font-heading;
-  font-size: $text-base;
-  font-weight: $font-semibold;
-  color: $text-secondary;
-  margin-bottom: $spacing-sm;
-}
-
-// Side-by-side map + street view
-.map-street-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: $spacing-xl;
-
-  @media (min-width: $bp-md) {
-    grid-template-columns: 1fr 1fr;
-  }
-}
 
 // -----------------------------------------------------------------------------
 // Prayer page layout

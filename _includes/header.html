@@ -39,12 +39,22 @@
     <!-- Nav menu -->
     <div class="nav-menu" id="nav-menu">
       <ul class="nav-links" role="list">
-        <li class="nav-links__item">
+        <li class="nav-links__item nav-links__item--has-dropdown">
           <a href="{{ '/about/' | relative_url }}"
              class="nav-links__link"
-             {% if page.url == '/about/' %}aria-current="page"{% endif %}>
+             {% if page.url == '/about/' or page.url == '/about-us/history/' %}aria-current="page"{% endif %}>
             About
+            <svg class="nav-dropdown-arrow" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
+          <ul class="nav-dropdown" role="list">
+            <li>
+              <a href="{{ '/about-us/history/' | relative_url }}"
+                 class="nav-dropdown__link"
+                 {% if page.url == '/about-us/history/' %}aria-current="page"{% endif %}>
+                History
+              </a>
+            </li>
+          </ul>
         </li>
         <li class="nav-links__item">
           <a href="{{ '/our-family/' | relative_url }}"

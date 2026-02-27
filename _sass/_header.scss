@@ -192,7 +192,82 @@
 }
 
 .nav-links__item {
-  // no extra styles needed
+  position: relative;
+}
+
+// Dropdown arrow icon (desktop only)
+.nav-dropdown-arrow {
+  display: none;
+
+  @media (min-width: #{$bp-lg}) {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 2px;
+    transition: transform $transition-fast;
+  }
+}
+
+// Dropdown sub-menu
+.nav-dropdown {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  // Mobile: show inline, indented
+  padding-left: $spacing-lg;
+
+  // Desktop: absolute dropdown, hidden by default
+  @media (min-width: #{$bp-lg}) {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    padding: $spacing-xs 0;
+    background-color: $white;
+    border-radius: $border-radius;
+    box-shadow: $shadow-md;
+    border: 1px solid $border-color;
+    z-index: 60;
+  }
+}
+
+.nav-dropdown__link {
+  display: block;
+  padding: $spacing-xs $spacing-md;
+  font-family: $font-body;
+  font-size: $text-sm;
+  color: $text-primary;
+  text-decoration: none;
+  border-radius: $border-radius;
+  transition: background-color $transition-fast, color $transition-fast;
+
+  &:hover {
+    background-color: $bg-alt;
+    color: $primary;
+  }
+
+  &[aria-current="page"] {
+    color: $primary;
+    font-weight: $font-semibold;
+  }
+
+  @media (min-width: #{$bp-lg}) {
+    white-space: nowrap;
+    border-radius: 0;
+  }
+}
+
+// Desktop: show dropdown on hover/focus-within
+@media (min-width: #{$bp-lg}) {
+  .nav-links__item--has-dropdown:hover .nav-dropdown,
+  .nav-links__item--has-dropdown:focus-within .nav-dropdown {
+    display: block;
+  }
+
+  .nav-links__item--has-dropdown:hover .nav-dropdown-arrow {
+    transform: rotate(180deg);
+  }
 }
 
 .nav-links__link {

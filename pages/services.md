@@ -69,7 +69,7 @@ There are practical ways to get involved and make a real difference every week.
 
 We are looking for musicians to grow our Sunday worship band — especially a **bass player**. We currently have piano, violin, and flute, and we want to build something bigger. If you play an instrument or sing, we would love to hear from you.
 
-Here is the deal: our building has a fully equipped **recording studio on site**. Musicians who anchor the Sunday worship band get weekly access to the studio for their own projects. It is a genuine exchange — you bring your gift on Sundays, and the studio is yours to use during the week.
+Here is the deal: musicians who commit to the Sunday worship band can have an **allocated day to use the church space** for their own music projects, under supervision. It is a genuine exchange — you bring your gift on Sundays, and we give you space to work on yours.
 
 ### Sound Desk Volunteer
 

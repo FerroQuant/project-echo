@@ -71,6 +71,10 @@ h1, h2, h3, h4, h5, h6 {
   text-wrap: balance;
 }
 
+b, strong {
+  font-weight: $font-semibold;
+}
+
 h1 { font-size: $text-4xl; }
 h2 { font-size: $text-3xl; }
 h3 { font-size: $text-2xl; }

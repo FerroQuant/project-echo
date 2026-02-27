@@ -147,7 +147,7 @@
 
 .service-time {
   font-size: 1.5rem;
-  font-weight: $font-bold;
+  font-weight: $font-semibold;
   color: $primary;
   margin-bottom: $spacing-sm;
 }
@@ -212,7 +212,7 @@
 
 .find-us-card__heading {
   font-size: $text-xl;
-  font-weight: $font-bold;
+  font-weight: $font-semibold;
   color: $primary-dark;
   margin-bottom: $spacing-xs;
 }
@@ -344,14 +344,14 @@
 
 .event-month {
   font-size: $text-xs;
-  font-weight: $font-bold;
+  font-weight: $font-semibold;
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
 
 .event-day {
   font-size: $text-xl;
-  font-weight: $font-bold;
+  font-weight: $font-semibold;
   line-height: 1;
 
   svg {

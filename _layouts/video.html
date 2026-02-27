@@ -10,8 +10,8 @@ layout: default
   "name": "{{ page.title | escape }} — {{ page.date | date: '%-d %B %Y' }}",
   "description": "{{ page.title | escape }} at {{ site.title }} on {{ page.date | date: '%-d %B %Y' }}",
   "uploadDate": "{{ page.date | date: '%Y-%m-%dT00:00:00+00:00' }}",
-  "contentUrl": "https://www.facebook.com/thewellreading/videos/{{ page.facebook_id | default: page.facebook_video_id }}",
-  "embedUrl": "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fthewellreading%2Fvideos%2F{{ page.facebook_id | default: page.facebook_video_id }}%2F",
+  "contentUrl": "{{ site.church.facebook_videos }}/{{ page.facebook_id | default: page.facebook_video_id }}",
+  "embedUrl": "https://www.facebook.com/plugins/video.php?href={{ site.church.facebook_videos | url_encode }}%2F{{ page.facebook_id | default: page.facebook_video_id }}%2F",
   "thumbnailUrl": "{{ '/assets/images/church/hero.jpg' | absolute_url }}"{% if page.duration %},
   "duration": "PT{{ page.duration | replace: ':', 'M' }}S"{% endif %}{% if page.views %},
   "interactionStatistic": {

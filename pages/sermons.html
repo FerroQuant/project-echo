@@ -40,12 +40,13 @@ description: "Watch sermons and messages from The Well Church Reading. Browse ou
       <article class="card card--portrait">
         <div class="video-facade video-facade--portrait"
              data-video-id="{{ sermon.facebook_id }}"
+             data-facebook-videos="{{ site.church.facebook_videos }}"
              data-title="{{ sermon.title }} — {{ sermon.date | date: '%-d %B %Y' }}"
              role="button"
              tabindex="0"
              aria-label="Play video: {{ sermon.title }} — {{ sermon.date | date: '%-d %B %Y' }}">
           <img src="{{ '/assets/images/church/hero.jpg' | relative_url }}"
-               alt=""
+               alt="Sermon thumbnail"
                class="video-facade__thumb"
                loading="lazy"
                decoding="async">

@@ -34,7 +34,7 @@ Can't make it in person? We live-stream every Sunday service on Facebook. You ca
 We are also working towards launching on YouTube — stay tuned.
 
 **Watch live every Sunday at 10:30am:**
-[facebook.com/thewellreading](https://www.facebook.com/thewellreading){:target="_blank" rel="noopener noreferrer"}
+[Follow The Well on Facebook]({{ site.church.facebook }}){:target="_blank" rel="noopener noreferrer"}
 
 Past services are also available to watch back on our [Sermons page]({{ '/sermons/' | relative_url }}).
 

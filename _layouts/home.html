@@ -55,14 +55,19 @@ layout: default
     <div class="video-grid video-grid--portrait stagger-children">
       {% for sermon in recent_sermons %}
       <div class="video-card video-card--portrait">
-        <div class="video-embed video-embed--portrait video-card__embed">
-          <iframe
-            src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fthewellreading%2Fvideos%2F{{ sermon.facebook_id }}%2F&show_text=false"
-            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
-            allowfullscreen
-            loading="lazy"
-            title="{{ sermon.title }} — {{ sermon.date | date: '%-d %B %Y' }}">
-          </iframe>
+        <div class="video-facade video-facade--portrait video-card__embed"
+             data-video-id="{{ sermon.facebook_id }}"
+             data-facebook-videos="{{ site.church.facebook_videos }}"
+             data-title="{{ sermon.title }} — {{ sermon.date | date: '%-d %B %Y' }}"
+             role="button"
+             tabindex="0"
+             aria-label="Play video: {{ sermon.title }} — {{ sermon.date | date: '%-d %B %Y' }}">
+          <img src="{{ '/assets/images/church/hero.jpg' | relative_url }}"
+               alt="Sermon thumbnail"
+               class="video-facade__thumb"
+               loading="lazy"
+               decoding="async">
+          <span class="video-facade__label">{{ sermon.title }}<br>{{ sermon.date | date: "%-d %B %Y" }}</span>
         </div>
         <div class="video-card__meta">
           <p class="video-card__date">{{ sermon.date | date: "%-d %B %Y" }}</p>
@@ -334,7 +339,7 @@ layout: default
     <div class="stats-strip stagger-children">
 
       <div class="stat-card depth-card">
-        <span class="stat-card__number">967</span>
+        <span class="stat-card__number">{{ site.data.facebook_content.page_info.followers }}</span>
         <span class="stat-card__label">Followers</span>
       </div>
 

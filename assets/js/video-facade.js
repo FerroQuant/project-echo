@@ -10,8 +10,9 @@
   function createIframe(wrapper) {
     var videoId = wrapper.getAttribute('data-video-id');
     if (!videoId) return null;
+    var baseUrl = wrapper.getAttribute('data-facebook-videos') || 'https://www.facebook.com/thewellreading/videos';
     var iframe = document.createElement('iframe');
-    iframe.src = 'https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fthewellreading%2Fvideos%2F' + encodeURIComponent(videoId) + '%2F&show_text=false&autoplay=true&appId';
+    iframe.src = 'https://www.facebook.com/plugins/video.php?href=' + encodeURIComponent(baseUrl + '/' + videoId + '/') + '&show_text=false&autoplay=true&appId';
     iframe.setAttribute('allowfullscreen', '');
     iframe.setAttribute('allow', 'autoplay; clipboard-write; encrypted-media; picture-in-picture');
     iframe.setAttribute('loading', 'lazy');
@@ -43,8 +44,9 @@
 
   function showFallback(wrapper) {
     var videoId = wrapper.getAttribute('data-video-id');
+    var baseUrl = wrapper.getAttribute('data-facebook-videos') || 'https://www.facebook.com/thewellreading/videos';
     var link = document.createElement('a');
-    link.href = 'https://www.facebook.com/thewellreading/videos/' + (videoId || '');
+    link.href = baseUrl + '/' + (videoId || '');
     link.target = '_blank';
     link.rel = 'noopener noreferrer';
     link.textContent = 'Watch on Facebook';

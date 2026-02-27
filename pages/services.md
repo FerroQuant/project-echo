@@ -31,8 +31,6 @@ A typical Sunday morning looks like this:
 
 Can't make it in person? We live-stream every Sunday service on Facebook. You can join from anywhere in the world — and many do. Friends have tuned in from across the UK and from as far as Liberia, West Africa.
 
-We are also working towards launching on YouTube — stay tuned.
-
 **Watch live every Sunday at 10:30am:**
 [Follow The Well on Facebook]({{ site.church.facebook }}){:target="_blank" rel="noopener noreferrer"}
 

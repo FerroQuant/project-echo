@@ -1,0 +1,18 @@
+{% comment %}
+  Google Maps embed — SSOT include.
+  All config from _config.yml: church.google_maps_key, church.map_query, church.map_zoom
+  Optional params: height (default 400)
+{% endcomment %}
+{% assign map_height = include.height | default: 400 %}
+<div class="map-embed" aria-label="Map showing location of The Well Church, Dawlish Road, Reading">
+  <iframe
+    src="https://www.google.com/maps/embed/v1/place?key={{ site.church.google_maps_key }}&q={{ site.church.map_query }}&zoom={{ site.church.map_zoom }}"
+    width="100%"
+    height="{{ map_height }}"
+    class="map-iframe"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    title="The Well Church location map">
+  </iframe>
+</div>

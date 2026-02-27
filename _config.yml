@@ -11,6 +11,8 @@ church:
   map_lat: 51.4322331
   map_lng: -0.9635016
   google_maps_key: "AIzaSyAqN_40Qp7XmBhm7QSUePybOZejBsJplig"
+  map_query: "The+Well,29+Dawlish+Rd,Reading+RG2+7SD"
+  map_zoom: 16
 
 markdown: kramdown
 permalink: pretty

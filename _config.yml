@@ -16,9 +16,6 @@ church:
   map_query: "The+Well,29+Dawlish+Rd,Reading+RG2+7SD"
   map_zoom: 16
 
-twitter:
-  card: summary_large_image
-
 markdown: kramdown
 permalink: pretty
 sass:
@@ -42,6 +39,11 @@ defaults:
     values:
       layout: "video"
       image: /assets/images/church/hero.jpg
+  - scope:
+      path: ""
+    values:
+      twitter:
+        card: summary_large_image
 
 plugins:
   - jekyll-feed

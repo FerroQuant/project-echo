@@ -4,6 +4,7 @@ title: "Services"
 subtitle: "Plan your visit"
 permalink: /services/
 description: "Sunday worship at 10:30am and Thursday prayer at The Well Church, Dawlish Road, Reading. Bilingual English and Amharic services, live-streamed on Facebook."
+last_modified_at: 2026-02-27
 ---
 
 ## Sunday Morning Service
@@ -74,3 +75,52 @@ Here is the deal: musicians who commit to the Sunday worship band can have an **
 We also need a **Sound Desk Operator** for Sunday services. The setup has been simplified and full training is provided — no prior experience needed. If you are reliable and willing to learn, this is a great way to serve behind the scenes.
 
 **Interested in joining the worship team?** [Get in touch]({{ '/contact/?subject=worship-team' | relative_url }}) — or if the sound desk is more your thing, [let us know]({{ '/contact/?subject=sound-desk' | relative_url }}). We will take it from there.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What time are services at The Well Church?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sunday Morning Service is every Sunday at 10:30am. Services run for approximately 45 to 60 minutes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where is The Well Church in Reading?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Well Church is located between 29 and 31 Dawlish Road, Reading, RG2 7SD. Parking is available nearby and the venue is accessible by public transport."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I watch services online?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, every Sunday service is live-streamed on Facebook at 10:30am. Past services are also available to watch back on the Sermons page."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you have children's ministry?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, children's activities run during the Sunday service so that younger ones can learn and grow in a fun, safe environment while parents engage fully in the service."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should I expect on my first visit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You will be greeted warmly at the door. There are no expectations and no dress code — just come as you are. A typical Sunday includes worship, a Bible message, prayer, and fellowship over tea and coffee afterwards."
+      }
+    }
+  ]
+}
+</script>

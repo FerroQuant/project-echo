@@ -4,6 +4,7 @@ title: "Give"
 subtitle: "Support the work of The Well Church"
 permalink: /give/
 description: "Support The Well Church in Reading through regular giving or one-off donations. Your generosity funds worship, community support, and outreach."
+last_modified_at: 2026-03-01
 ---
 
 ## Why Give?

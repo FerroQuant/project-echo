@@ -4,6 +4,7 @@ title: "Small Groups"
 subtitle: "Doing life together"
 permalink: /small-groups/
 description: "Small groups at The Well Church are where real community happens — Bible study, prayer, and friendship in smaller gatherings across Reading."
+last_modified_at: 2026-03-01
 ---
 
 ## Going Deeper Together

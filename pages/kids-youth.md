@@ -4,6 +4,7 @@ title: "Kids & Youth"
 subtitle: "Growing together in faith"
 permalink: /kids-youth/
 description: "Children's and youth ministry at The Well Church, Reading. Fun, faith-filled sessions during Sunday worship for all ages. DBS-checked team."
+last_modified_at: 2026-03-01
 ---
 
 ## Kids at The Well

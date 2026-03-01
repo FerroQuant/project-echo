@@ -47,7 +47,7 @@ This work is at the heart of who we are. We believe the love of God is meant to 
 
 ## A Church With Roots and Reach
 
-We are a local church with a global heart. We meet at Dawlish Road in Reading, and we care deeply about this neighbourhood. Our services are live-streamed on Facebook every Sunday. Our community extends far beyond Reading — whether you are joining us in person or watching from another country, you are part of the family.
+We are a local church with a global heart. We meet at Dawlish Road in Reading, and we care deeply about this neighbourhood. Our services are live-streamed on Facebook every Sunday — and we are working towards launching on YouTube too, so you will be able to find us wherever you watch. Our community extends far beyond Reading — whether you are joining us in person or watching from another country, you are part of the family.
 
 ## Get in Touch
 

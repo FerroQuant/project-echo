@@ -8,7 +8,7 @@ layout: default
   "@context": "https://schema.org",
   "@type": "VideoObject",
   "name": "{{ page.title | escape }} — {{ page.date | date: '%-d %B %Y' }}",
-  "description": "{{ page.title | escape }} at {{ site.title }} on {{ page.date | date: '%-d %B %Y' }}",
+  "description": "{% if page.description %}{{ page.description | escape }}{% else %}{{ page.title | escape }} at {{ site.title }} on {{ page.date | date: '%-d %B %Y' }}. The Well Church meets every Sunday at 10:30am at Dawlish Road, Reading, RG2 7SD.{% endif %}",
   "uploadDate": "{{ page.date | date: '%Y-%m-%dT00:00:00+00:00' }}",
   "contentUrl": "{{ site.church.facebook_videos }}/{{ page.facebook_id | default: page.facebook_video_id }}",
   "embedUrl": "https://www.facebook.com/plugins/video.php?href={{ site.church.facebook_videos | url_encode }}%2F{{ page.facebook_id | default: page.facebook_video_id }}%2F",

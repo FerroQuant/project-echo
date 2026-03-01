@@ -48,7 +48,7 @@ layout: default
 
     <h2 id="videos-heading" class="section-heading">Watch Our Services</h2>
     <p class="section-subtitle section-subtitle--center">
-      Catch up on recent Sunday messages — streamed live every week on Facebook.
+      Catch up on recent Sunday messages — streamed live every week on Facebook. YouTube coming soon.
     </p>
 
     {% assign recent_sermons = site.sermons | sort: 'date' | reverse | slice: 0, 3 %}
@@ -469,3 +469,68 @@ layout: default
     </div>
   </div>
 </section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Where is The Well Church in Reading?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Well Church is located between 29 and 31 Dawlish Road, Reading, RG2 7SD — in south Reading, Berkshire. Parking is available nearby and the venue is accessible by public transport."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What time does The Well Church service start?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sunday Morning Service is every Sunday at 10:30am. Services run for approximately 45 to 60 minutes. All are welcome — no prior church experience needed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is The Well Church good for families with children?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, The Well Church warmly welcomes families. Age-appropriate children's activities run during the Sunday service for babies, toddlers, pre-school, and primary-age children. The team is DBS-checked and committed to a safe, fun environment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I watch The Well Church services online?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, every Sunday service is live-streamed on Facebook at 10:30am. Past services are available to watch back on the Sermons page at thewell-church.com/sermons/. YouTube is coming soon."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is The Well Church a multicultural church?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, The Well Church is a vibrant multicultural family of believers. People from many different nations and backgrounds gather together every Sunday. The church also partners with a thriving Amharic-speaking congregation serving the Ethiopian and Eritrean community in Reading."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does The Well Church support refugees and asylum seekers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, through The Well Centre the church actively supports refugees and asylum seekers in Reading, offering practical help, friendship, and integration support. The church also provides emergency assistance including food, clothing, and household items to families in crisis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I hire The Well Church building?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Well Centre building on Dawlish Road is available for hire by churches, charities, and verified community groups. We give preference to long-term regular hire. Submit an enquiry at thewell-church.com/building-hire/ and the team will respond within 5 working days."
+      }
+    }
+  ]
+}
+</script>

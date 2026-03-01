@@ -46,16 +46,9 @@
     "@type": "AggregateRating",
     "ratingValue": "{{ site.data.reviews.rating }}",
     "reviewCount": "{{ site.data.reviews.total_reviews }}",
-    "bestRating": "5"
+    "bestRating": "5",
+    "worstRating": "1"
   },
-  "review": [{% for review in site.data.reviews.reviews %}{% unless forloop.first %},{% endunless %}
-    {
-      "@type": "Review",
-      "author": {"@type": "Person", "name": "{{ review.author }}"},
-      "reviewRating": {"@type": "Rating", "ratingValue": "{{ review.rating }}", "bestRating": "5"},
-      "reviewBody": "{{ review.text | escape }}"
-    }{% endfor %}
-  ],
   "foundingDate": "2014",
   "openingHoursSpecification": [
     {

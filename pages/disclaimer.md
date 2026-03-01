@@ -4,6 +4,7 @@ title: "Disclaimer"
 subtitle: "Terms of use for this website"
 permalink: /disclaimer/
 description: "Disclaimer and terms of use for The Well Church website."
+last_modified_at: 2026-03-01
 ---
 
 ## General Information

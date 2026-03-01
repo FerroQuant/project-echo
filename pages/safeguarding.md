@@ -4,6 +4,7 @@ title: "Safeguarding"
 subtitle: "Our commitment to protecting everyone"
 permalink: /safeguarding/
 description: "Safeguarding policy statement for The Well Church — our commitment to the safety of children, young people, and vulnerable adults."
+last_modified_at: 2026-03-01
 ---
 
 ## Our Commitment

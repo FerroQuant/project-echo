@@ -4,6 +4,7 @@ title: "Privacy Policy"
 subtitle: "How we handle your personal data"
 permalink: /privacy-policy/
 description: "Privacy policy for The Well Church — how we collect, use, and protect your personal data under UK GDPR."
+last_modified_at: 2026-03-01
 ---
 
 ## Who We Are

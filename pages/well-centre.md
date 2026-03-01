@@ -4,6 +4,7 @@ title: "The Well Centre"
 subtitle: "Serving our community"
 permalink: /well-centre/
 description: "The Well Centre at Dawlish Road, Reading — community support, a welcoming space, and building hire."
+last_modified_at: 2026-03-01
 ---
 
 ## About The Well Centre

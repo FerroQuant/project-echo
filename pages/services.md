@@ -37,6 +37,8 @@ Can't make it in person? We live-stream every Sunday service on Facebook. You ca
 
 Past services are also available to watch back on our [Sermons page]({{ '/sermons/' | relative_url }}).
 
+We are also working towards launching on YouTube — stay tuned.
+
 ## Location
 
 **The Well Church**
